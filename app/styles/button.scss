@@ -1,0 +1,90 @@
+@import "./fonts.scss";
+
+.btn {
+    display: inline-flex;
+}
+
+.btn-menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 28px;
+    height: 15px;
+    font-size: 0;
+    cursor: pointer;
+    transition: 0.23s ease;
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-black);
+        transition: 0.34s ease;
+    }
+    span {
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-black);
+        transition: 0.23s ease;
+    }
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &__text {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
+        &::before {
+            font-family: "icomoon";
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+        }
+    }
+    &--user {
+        .btn-icon__text {
+            &::before {
+                content: "\e908";
+                font-size: 1.1875rem;
+                font-weight: 600 !important;
+                line-height: 1;
+            }
+        }
+    }
+    &--search {
+        .btn-icon__text {
+            &::before {
+                content: "\e905";
+            }
+        }
+    }
+    &--shoppingbag {
+        .btn-icon__text {
+            &::before {
+                content: "\e903";
+            }
+        }
+    }
+}
+.icon-title {
+    visibility: hidden;
+    margin-left: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #000;
+    white-space: nowrap;
+}

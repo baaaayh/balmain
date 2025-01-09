@@ -1,0 +1,28 @@
+.header {
+    position: relative;
+    z-index: 1;
+    &__inner {
+        position: relative;
+        padding: 0.6875rem 0;
+        background-color: #000;
+    }
+    &__logo {
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        top: 4.6875rem;
+        right: 2.1875rem;
+        width: 3.75rem;
+        a {
+            display: block;
+        }
+    }
+    &.active {
+        .header__logo {
+            -webkit-filter: drop-shadow(0 0 2.5rem #000);
+            filter: drop-shadow(0 0 2.5rem #000);
+            opacity: 1;
+        }
+    }
+}
