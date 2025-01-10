@@ -67,10 +67,12 @@
 html,
 body {
     height: 100%;
+    min-height: 100%;
 }
 
 html {
-    font-size: 18px;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -92,14 +94,42 @@ a {
     text-decoration: none;
 }
 
-.wrap,
-.contents {
-    height: 100%;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.contents {
-    display: flex;
+.ir {
+    overflow: hidden;
+    visibility: hidden;
+    position: absolute;
+    top: -99999999px;
+    left: -99999999px;
+    width: 0;
+    height: 0;
     font-size: 0;
+    text-indent: -99999999px;
+}
+
+.wrap,
+.container {
+    height: 100%;
+    min-height: 100%;
+}
+
+.container {
+    font-size: 0;
+}
+
+.section {
+    &__inner {
+        padding: 1.5rem;
+    }
+    &--hidden {
+        .section__inner {
+            visibility: visible;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {

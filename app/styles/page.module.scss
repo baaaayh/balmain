@@ -10,7 +10,15 @@
 }
 
 .main {
-    flex-basis: 100%;
+    padding-left: 4.5rem;
+    transition: padding 0.5s ease-out;
+    overflow: hidden;
+}
+
+:global(.container--widenav) {
+    .main {
+        padding-left: 380px;
+    }
 }
 
 @media (hover: hover) and (pointer: fine) {

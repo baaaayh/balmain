@@ -1,0 +1,61 @@
+.menu {
+    opacity: 0;
+    overflow-x: hidden;
+    pointer-events: none;
+    padding: 1.875rem 1.875rem 1.4375rem 3.125rem;
+    transition: opacity 0.5s ease-out;
+    &__item {
+        position: relative;
+        margin: 0 0 1.1875rem;
+        &--border {
+            padding-bottom: 1.875rem;
+            margin-bottom: 1.75rem;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -100%;
+                right: -100%;
+                display: inline-block;
+                border-bottom: 0.125rem solid #e1e1e1;
+            }
+        }
+        &--grey {
+            .menu__depth1 {
+                color: #696969;
+            }
+        }
+    }
+    &__depth1 {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding-right: 24px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--color-black);
+        cursor: pointer;
+        text-align: left;
+        &::before {
+            content: "\e901";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            display: inline-block;
+            font-family: "icomoon";
+            font-size: 0.6875rem;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+    &--active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &--closing {
+        opacity: 0;
+        transition: none;
+    }
+}

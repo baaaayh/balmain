@@ -6,7 +6,7 @@
         display: flex;
         flex-direction: column;
         row-gap: 15px;
-        padding-left: 25px;
+        padding-left: 29px;
         transform: translateY(-50%);
         transition: opacity 0.34s ease;
         &--active {
@@ -14,6 +14,7 @@
             position: static;
             flex-direction: row;
             justify-content: space-between;
+            border-bottom: 0.125rem solid #e1e1e1;
             padding: 2.4375rem 1.875rem 1.875rem 3.125rem;
             transform: translateY(0);
             transition: opacity 0.34s ease;

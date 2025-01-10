@@ -1,0 +1,34 @@
+.card-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 1.25rem;
+    pointer-events: none;
+}
+.card-title {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.75rem;
+    pointer-events: all;
+    h3 {
+        font-size: 1.25rem;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: 0.04688rem;
+        line-height: 1;
+        color: #fff;
+    }
+    &__link {
+        ul {
+            display: flex;
+            column-gap: 10px;
+        }
+    }
+}

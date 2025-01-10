@@ -1,17 +1,27 @@
 .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: inline-flex;
     flex-shrink: 0;
     width: 4.5rem;
-    transition: width 0.7s ease;
-
+    height: 100%;
+    transition: width 0.5s ease-out;
+    z-index: 2;
+    background-color: #fff;
     &__inner {
         width: 100%;
         padding: 20px 25px 0;
         font-size: 0;
         &--active {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             padding: 20px 0;
             .side-nav__contents {
                 display: block;
+                flex-basis: auto;
+                height: auto;
             }
         }
     }

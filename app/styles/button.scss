@@ -79,6 +79,7 @@
         }
     }
 }
+
 .icon-title {
     visibility: hidden;
     margin-left: 14px;
@@ -87,4 +88,64 @@
     line-height: 18px;
     color: #000;
     white-space: nowrap;
+}
+
+.btn-navfoot {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0 0 0 2.3125rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.03125rem;
+    line-height: 1.125rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+    }
+    &--phone {
+        &::before {
+            background: url(/images/icons/icon_phone.webp) center / auto
+                no-repeat;
+        }
+    }
+    &--marker {
+        &::before {
+            background: url(/images/icons/icon_marker.webp) center / auto
+                no-repeat;
+        }
+    }
+}
+
+.btn-link {
+    font-size: 0.59375rem;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 0.0625rem;
+    line-height: 1;
+    padding: 0.625rem 2rem;
+    background-color: #fff;
+    border-radius: 1.71875rem;
+    text-transform: uppercase;
+    &--bk {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.btn-cart {
+    &::before {
+        content: "\e903";
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+    }
 }

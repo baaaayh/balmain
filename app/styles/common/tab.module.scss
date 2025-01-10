@@ -1,0 +1,20 @@
+.tab {
+    &__inner {
+        ul {
+            display: flex;
+            column-gap: 10px;
+            li {
+            }
+        }
+    }
+    &__button {
+        display: inline-block;
+        cursor: pointer;
+        padding-bottom: 0.3125rem;
+        font-size: 0.875rem;
+        &--active {
+            text-decoration: underline;
+            text-underline-offset: 0.3125rem;
+        }
+    }
+}

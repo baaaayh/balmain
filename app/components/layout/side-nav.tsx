@@ -1,26 +1,23 @@
 "use client";
-import { useState, useCallback } from "react";
-import Link from "next/link";
 import clsx from "clsx";
 import SideNavUtils from "@/app/components/layout/side-nav-utils";
+import SideNavMenu from "@/app/components/layout/side-nav-menu";
+import SideNavFooter from "@/app/components/layout/side-nav-footer";
 import styles from "@/app/styles/layout/side-nav.module.scss";
 
-export default function SideNav() {
-    const [navState, setNavState] = useState(false);
-    const [isExpended, setIsExpended] = useState(false);
+interface SideNavProps {
+    handleNavState: () => void;
+    handleTransitionEnd: () => void;
+    navState: boolean;
+    isExpended: boolean;
+}
 
-    const handleNavState = useCallback(() => {
-        setNavState((prev: boolean) => !prev);
-    }, []);
-
-    const handleTransitionEnd = useCallback(() => {
-        if (navState) {
-            setIsExpended(true);
-        } else {
-            setIsExpended(false);
-        }
-    }, [navState]);
-
+export default function SideNav({
+    handleNavState,
+    handleTransitionEnd,
+    navState,
+    isExpended,
+}: SideNavProps) {
     return (
         <nav
             className={clsx(styles["side-nav"], {
@@ -46,32 +43,9 @@ export default function SideNav() {
                         </button>
                     </div>
                     <SideNavUtils navState={navState} isExpended={isExpended} />
-                    <nav className={clsx(styles["side-nav__menu"])}>
-                        <div className={clsx(styles["side-nav__row"])}></div>
-                        <div className={clsx(styles["side-nav__row"])}></div>
-                        <div className={clsx(styles["side-nav__row"])}></div>
-                    </nav>
+                    <SideNavMenu navState={navState} isExpended={isExpended} />
                 </div>
-                <div className={clsx(styles["side-nav__footer"])}>
-                    <ul>
-                        <li>
-                            <Link
-                                href=""
-                                className="btn btn-navfoot btn-navfoot--marker"
-                            >
-                                BOUTIQUES
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href=""
-                                className="btn btn-navfoot btn-navfoot--phone"
-                            >
-                                +1 646 343 9792
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                <SideNavFooter navState={navState} isExpended={isExpended} />
             </div>
         </nav>
     );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SideNav from "@/app/components/layout/side-nav";
+import Container from "@/app/components/layout/container";
 import "@/app/styles/globals.scss";
 
 export const metadata: Metadata = {
@@ -17,10 +17,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={``}>
                 <div className="wrap">
-                    <div className="contents">
-                        <SideNav />
-                        {children}
-                    </div>
+                    <Container>{children}</Container>
                 </div>
             </body>
         </html>
