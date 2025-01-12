@@ -1,0 +1,36 @@
+.mode-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.25rem;
+    cursor: pointer;
+    span {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 1.875rem;
+        background-color: #ccc;
+        color: #000;
+        &::before {
+            font-family: "icomoon";
+            content: "\e954";
+            display: inline-block;
+            font-size: 2.1875rem;
+            line-height: 1;
+        }
+    }
+    b {
+        color: #000;
+        font-family: Balmain Sans;
+        font-size: 1.25rem;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0.04688rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,69 @@
+[
+    {
+        "cardSectionData1": [
+            {
+                "imageUrl_desktop": "/images/main/card/hp_carre_dress_body_blue_PS25_desktop.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_dress_body_blue_PS25_mob.avif",
+                "title": "DRESSES <br /> RESORT 2025",
+                "buttonText": "SHOP NOW",
+                "linkString": "javascript:;"
+            },
+            {
+                "imageUrl_desktop": "/images/main/card/hp_carre_bags_moon1945_denim_PS25_desktop.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_bags_moon1945_denim_PS25_mob.avif",
+                "title": "WOMEN'S BAGS <br /> RESORT 2025",
+                "buttonText": "SHOP NOW",
+                "linkString": "javascript:;"
+            },
+            {
+                "imageUrl_desktop": "/images/main/card/hp_carre_menbags_PS25_2_desktop.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_menbags_PS25_2_mob.avif",
+                "title": "MEN'S BAGS <br /> RESORT 2025",
+                "buttonText": "SHOP NOW",
+                "linkString": "javascript:;"
+            }
+        ],
+        "cardSectionData2": [
+            {
+                "imageUrl_desktop": "/images/main/card/hp_carre_WOMEN_rtw_denim_PS25_desktop.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_WOMEN_rtw_denim_PS25_mob.avif",
+                "title": "WOMEN'S READY-TO-WEAR <br /> RESORT 2025",
+                "buttonText": "VIEW ALL",
+                "linkString": "javascript:;"
+            },
+            {
+                "imageUrl_desktop": "/images/main/card/hp_carre_MEN_rtw_denim_PS25_desktop.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_MEN_rtw_denim_PS25_mob.avif",
+                "title": "MEN'S READY-TO-WEAR <br /> RESORT 2025",
+                "buttonText": "VIEW ALL",
+                "linkString": "javascript:;"
+            }
+        ],
+        "circleSectionData": [
+            {
+                "imageUrl": "/images/main/circle/portrait_olivierrousteing_2024.avif",
+                "title": "Olivier Rousteing"
+            },
+            {
+                "imageUrl": "/images/main/circle/portrait_pierrebalmain.avif",
+                "title": "Pierre Balmain"
+            },
+            {
+                "imageUrl": "/images/main/circle/HP_BALMAINCULTURE_SS25SHOW.avif",
+                "title": " Women's Spring Summer 2025 <br /> Fashion Show"
+            },
+            {
+                "imageUrl": "/images/main/circle/hp_balmainculture_jmleather.avif",
+                "title": "Jolie Madame <br /> Leather Bag"
+            },
+            {
+                "imageUrl": "/images/main/circle/hp_balmainculture_FW24show_women_beige.avif",
+                "title": "Women's Fall Winter 2024 <br> Fashion Show"
+            },
+            {
+                "imageUrl": "/images/main/circle/balmainculture_showFW24_men.avif",
+                "title": "Men's Fall <br>Winter 2024 <br> Fashion Show"
+            }
+        ]
+    }
+]
