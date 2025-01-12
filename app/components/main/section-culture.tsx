@@ -1,10 +1,9 @@
 "use client";
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import clsx from "clsx";
 import Section from "@/app/components/main/section";
-import SectionCultureCircle from "@/app/components/main/section-culture-item";
+import SectionCultureItem from "@/app/components/main/section-culture-item";
 import sectionData from "@/mainData.json";
 import styles from "@/app/styles/main/section-culture.module.scss";
 
@@ -62,21 +61,13 @@ export default function SectionCulture() {
                     </p>
                     <div className={clsx(styles["circle-list"])}>
                         <ul>
-                            {data.map((d) => (
-                                <li key={d.title}>
-                                    <Link
-                                        href="javascript:;"
-                                        onMouseEnter={() =>
-                                            handleBackground(
-                                                d.title,
-                                                d.imageUrl
-                                            )
-                                        }
-                                        onMouseLeave={removeBackground}
-                                    >
-                                        <SectionCultureCircle data={d} />
-                                    </Link>
-                                </li>
+                            {data.map((d, index) => (
+                                <SectionCultureItem
+                                    key={index}
+                                    handleBackground={handleBackground}
+                                    removeBackground={removeBackground}
+                                    data={d}
+                                />
                             ))}
                         </ul>
                     </div>
