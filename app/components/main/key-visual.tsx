@@ -1,13 +1,19 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, RefObject } from "react";
 import clsx from "clsx";
+import { Swiper } from "swiper/types";
 import KeyVisualSlider from "@/app/components/main/key-visual-slider";
 import CardTitle from "@/app/components/common/card-title";
+import KeyVisualControl from "@/app/components/main/key-visual-control";
 import styles from "@/app/styles/main/key-visual.module.scss";
 
 export default function KeyVisual() {
-    const [isChange, setIsChange] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [isChange, setIsChange] = useState<boolean | null>(null);
     const scrollTopRef = useRef(0);
+    const kvSliderRef = useRef<Swiper | null>(null);
+    const paginationRef = useRef<HTMLDivElement | null>(null);
+    const [init, setInit] = useState<boolean>(false);
 
     const handleVisualMotion = useCallback(() => {
         if (scrollTopRef.current > 0) {
@@ -24,10 +30,39 @@ export default function KeyVisual() {
 
         window.addEventListener("scroll", handleScroll);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [handleVisualMotion]);
+
+    const handlePauseButton = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>) => {
+            if (
+                (e.target as HTMLElement).classList.contains(
+                    "btn-kvcontrol--play"
+                )
+            ) {
+                (e.target as HTMLElement).classList.remove(
+                    "btn-kvcontrol--play"
+                );
+                setIsPlaying(true);
+            } else {
+                (e.target as HTMLElement).classList.add("btn-kvcontrol--play");
+                setIsPlaying(false);
+            }
+        },
+        []
+    );
+
+    const handleNavButton = useCallback((dir: string) => {
+        if (dir === "prev") {
+            kvSliderRef.current?.slidePrev();
+        } else {
+            kvSliderRef.current?.slideNext();
+        }
+    }, []);
+
+    useEffect(() => {
+        setInit(true);
+    }, []);
 
     return (
         <section className="section section--kv">
@@ -39,7 +74,12 @@ export default function KeyVisual() {
             >
                 <div className={clsx(styles["kv__inner"])}>
                     <div className={clsx(styles["kv__container"])}>
-                        <KeyVisualSlider />
+                        <KeyVisualSlider
+                            kvSliderRef={kvSliderRef as RefObject<Swiper>}
+                            isPlaying={isPlaying}
+                            paginationRef={paginationRef}
+                            init={init}
+                        />
                     </div>
                     <CardTitle
                         title="NEW IN <br />  RESORT 2025 COLLECTION"
@@ -54,7 +94,15 @@ export default function KeyVisual() {
                             },
                         ]}
                     />
+                    <KeyVisualControl
+                        handlePauseButton={handlePauseButton}
+                        handleNavButton={handleNavButton}
+                    />
                 </div>
+                <div
+                    ref={paginationRef}
+                    className={clsx(styles["kv__pagination"])}
+                ></div>
             </div>
         </section>
     );

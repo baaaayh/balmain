@@ -26,3 +26,16 @@
         }
     }
 }
+
+.full-logo {
+    opacity: 1;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    &--fadeout {
+        opacity: 0;
+    }
+}

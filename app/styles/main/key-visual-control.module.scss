@@ -1,0 +1,14 @@
+.kv {
+    &__control {
+        position: absolute;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        z-index: 2;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 5px;
+        }
+    }
+}

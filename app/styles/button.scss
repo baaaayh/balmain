@@ -149,3 +149,76 @@
         height: 30px;
     }
 }
+
+.btn-kvcontrol {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        pointer-events: none;
+        &::before {
+            display: inline-flex;
+            width: 30px;
+            height: 30px;
+        }
+    }
+    &--pause {
+        span {
+            column-gap: 1.25px;
+            &::before,
+            &::after {
+                content: "";
+                display: inline-block;
+                height: 0.625rem;
+                width: 0.125rem;
+                background-color: #000;
+                border-radius: 0.0625rem;
+            }
+        }
+    }
+    &--play {
+        span {
+            column-gap: 0;
+            &::before {
+                background: transparent;
+                border-color: transparent transparent transparent #000;
+                border-style: solid;
+                border-width: 0.3125rem 0 0.3125rem 0.5rem;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                height: 0.625rem;
+                width: 0.625rem;
+            }
+            &::after {
+                display: none;
+            }
+        }
+    }
+    &--prev {
+        span {
+            &::before {
+                display: inline-block;
+                content: "\e92c";
+                font-family: "icomoon";
+                font-size: 1.875rem;
+            }
+        }
+    }
+    &--next {
+        span {
+            &::before {
+                display: inline-block;
+                content: "\e92d";
+                font-family: "icomoon";
+                font-size: 1.875rem;
+            }
+        }
+    }
+}

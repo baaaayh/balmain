@@ -22,6 +22,7 @@ export default function CardSlider() {
         slidesToScroll: 1,
     };
     const array = [1, 2, 3, 4];
+
     return (
         <div className={clsx(styles["slider-container"])}>
             <div className={clsx(styles["slider-container__inner"])}>
