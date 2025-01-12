@@ -1,0 +1,7 @@
+.image-circle {
+    overflow: hidden;
+    border-radius: 175px;
+    img {
+        transition: transform 0.3s linear;
+    }
+}

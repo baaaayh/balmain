@@ -1,7 +1,9 @@
 .slider-container {
     overflow: visible;
+    position: relative;
     padding: 0 1.5rem 0 0.75rem;
     margin: 0 -1.5rem;
+    z-index: 2;
     &__inner {
         position: relative;
         overflow: visible;
