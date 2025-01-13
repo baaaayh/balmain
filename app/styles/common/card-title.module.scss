@@ -11,14 +11,21 @@
     height: 100%;
     padding: 1.25rem;
     pointer-events: none;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
 }
 .card-title {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     row-gap: 1.75rem;
     pointer-events: all;
     h3 {
         font-size: 1.25rem;
+        font-weight: 400;
         font-stretch: normal;
         font-style: normal;
         letter-spacing: 0.04688rem;

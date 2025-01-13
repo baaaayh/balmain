@@ -21,12 +21,9 @@
             height: 90vh;
         }
     }
-    :global(.slick-slider) {
+    :global(.swiper) {
         height: 100%;
         overflow: hidden;
-        div {
-            height: 100%;
-        }
     }
     &__pagination {
         display: flex;

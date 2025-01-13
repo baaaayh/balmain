@@ -1,0 +1,36 @@
+.reinsurance {
+    &__item {
+        overflow: hidden;
+        flex: 1;
+        border-radius: 1.25rem;
+        background-color: #fff;
+        padding: 5.625rem 1.25rem;
+    }
+    &__inner {
+        h3 {
+            margin: 0 0 1.25rem;
+            font-family: "Balmain Sans";
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.0625rem;
+            line-height: 1.25;
+            color: #000;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        p {
+            display: block;
+            font-family: "Proxima Nova Sm";
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: normal;
+            line-height: 1.29;
+            margin: 0 0 1.875rem;
+            color: #696969;
+            text-align: center;
+        }
+    }
+    &__button {
+        text-align: center;
+    }
+}

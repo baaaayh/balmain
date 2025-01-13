@@ -50,7 +50,7 @@
             },
             {
                 "imageUrl": "/images/main/circle/HP_BALMAINCULTURE_SS25SHOW.avif",
-                "title": " Women's Spring Summer 2025 <br /> Fashion Show"
+                "title": " Women's Spring <br /> Summer 2025 <br /> Fashion Show"
             },
             {
                 "imageUrl": "/images/main/circle/hp_balmainculture_jmleather.avif",
@@ -63,6 +63,29 @@
             {
                 "imageUrl": "/images/main/circle/balmainculture_showFW24_men.avif",
                 "title": "Men's Fall <br>Winter 2024 <br> Fashion Show"
+            }
+        ],
+        "reinsuranceData": [
+            {
+                "title": "BOUTIQUES",
+                "paragraph": "You can also find us in one of our Balmain boutiques.",
+                "text": "SEE OUR BOUTIQUES",
+                "linkString": "javascript:;",
+                "buttonColorClass": "btn-link--bk"
+            },
+            {
+                "title": "CUSTOMER CARE",
+                "paragraph": "Do you have any questions? We are here to help you. You can contact our customer care team by email or over the phone.",
+                "text": "GET IN TOUCH",
+                "linkString": "javascript:;",
+                "buttonColorClass": "btn-link--bk"
+            },
+            {
+                "title": "FAQ",
+                "paragraph": "Find all the answers to the frequently asked questions below.",
+                "text": "SEE OUR FAQS",
+                "linkString": "javascript:;",
+                "buttonColorClass": "btn-link--bk"
             }
         ]
     }

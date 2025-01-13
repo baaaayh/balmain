@@ -3,7 +3,6 @@ import { useState, useEffect, useRef, useCallback, RefObject } from "react";
 import clsx from "clsx";
 import { Swiper } from "swiper/types";
 import KeyVisualSlider from "@/app/components/main/key-visual-slider";
-import CardTitle from "@/app/components/common/card-title";
 import KeyVisualControl from "@/app/components/main/key-visual-control";
 import styles from "@/app/styles/main/key-visual.module.scss";
 
@@ -81,19 +80,7 @@ export default function KeyVisual() {
                             init={init}
                         />
                     </div>
-                    <CardTitle
-                        title="NEW IN <br />  RESORT 2025 COLLECTION"
-                        buttons={[
-                            {
-                                text: "FOR WOMEN",
-                                linkString: "javascript:;",
-                            },
-                            {
-                                text: "FOR MEN",
-                                linkString: "javascript:;",
-                            },
-                        ]}
-                    />
+
                     <KeyVisualControl
                         handlePauseButton={handlePauseButton}
                         handleNavButton={handleNavButton}

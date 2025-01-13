@@ -1,6 +1,7 @@
 export interface LinkButtonType {
     text: string;
     linkString: string;
+    buttonColorClass: string;
 }
 
 export interface CardSectionDataType {
@@ -14,4 +15,9 @@ export interface CardSectionDataType {
 export interface CircleDataType {
     imageUrl: string;
     title: string;
+}
+
+export interface ReinsuranceDataType extends LinkButtonType {
+    title: string;
+    paragraph: string;
 }

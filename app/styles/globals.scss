@@ -78,7 +78,9 @@ html {
 body {
     color: var(--foreground);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Balmain Sans", "Proxima Nova Rg", sans-serif;
+    font-weight: 400;
+    line-height: 1.125rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

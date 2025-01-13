@@ -1,0 +1,126 @@
+.subscribe {
+    overflow: hidden;
+    background: #fff;
+    border-radius: 1.25rem;
+    &__inner {
+        display: flex;
+        column-gap: 1.75rem;
+        padding: 1.25rem;
+    }
+    &__left {
+        flex: 1;
+    }
+    &__title {
+        h2 {
+            font-family: "Balmain Sans";
+            font-size: 1rem;
+            letter-spacing: 0.0625rem;
+            line-height: 1.25;
+            margin: 0 0 2.375rem;
+        }
+        p {
+            font-family: "Proxima Nova Sm";
+            font-size: 0.875rem;
+            line-height: 1.29;
+            margin-bottom: 0;
+        }
+    }
+    &__announce {
+        margin: 1.875rem 0;
+        p {
+            font-family: "Proxima Nova Rg";
+            font-size: 0.75rem;
+            color: #afafaf;
+            margin-bottom: 1rem;
+        }
+    }
+    &__right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 1.875rem;
+        h3 {
+            font-size: 1rem;
+            letter-spacing: 0.01562rem;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+        }
+    }
+    &__radio {
+        padding: 1.25rem 0;
+        ul {
+            display: flex;
+            align-items: center;
+            column-gap: 1.625rem;
+            li {
+                input[type="radio"] {
+                    appearance: none;
+                    border: 0.0625rem solid #979797;
+                    border-radius: 50%;
+                    color: #fff;
+                    cursor: pointer;
+                    height: 0.875rem;
+                    position: relative;
+                    -webkit-transition: all 0.15s ease-out 0s;
+                    transition: all 0.15s ease-out 0s;
+                    width: 0.875rem;
+                    &:checked {
+                        background: url("/images/icons/icon_radio_input_checked.svg")
+                            center / auto no-repeat;
+                    }
+                }
+                label {
+                    font-family: "Proxima Nova Sm";
+                    font-size: 0.875rem;
+                    margin-bottom: 0;
+                    margin-left: 0.8125rem;
+                }
+            }
+        }
+    }
+    &__email {
+        form {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            p {
+                font-family: Proxima Nova Rg;
+                font-size: 0.75rem;
+                color: #c00;
+            }
+        }
+        input[type="text"] {
+            display: block;
+            width: 100%;
+            height: 2.9375rem;
+            padding: 0.9375rem 0 0;
+            font-family: Proxima Nova Rg;
+            font-size: 0.875rem;
+            background-color: transparent !important;
+            border: none;
+            border-bottom: 1px solid #979797;
+            border-radius: 0;
+            &.subscribe__input--red {
+                border-bottom: 1px solid #c00;
+            }
+        }
+        button {
+            min-width: 12.5rem;
+            flex: 0 0 0;
+            padding: 1.25rem;
+            background: #000;
+            border-radius: 2.5rem;
+            font-family: "Balmain Sans";
+            font-size: 0.59375rem;
+            letter-spacing: 0.125rem;
+            line-height: 1.05;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    &__wrap {
+        flex-basis: 100%;
+    }
+}

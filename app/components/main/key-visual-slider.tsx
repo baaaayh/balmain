@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+import CardTitle from "@/app/components/common/card-title";
 import styles from "@/app/styles/main/key-visual-slider.module.scss";
 
 export default function KeyVisualSlider({
@@ -30,10 +31,9 @@ export default function KeyVisualSlider({
             alt: "NEW IN <br> RESORT 2025 COLLECTION",
         },
         {
-            imgDesktop:
-                "/images/main/keyvisual/hp_carrousel_denim_x2_PS25_women_desk.avif",
+            imgDesktop: "/images/main/kv_02_desk.jpg",
             imgMobile: "/images/main/hp_carrousel_denim_x2_PS25_women_mob.avif",
-            alt: "NEW IN <br> RESORT 2025 COLLECTION",
+            alt: "SNEAKERS <br> RESORT 2025 COLLECTION",
         },
     ];
 
@@ -90,6 +90,21 @@ export default function KeyVisualSlider({
                                         />
                                     </picture>
                                 </Link>
+                                <CardTitle
+                                    title="NEW IN <br />  RESORT 2025 COLLECTION"
+                                    buttons={[
+                                        {
+                                            text: "FOR WOMEN",
+                                            linkString: "javascript:;",
+                                            buttonColorClass: "",
+                                        },
+                                        {
+                                            text: "FOR MEN",
+                                            linkString: "javascript:;",
+                                            buttonColorClass: "",
+                                        },
+                                    ]}
+                                />
                             </div>
                         </SwiperSlide>
                     ))}
