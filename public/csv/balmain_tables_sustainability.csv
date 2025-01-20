@@ -1,0 +1,84 @@
+﻿sustainability_id,product_id,contents
+1,EF1R8018KI13SOL,"""<p>\r\n    Materials 1 : 60% Viscose 16% Polyamide 13% Polyester 10% Cotton 1% Elastane\r\n</p>\r\n<ul>\r\n    <li>Dyeing : Italy</li>\r\n    <li>Knitting : France</li>\r\n</ul>\r\n<p>Yarns 2 : 54% Cotton 46% Nylon</p>\r\n<ul>\r\n    <li>Dyeing : Italy</li>\r\n</ul>\r\n<p>Yarns 3 : 83% Viscose 17% Polyester</p>\r\n<ul>\r\n    <li>Dyeing : Italy</li>\r\n</ul>\r\n<p>Yarns 4 : 88% Viscose 12% Polyester</p>\r\n<ul>\r\n    <li>Dyeing : Italy</li>\r\n</ul>\r\n<p>Yarns 5 : 70% Polyamide 30% Polyester</p>\r\n<ul>\r\n    <li>Dyeing : Italy</li>\r\n</ul>"""
+2,EF1SK716XC670FA,"""<p>Materials 1 : 100% Polyamide</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Linings : 52% Viscose 48% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : France</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>"""
+3,EF1UE100VH64EAB,"""<p>Materials 1 : 100% Viscose</p>\r\n    <ul>\r\n        <li>Printing : Italy</li>\r\n        <li>Weaving : China</li>\r\n    </ul>\r\n    <p>Materials 2 : 100% Lyocell</p>\r\n    <ul>\r\n        <li>Printing : Italy</li>\r\n        <li>Weaving : Turkey</li>\r\n    </ul>\r\n    <p>Linings : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Pakistan</li>\r\n    </ul>"""
+4,BF1EF005BB02OLA,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+5,BF1EF005BB02GAB,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+6,BF1EF005BB02EAB,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+7,BF1EF005BB02OIR,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+8,BF1EF005BB02MCZ,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+9,EF1KA115KH87EAB,"""<p>Materials 1 : 100% Virgin wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : Italy</li>\r\n    </ul>\r\n    <p>Yarns 1 : 100% Merino wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>"""
+10,EF1KA115KH87MIG,"""<p>Materials 1 : 100% Virgin wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : Italy</li>\r\n    </ul>\r\n    <p>Yarns 1 : 100% Merino wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>"""
+11,EF1HT020VH61GAB,"""<p>Materials 1 : 100% Viscose</p>\r\n    <ul>\r\n        <li>Printing : Italy</li>\r\n        <li>Weaving : China</li>\r\n    </ul>"""
+12,EF1JQ002BB02SOY,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+13,EF1KL133KH93IAC,"""<p>Materials 1 : 81% Merino wool 16% Viscose 3% Metallized polyester</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : France</li>\r\n    </ul>\r\n    <p>Yarns 1 : 100% Merino wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 2 : 82% Viscose 18% Metallized polyester</p>\r\n    <ul>\r\n        <li>Dyeing : China, Bulgaria</li>\r\n    </ul>"""
+14,EF1LC245JJ95EDY,"""<p>Materials 1 : 97% Viscose 2% Polyamide 1% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Italy, United Kingdom, Bulgaria</li>\r\n        <li>Knitting : Italy</li>\r\n    </ul>\r\n    <p>Linings : 100% Polyester</p>\r\n    <ul>\r\n        <li>Dyeing : South Korea</li>\r\n        <li>Weaving : South Korea</li>\r\n    </ul>"""
+15,EF1PO160WC090PA,"""<p>Materials 1 : 100% Sheep wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Linings : 52% Viscose 48% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : France</li>\r\n    </ul>"""
+16,CF1MA012DB690FA,"""<p>Materials 1 : 34% Cotton 33% Cotton 33% Cotton</p>\r\n    <ul>\r\n        <li>Weaving :</li>\r\n    </ul>\r\n    <p>Lining : 97% Cotton 3% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Tunisia</li>\r\n        <li>Weaving : Pakistan</li>\r\n    </ul>"""
+17,EF1KL220KH806FF,"""<p>Materials 1 : 84% Viscose 8% Polyamide 8% Polyester</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : France</li>\r\n    </ul>\r\n    <p>Yarns 1 : 88% Viscose 12% Polyester</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 2 : 76% Viscose 24% Polyamide</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 3 : 88% Polyamide 12% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Spain</li>\r\n    </ul>"""
+18,BKB852200104,{}
+19,EN1DB943LHLB0PA,{}
+20,EN1DB530LHLB0PA,{}
+21,EN1BQ954LETF0PA,{}
+22,EN1BQ954TTSD6FF,{}
+23,DN0FD871LETF0DA,{}
+24,EN1DA961TECSGAU,{}
+25,EN1LN245LVGU0PA,{}
+26,DN1FM872TCFEGEM,{}
+27,EN1VI736KRCTEAB,"""<p>Materials 1 : 50% Nylon 50% Polyurethane</p>\r\n    <ul>\r\n        <li>Stitching : China</li>\r\n        <li>Assembly : China</li>\r\n        <li>Finishing : China</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>"""
+28,EM1VI360TRIDSEE,"""<p>Materials 1 : 52% Polyester 48% Cotton</p>\r\n    <ul>\r\n        <li>Stitching : Italy</li>\r\n        <li>Assembly : Italy</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>"""
+29,EN1VI735TRIDSEE,"""<p>Materials 1 : 52% Polyester 48% Cotton</p>\r\n    <ul>\r\n        <li>Stitching : Italy</li>\r\n        <li>Assembly : Italy</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>"""
+30,CN0VI727TDNM6KF,"""<p>Materials 1 : 100% Calf leather</p>\r\n    <ul>\r\n        <li>Assembly : Italia</li>\r\n        <li>Stitching : Germany</li>\r\n        <li>Finishing : Italia</li>\r\n    </ul>"""
+31,DN1VI714TRCMEAB,"""<p>Materials 1 : 100% Polyester</p>\r\n    <ul>\r\n        <li>Assembly : Italy</li>\r\n        <li>Stiching : Albania</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>"""
+32,CN0VI730LLNP0CV,"""<p>Materials 1 : 100% Bovine leather</p>\r\n    <ul>\r\n        <li>Assembly : China</li>\r\n        <li>Stitching : China</li>\r\n        <li>Finishing : China</li>\r\n    </ul>"""
+33,EN1VI733TRGYGRU,"""<p>Materials 1 : 50% Nylon 50% Polyurethane</p>\r\n    <ul>\r\n        <li>Stitching : China</li>\r\n        <li>Assembly : China</li>\r\n        <li>Finishing : China</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>"""
+34,EN1UH078LVHSEAW,"""<p>Materials 1 : 100% Caprine leather</p>\r\n    <ul>\r\n        <li>Stitching : Italy</li>\r\n        <li>Assembly : Italy</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>"""
+35,EN1TE108LTBC0PA,"""<p>Materials 1 : 100% Calf leather</p>\r\n    <ul>\r\n        <li>Stitching : Italy</li>\r\n        <li>Assembly : Italy</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>"""
+36,EN1UG866TJMAGFE,"""<p>Materials 1 : 84% Cotton 16% Polyester</p>\r\n    <ul>\r\n        <li>Stitching : Spain</li>\r\n        <li>Assembly : Spain</li>\r\n        <li>Finishing : Spain</li>\r\n    </ul>"""
+37,CBPS156156A,{}
+38,EN1ON197LCLLGA,{}
+39,EN1WJ000LVTL0PA,{}
+40,EN4XM426MBPTX99,{}
+41,EF1XF090SE90GAB,"""<p>Materials 1 : 100% Silk</p>\r\n    <ul>\r\n        <li>Printing : Italy</li>\r\n        <li>Weaving : China</li>\r\n    </ul>"""
+42,CF1XA070MB38GEM,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Weaving : Italy</li>\r\n    </ul>"""
+43,CN1LN220LNQD0PA,{}
+44,EH1AM055VB000FA,"""<p>Materials 1 : 100% Viscose</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>"""
+45,EH1HS40521VGEAB,"""<p>Materials 1 : 100% Viscose</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : China</li>\r\n    </ul>"""
+46,EH1GC027BC920PA,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : Italy</li>\r\n    </ul>"""
+47,EH1EH175PC70GAB,"""<p>Materials 1 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : India</li>\r\n        <li>Knitting : India</li>\r\n    </ul>\r\n    <p>Linings : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : India</li>\r\n        <li>Knitting : India</li>\r\n    </ul>"""
+48,EH1EG010BC90GFE,"""<p>Materials 1 : 95% Cotton 5% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>\r\n    <p>Materials 2 : 95% Cotton 5% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>"""
+49,EH1JT240PC70EAW,"""<p>Materials 1 : 99% Cotton 1% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Portugal</li>\r\n        <li>Knitting : Portugal</li>\r\n    </ul>\r\n    <p>Linings : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : India</li>\r\n        <li>Weaving : India</li>\r\n    </ul>"""
+50,EH1KD013KI04GAB,"""<p>\r\n        Materials 1 : 66% Merino wool 19% Cotton 9% Polyamide 5% Sheep wool 1%\r\n        Elastane\r\n    </p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : France</li>\r\n    </ul>\r\n    <p>Yarns 2 : 88% Polyamide 12% Elastane</p>\r\n    <ul>\r\n        <li>Dyeing : Spain</li>\r\n    </ul>\r\n    <p>Yarns 3 : 100% Merino wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 4 : 66% Cotton 18% Polyamide 16% Sheep wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>"""
+51,EH1SE28509WCEHV,"""<p>Materials 1 : 100% Virgin wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Linings : 65% Acetate 35% Viscose</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Pockets lining : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Pakistan</li>\r\n    </ul>"""
+52,EH1TF955VH56EAB,"""<p>Materials 1 : 100% Viscose</p>\r\n    <ul>\r\n        <li>Printing : Italy</li>\r\n        <li>Weaving : China</li>\r\n    </ul>\r\n    <p>Linings : 65% Acetate 35% Viscose</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Pockets lining : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Pakistan</li>\r\n    </ul>"""
+53,EH1PQ305WC090PA,{}
+54,DH1PQ260VF43EAB,"""<p>Materials 1 : 100% Cupro</p>\r\n    <ul>\r\n        <li>Printing : Italy</li>\r\n    </ul>\r\n    <p>Linings : 52% Viscose 48% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : France</li>\r\n    </ul>"""
+55,EH1SC285MG90ENA,"""<p>Materials 1 : 100% Virgin wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Materials 2 : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Morocco</li>\r\n        <li>Weaving : Morocco</li>\r\n    </ul>\r\n    <p>Linings : 65% Acetate 35% Viscose</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Italy</li>\r\n    </ul>\r\n    <p>Pockets lining : 100% Cotton</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Weaving : Pakistan</li>\r\n    </ul>"""
+56,DH0JS118BC81EAH,{}
+57,BWB641590012,{}
+58,EM1VI362KRCTEAB,"""<p>Materials 1 : 50% Nylon 50% Polyurethane</p>\r\n    <ul>\r\n        <li>Stitching : China</li>\r\n        <li>Assembly : China</li>\r\n        <li>Finishing : China</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>"""
+59,DM1VI288LTSGEAB,"""<p>Materials 1 : 100% Calf leather</p>\r\n    <ul>\r\n        <li>Assembly : Italy</li>\r\n        <li>Stiching : Albania</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>"""
+60,DM1VI350TNVFEFF,"""<p>Materials 1 : 100% Polystyrene</p>\r\n    <ul>\r\n        <li>Assembly : Italy</li>\r\n        <li>Stiching : Albania</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>"""
+61,DM1VI355LNVYEFF,"""<p>Materials 1 : 100% Bovine leather</p>\r\n    <ul>\r\n        <li>Assembly : China</li>\r\n        <li>Stiching : China</li>\r\n        <li>Finishing : China</li>\r\n    </ul>"""
+62,EM1VI357TMGOYAD,"""<p>Materials 1 : 82% Nylon 14% Elastane 4% Thermoplastic polyurethane</p>\r\n    <ul>\r\n        <li>Stitching : China</li>\r\n        <li>Assembly : China</li>\r\n        <li>Finishing : China</li>\r\n    </ul>\r\n    <p>Releases microplastics into the environment during washing.</p>\r\n</div>"""
+63,DM0TE346LPAT0PA,{}
+64,BM1UO330LIRS0PA,"""<p>Materials : 100% calf leather</p>\r\n    <ul>\r\n        <li>Stitching : Romania</li>\r\n        <li>Assembly : Italy</li>\r\n        <li>Finishing : Italy</li>\r\n    </ul>"""
+65,CM1UG320TJMAGFE,{}
+66,EM1FF239TNDTEAF,{}
+67,CM1SH055TGBO0PA,{}
+68,DBPS164164C,{}
+69,DBPS164164B,{}
+70,DBPS164164A,{}
+71,EN1MA195LCLLGAB,{}
+72,BM0WJ016TMCKWFP,{}
+73,DN1XH358MLTOIAB,{}
+74,,{}
+75,DN1ON225LGSR8AG,{}
+76,EN1DB960TDTW6FF,{}
+77,CN1FF869TMBJWEZ,{}
+78,DN1FE818TJDCGFE,{}
+79,EF1KA120KH91GAU,"""<p>Materials 1 : 60% Merino wool 25% Sheep wool 15% Cashmere</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : Italy</li>\r\n    </ul>\r\n    <p>Yarns 1 : 100% Merino wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 2 : 70% Merino wool 30% Cashmere</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 3 : 70% Merino wool 30% Cashmere</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>\r\n    <p>Yarns 4 : 100% Merino wool</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>"""
+80,EN1DB953AHXSEAW,{}
+81,CN1EG879TMBJEEO,{}
+82,EF1R5086KH88GAU,"""<p>Materials 1 : 85% Viscose 15% Polyester</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n        <li>Knitting : Italy</li>\r\n    </ul>\r\n    <p>Yarns 1 : 85% Viscose 15% Polyester</p>\r\n    <ul>\r\n        <li>Dyeing : Italy</li>\r\n    </ul>"""
+83,DM1GE150TJMYGFE,{}

@@ -21,3 +21,16 @@ export interface ReinsuranceDataType extends LinkButtonType {
     title: string;
     paragraph: string;
 }
+
+export interface menuDataType {
+    menu_id: number;
+    parent_menu_id: number | null;
+    depth1: string;
+    depth2: string;
+    depth3: string;
+    depth4: string;
+    depth_level: number;
+    path: string;
+    border: boolean | null;
+    link: string | null;
+}

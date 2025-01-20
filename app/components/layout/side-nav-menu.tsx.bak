@@ -69,29 +69,15 @@ export default function SideNavMenu({
                                         depth1.border,
                                 })}
                             >
-                                {expandedDepth2 !== index &&
-                                    (!depth1.link ? (
-                                        <button
-                                            type="button"
-                                            className={clsx(
-                                                styles["menu__depth1"]
-                                            )}
-                                            onClick={() =>
-                                                handleDepth1Click(index)
-                                            }
-                                        >
-                                            {depth1.depth1}
-                                        </button>
-                                    ) : (
-                                        <Link
-                                            href={depth1.link}
-                                            className={clsx(
-                                                styles["menu__depth1"]
-                                            )}
-                                        >
-                                            {depth1.depth1}
-                                        </Link>
-                                    ))}
+                                {expandedDepth2 !== index && (
+                                    <button
+                                        type="button"
+                                        className={clsx(styles["menu__depth1"])}
+                                        onClick={() => handleDepth1Click(index)}
+                                    >
+                                        {depth1.depth1}
+                                    </button>
+                                )}
                                 {expandedDepth2 === index &&
                                     depth2Menus.length > 0 && (
                                         <div
@@ -155,7 +141,7 @@ export default function SideNavMenu({
                                                                     )}
                                                                 >
                                                                     {depth2.path ===
-                                                                    null ? (
+                                                                    "null" ? (
                                                                         <>
                                                                             {expandedDepth3 ===
                                                                                 null && (
@@ -232,7 +218,6 @@ export default function SideNavMenu({
                                                                                                 >
                                                                                                     <Link
                                                                                                         href={
-                                                                                                            depth3.path &&
                                                                                                             depth3.path
                                                                                                         }
                                                                                                         className={clsx(
