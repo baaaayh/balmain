@@ -3,5 +3,5 @@ export default function ListPageLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return <div className="product-list">{children}</div>;
+    return <div className="contents">{children}</div>;
 }

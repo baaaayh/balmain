@@ -1,11 +1,5 @@
-import ProductsList from "@/app/components/products/product-list";
-import ProductListTitle from "@/app/components/products/product-list-title";
+import ProductListPage from "@/app/components/product/product-list-page";
 
 export default function Depth3Page() {
-    return (
-        <>
-            <ProductListTitle />
-            <ProductsList />
-        </>
-    );
+    return <ProductListPage />;
 }

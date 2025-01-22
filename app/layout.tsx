@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Container from "@/app/components/layout/container";
-import { MenuProvider } from "@/app/lib/menu-context";
 import "@/app/styles/globals.scss";
 
 export const metadata: Metadata = {
@@ -18,9 +17,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={``}>
                 <div className="wrap">
-                    <MenuProvider>
-                        <Container>{children}</Container>
-                    </MenuProvider>
+                    <Container>{children}</Container>
                 </div>
             </body>
         </html>
