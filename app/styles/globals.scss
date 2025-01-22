@@ -134,6 +134,12 @@ img {
     }
 }
 
+.product-list {
+    padding-left: 4.5rem;
+    transition: padding 0.5s linear;
+    overflow: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         /* color-scheme: dark; */

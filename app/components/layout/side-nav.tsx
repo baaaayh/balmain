@@ -1,32 +1,38 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
+import { useNavState } from "@/app/lib/nav-state-context";
 import SideNavUtils from "@/app/components/layout/side-nav-utils";
 import SideNavMenu from "@/app/components/layout/side-nav-menu";
 import SideNavFooter from "@/app/components/layout/side-nav-footer";
 import clsx from "clsx";
 import styles from "@/app/styles/layout/side-nav.module.scss";
 
-interface SideNavProps {
-    handleNavState: () => void;
-    handleNavClose: () => void;
-    handleTransitionEnd: () => void;
-    navState: boolean;
-    isExpended: boolean;
-}
-
-export default function SideNav({
-    handleNavState,
-    handleNavClose,
-    handleTransitionEnd,
-    navState,
-    isExpended,
-}: SideNavProps) {
+export default function SideNav() {
     const pathname = usePathname();
+    const [isExpended, setIsExpended] = useState(false);
+    const { navState, setNavState } = useNavState();
+
+    const handleNavState = useCallback(() => {
+        console.log(navState);
+        setNavState(!navState);
+    }, [setNavState, navState]);
+
+    const handleNavClose = useCallback(() => {
+        setNavState(false);
+    }, [setNavState]);
+
+    const handleTransitionEnd = useCallback(() => {
+        if (navState) {
+            setIsExpended(true);
+        } else {
+            setIsExpended(false);
+        }
+    }, [navState]);
 
     useEffect(() => {
         handleNavClose();
-    }, [pathname, handleNavState]);
+    }, [pathname, handleNavClose]);
 
     return (
         <nav
