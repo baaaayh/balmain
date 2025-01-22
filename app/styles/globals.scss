@@ -113,13 +113,13 @@ img {
     text-indent: -99999999px;
 }
 
-.wrap,
-.container {
+.wrap {
     height: 100%;
     min-height: 100%;
 }
 
 .container {
+    display: flex;
     font-size: 0;
 }
 
@@ -135,7 +135,6 @@ img {
 }
 
 .product-list {
-    padding-left: 4.5rem;
     transition: padding 0.5s linear;
     overflow: hidden;
 }

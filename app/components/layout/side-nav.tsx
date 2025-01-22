@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { useNavState } from "@/app/lib/nav-state-context";
 import SideNavUtils from "@/app/components/layout/side-nav-utils";
 import SideNavMenu from "@/app/components/layout/side-nav-menu";
 import SideNavFooter from "@/app/components/layout/side-nav-footer";
@@ -11,10 +10,9 @@ import styles from "@/app/styles/layout/side-nav.module.scss";
 export default function SideNav() {
     const pathname = usePathname();
     const [isExpended, setIsExpended] = useState(false);
-    const { navState, setNavState } = useNavState();
+    const [navState, setNavState] = useState(false);
 
     const handleNavState = useCallback(() => {
-        console.log(navState);
         setNavState(!navState);
     }, [setNavState, navState]);
 

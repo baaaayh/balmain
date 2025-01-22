@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Container from "@/app/components/layout/container";
 import { MenuProvider } from "@/app/lib/menu-context";
 import "@/app/styles/globals.scss";
-import { NavStateProvider } from "@/app/lib/nav-state-context";
 
 export const metadata: Metadata = {
     title: "***dev***Balmain Official Website United States | Designer clothing & bags",
@@ -19,11 +18,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={``}>
                 <div className="wrap">
-                    <NavStateProvider>
-                        <MenuProvider>
-                            <Container>{children}</Container>
-                        </MenuProvider>
-                    </NavStateProvider>
+                    <MenuProvider>
+                        <Container>{children}</Container>
+                    </MenuProvider>
                 </div>
             </body>
         </html>
