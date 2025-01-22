@@ -10,6 +10,10 @@ export default function Container({ children }: { children: React.ReactNode }) {
         setNavState((prev: boolean) => !prev);
     }, []);
 
+    const handleNavClose = useCallback(() => {
+        setNavState(false);
+    }, []);
+
     const handleTransitionEnd = useCallback(() => {
         if (navState) {
             setIsExpended(true);
@@ -22,6 +26,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
         <div className={`container ${navState ? "container--widenav" : ""}`}>
             <SideNav
                 handleNavState={handleNavState}
+                handleNavClose={handleNavClose}
                 handleTransitionEnd={handleTransitionEnd}
                 navState={navState}
                 isExpended={isExpended}

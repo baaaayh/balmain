@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import styles from "@/app/styles/layout/header.module.scss";
 
-export default function Header() {
+export default memo(function Header() {
     const [fadeOut, setFadeOut] = useState(false);
     const scrollTopRef = useRef(0);
 
@@ -57,4 +57,4 @@ export default function Header() {
             </div>
         </header>
     );
-}
+});

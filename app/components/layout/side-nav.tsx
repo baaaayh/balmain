@@ -1,12 +1,15 @@
 "use client";
-import clsx from "clsx";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import SideNavUtils from "@/app/components/layout/side-nav-utils";
 import SideNavMenu from "@/app/components/layout/side-nav-menu";
 import SideNavFooter from "@/app/components/layout/side-nav-footer";
+import clsx from "clsx";
 import styles from "@/app/styles/layout/side-nav.module.scss";
 
 interface SideNavProps {
     handleNavState: () => void;
+    handleNavClose: () => void;
     handleTransitionEnd: () => void;
     navState: boolean;
     isExpended: boolean;
@@ -14,10 +17,17 @@ interface SideNavProps {
 
 export default function SideNav({
     handleNavState,
+    handleNavClose,
     handleTransitionEnd,
     navState,
     isExpended,
 }: SideNavProps) {
+    const pathname = usePathname();
+
+    useEffect(() => {
+        handleNavClose();
+    }, [pathname, handleNavState]);
+
     return (
         <nav
             className={clsx(styles["side-nav"], {

@@ -45,6 +45,7 @@ export interface SideNavMenuProps {
         value: number | null | ((prev: number | null) => number | null)
     ) => void;
     depth1: {
+        menu_id: number;
         depth1: string;
         border: boolean | null;
         link: string | null;

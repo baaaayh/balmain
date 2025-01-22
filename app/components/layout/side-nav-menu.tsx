@@ -1,12 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
+import { usePathname } from "next/navigation";
+import { UseSetMenuIdHandler } from "@/app/lib/utils";
 import { getMenuData } from "@/app/lib/actions";
 import { menuDataType } from "@/type";
 import SideNavMenuDepth1 from "@/app/components/layout/side-nav-menu-depth1";
 import clsx from "clsx";
 import styles from "@/app/styles/layout/side-nav-menu.module.scss";
 
-export default function SideNavMenu({
+export default memo(function SideNavMenu({
     navState,
     isExpended,
 }: {
@@ -16,6 +18,8 @@ export default function SideNavMenu({
     const [menus, setMenus] = useState<Array<menuDataType>>([]);
     const [expandedDepth2, setExpandedDepth2] = useState<number | null>(null);
     const [expandedDepth3, setExpandedDepth3] = useState<number | null>(null);
+    const handleMenuId = UseSetMenuIdHandler();
+    const pathname = usePathname();
 
     useEffect(() => {
         const getMenuList = async () => {
@@ -25,6 +29,19 @@ export default function SideNavMenu({
 
         getMenuList();
     }, []);
+
+    useEffect(() => {
+        const currentPath = `${pathname}/`;
+
+        if (menus.length > 0 && pathname) {
+            const menu = menus.find((menu) => menu.path === currentPath);
+            if (menu?.menu_id !== undefined) {
+                handleMenuId(menu.menu_id);
+            }
+        }
+
+        return () => handleMenuId(null);
+    }, [menus, handleMenuId, pathname]);
 
     return (
         <nav
@@ -62,4 +79,4 @@ export default function SideNavMenu({
             </ul>
         </nav>
     );
-}
+});

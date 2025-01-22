@@ -27,8 +27,6 @@ export default function SideNavMenuDepth2({
         [setExpandedDepth3]
     );
 
-    console.log(depth2Menus);
-
     return (
         <div className={clsx(styles["depth2-container"])}>
             <ul>

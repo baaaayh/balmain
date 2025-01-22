@@ -20,6 +20,9 @@
             cursor: pointer;
             text-align: left;
         }
+        a {
+            padding-right: 0;
+        }
         button {
             &::before {
                 content: "\e901";
@@ -79,6 +82,13 @@
                     color: #696969;
                 }
             }
+        }
+        .menu__depth1 {
+            font-family: "Balmain Sans";
+            font-weight: 500;
+        }
+        .menu__depth2 {
+            font-size: 16px;
         }
     }
     &__depth3 {
