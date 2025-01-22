@@ -60,3 +60,22 @@ export interface SideNavMenuProps {
     menus: Array<menuDataType>;
     index: number;
 }
+
+export interface ProductsDataType {
+    product_id: number;
+    base_item_code: string;
+    item_code: string;
+    name: string;
+    category1: string;
+    category1_1: string;
+    category1_3: string;
+    category1_4: string;
+    collections1: string;
+    collections2: string;
+    collections3: string;
+    collections4: string;
+    menu_id: number;
+    category_id: number;
+    price: number;
+    image_alt: string;
+}

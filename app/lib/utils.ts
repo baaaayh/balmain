@@ -1,3 +1,4 @@
+"use client";
 import { useCallback } from "react";
 import { useMenuContext } from "@/app/lib/menu-context";
 
