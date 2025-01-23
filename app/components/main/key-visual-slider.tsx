@@ -26,14 +26,16 @@ export default function KeyVisualSlider({
     const slides = [
         {
             imgDesktop:
-                "/images/main/keyvisual/hp_carrousel_denim_x2_PS25_women_desk.avif",
-            imgMobile: "/images/main/hp_carrousel_denim_x2_PS25_women_mob.avif",
-            alt: "NEW IN <br> RESORT 2025 COLLECTION",
+                "/images/main/keyvisual/hp_carrousel_joliemadame_leather_rubber_PS25_desk.avif",
+            imgMobile:
+                "/images/main/keyvisual/hp_carrousel_jmrubber_B_PS25_mob.avif",
+            alt: "JOLIE MADAME BAGS <br> AN ODE TO BALMAIN HERITAGE WITH AN UNIQUE VISION",
         },
         {
-            imgDesktop: "/images/main/kv_02_desk.jpg",
-            imgMobile: "/images/main/hp_carrousel_denim_x2_PS25_women_mob.avif",
-            alt: "SNEAKERS <br> RESORT 2025 COLLECTION",
+            imgDesktop: "/images/main/hp_carrousel_unicorn_x2_PS25_desk.avif",
+            imgMobile:
+                "/images/main/hp_carrousel_unicorn_loveletter_PS25_mob.avif",
+            alt: "UNICORN SNEAKERS <br> THE HOUSE'S ICONICS",
         },
     ];
 

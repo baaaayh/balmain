@@ -1,12 +1,13 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
+import Card from "@/app/components/common/card";
 import { useState, useEffect } from "react";
 import { useMenuContext } from "@/app/lib/menu-context";
 import { getProductsData, getAllProductsData } from "@/app/lib/actions";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import styles from "@/app/styles/product/product-list.module.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { ProductDataType } from "@/type";
 
 export default function ProudctList() {
@@ -39,38 +40,9 @@ export default function ProudctList() {
 
     return (
         <div className={clsx(styles["product-list"])}>
-            <ul>
-                {products.map((product, index) => (
-                    <li
-                        key={`${product.product_id}-${product.item_code}-${index}`}
-                    >
-                        <div>{product.base_item_code}</div>
-
-                        <Link href={`${pathname}/${product.product_id}`}>
-                            {product.image_filenames
-                                .filter(
-                                    (filename) =>
-                                        filename.endsWith("F.avif") ||
-                                        filename.endsWith("F.jpg")
-                                )
-                                .map((filename, index) => {
-                                    return (
-                                        <Image
-                                            key={`${filename}-${index}`}
-                                            width={828}
-                                            height={1119}
-                                            src={`/images/products/${product.base_item_code}/${product.color}/${filename}`}
-                                            alt={product.image_alt}
-                                            priority
-                                        />
-                                    );
-                                })}
-                        </Link>
-                        <h3>{product.name}</h3>
-                        <p>Color: {product.color}</p>
-                    </li>
-                ))}
-            </ul>
+            {products.map((product) => (
+                <Card key={product.product_id} product={product} />
+            ))}
         </div>
     );
 }

@@ -5,8 +5,10 @@ import ProductListTitle from "@/app/components/product/product-list-title";
 export default function ProductListPage() {
     return (
         <MenuProvider>
-            <ProductListTitle />
-            <ProductList />
+            <div className="sub-inner">
+                <ProductListTitle />
+                <ProductList />
+            </div>
         </MenuProvider>
     );
 }

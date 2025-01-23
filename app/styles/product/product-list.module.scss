@@ -1,9 +1,8 @@
 .product-list {
-    ul {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        li {
-            font-size: 20px;
-        }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3.125rem 0 0;
+    &__item {
+        font-size: 20px;
     }
 }
