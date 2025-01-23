@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useMemo, useState, useEffect } from "react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useMenuContext } from "@/app/lib/menu-context";
 import { getProductsData, getAllProductsData } from "@/app/lib/actions";
 import { usePathname } from "next/navigation";
@@ -12,26 +13,16 @@ export default function ProudctList() {
     const [products, setProducts] = useState<ProductDataType[]>([]);
     const pathname = usePathname();
     const menuContext = useMenuContext();
-    const menuData = menuContext?.menuData;
-
-    const menu = useMemo(() => {
-        if (!menuData || menuData.length === 0 || !pathname) return null;
-        const currentPath = `${pathname}/`;
-
-        const menu = menuData.find((menu) => menu.path === currentPath);
-        if (menu !== undefined) {
-            return menu;
-        }
-    }, [menuData, pathname]);
+    const menu = menuContext?.currMenuData;
 
     useEffect(() => {
         const fetchProductsByMenu = async () => {
             if (!menu) return;
 
-            console.log(menu.menu_id);
+            console.log(menu);
 
             const fetchData =
-                menu.depth3 === "View all"
+                menu.depth1 || menu.depth2 || menu.depth3 === "View all"
                     ? getAllProductsData(menu.menu_id)
                     : getProductsData(menu.menu_id);
 
@@ -53,24 +44,28 @@ export default function ProudctList() {
                     <li
                         key={`${product.product_id}-${product.item_code}-${index}`}
                     >
-                        {product.image_filenames
-                            .filter(
-                                (filename) =>
-                                    filename.endsWith("F.avif") ||
-                                    filename.endsWith("F.jpg")
-                            )
-                            .map((filename, index) => {
-                                return (
-                                    <Image
-                                        key={`${filename}-${index}`}
-                                        width={828}
-                                        height={1119}
-                                        src={`/images/products/${product.base_item_code}/${product.color}/${filename}`}
-                                        alt={product.image_alt}
-                                        priority
-                                    />
-                                );
-                            })}
+                        <div>{product.base_item_code}</div>
+
+                        <Link href={`${pathname}/${product.product_id}`}>
+                            {product.image_filenames
+                                .filter(
+                                    (filename) =>
+                                        filename.endsWith("F.avif") ||
+                                        filename.endsWith("F.jpg")
+                                )
+                                .map((filename, index) => {
+                                    return (
+                                        <Image
+                                            key={`${filename}-${index}`}
+                                            width={828}
+                                            height={1119}
+                                            src={`/images/products/${product.base_item_code}/${product.color}/${filename}`}
+                                            alt={product.image_alt}
+                                            priority
+                                        />
+                                    );
+                                })}
+                        </Link>
                         <h3>{product.name}</h3>
                         <p>Color: {product.color}</p>
                     </li>

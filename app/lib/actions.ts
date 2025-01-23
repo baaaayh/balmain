@@ -41,8 +41,8 @@ export async function getProductsData(menuId: number) {
             p.category_id,
             p.price,
             p.image_alt,
-            MAX(po.color) AS color,  -- 색상 단일 값
-            ARRAY_AGG(DISTINCT i.image_filename) AS image_filenames  -- 이미지 배열
+            MAX(po.color) AS color,
+            ARRAY_AGG(DISTINCT i.image_filename) AS image_filenames
         FROM products p
         LEFT JOIN images i ON p.item_code = i.product_id
         LEFT JOIN product_options po ON p.item_code = po.product_id
@@ -92,12 +92,12 @@ export async function getAllProductsData(menuId: number) {
             p.category_id,
             p.price,
             p.image_alt,
-            MAX(po.color) AS color,  -- 색상 단일 값
-            ARRAY_AGG(DISTINCT i.image_filename) AS image_filenames  -- 이미지 배열
+            MAX(po.color) AS color,
+            ARRAY_AGG(DISTINCT i.image_filename) AS image_filenames
         FROM products p
         LEFT JOIN images i ON p.item_code = i.product_id
         LEFT JOIN product_options po ON p.item_code = po.product_id
-        WHERE p.category_id::text > $1::text
+        WHERE string_to_array(p.category_id, ',')::int[] @> string_to_array($1, ',')::int[]
         GROUP BY 
             p.product_id, 
             p.base_item_code, 
