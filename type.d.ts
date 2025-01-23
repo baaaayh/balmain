@@ -61,7 +61,7 @@ export interface SideNavMenuProps {
     index: number;
 }
 
-export interface ProductsDataType {
+export interface ProductDataType {
     product_id: number;
     base_item_code: string;
     item_code: string;
@@ -78,4 +78,6 @@ export interface ProductsDataType {
     category_id: number;
     price: number;
     image_alt: string;
+    image_filenames: Array<string>;
+    color: string;
 }

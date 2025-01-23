@@ -3,8 +3,6 @@ import { useState, useEffect, createContext, useContext } from "react";
 import { getMenuData } from "@/app/lib/actions";
 import { menuDataType } from "@/type";
 interface MenuContextType {
-    selectedMenuId: number | null;
-    setSelectedMenuId: (id: number | null) => void;
     menuData: menuDataType[];
 }
 
@@ -12,7 +10,6 @@ const MenuContext = createContext<MenuContextType | undefined>(undefined);
 
 export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
     const [menuData, setMenuData] = useState<menuDataType[]>([]);
-    const [selectedMenuId, setSelectedMenuId] = useState<number | null>(null);
 
     useEffect(() => {
         async function getMenu() {
@@ -27,7 +24,7 @@ export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
         };
     }, []);
 
-    const value = { selectedMenuId, setSelectedMenuId, menuData };
+    const value = { menuData };
 
     return (
         <MenuContext.Provider value={value}>{children}</MenuContext.Provider>
