@@ -15,10 +15,15 @@
             padding-right: 24px;
             font-family: "Proxima Nova Rg";
             font-size: 15px;
-            font-weight: 700;
             color: var(--color-black);
+            font-weight: 700;
             cursor: pointer;
             text-align: left;
+            &.menu__depth2--grey,
+            &.menu__depth3--grey {
+                text-transform: uppercase;
+                color: #757575;
+            }
         }
         a {
             padding-right: 0;
@@ -69,20 +74,6 @@
                 }
             }
         }
-        &--grey {
-            .menu__depth1,
-            .menu__depth2,
-            .menu__depth3 {
-                color: #696969;
-            }
-            & ~ .menu__item {
-                .menu__depth1,
-                .menu__depth2,
-                .menu__depth3 {
-                    color: #696969;
-                }
-            }
-        }
         .menu__depth1 {
             font-family: "Balmain Sans";
             font-weight: 500;
@@ -99,12 +90,8 @@
         font-family: "Proxima Nova Rg";
         font-size: 15px;
         font-weight: 700;
-        color: var(--color-black);
         cursor: pointer;
         text-align: left;
-        &--grey {
-            color: #757575;
-        }
     }
     &--active {
         opacity: 1;

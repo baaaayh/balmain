@@ -16,11 +16,10 @@ export default function ProudctList() {
     const menuContext = useMenuContext();
     const menu = menuContext?.currMenuData;
 
+    console.log(menu);
     useEffect(() => {
         const fetchProductsByMenu = async () => {
             if (!menu) return;
-
-            console.log(menu);
 
             const fetchData =
                 menu.depth1 || menu.depth2 || menu.depth3 === "View all"

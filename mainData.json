@@ -2,41 +2,64 @@
     {
         "cardSectionData1": [
             {
-                "imageUrl_desktop": "/images/main/card/hp_carre_dress_body_blue_PS25_desktop.avif",
-                "imageUrl_mobile": "/images/main/card/hp_carre_dress_body_blue_PS25_mob.avif",
-                "title": "DRESSES <br /> RESORT 2025",
-                "buttonText": "SHOP NOW",
-                "linkString": "javascript:;"
+                "imageUrl_desktop": "/images/main/card/hp_carre_redleather_PS25_desk.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_redleather_PS25_mob.avif",
+                "title": "NEW IN <br /> RESORT 2025",
+                "buttons": [
+                    {
+                        "buttonText": "FOR WOMEN",
+                        "linkString": "javascript:;",
+                        "buttonColorClass": ""
+                    },
+                    {
+                        "buttonText": "FOR MEN",
+                        "linkString": "javascript:;",
+                        "buttonColorClass": ""
+                    }
+                ]
             },
             {
-                "imageUrl_desktop": "/images/main/card/hp_carre_bags_moon1945_denim_PS25_desktop.avif",
-                "imageUrl_mobile": "/images/main/card/hp_carre_bags_moon1945_denim_PS25_mob.avif",
-                "title": "WOMEN'S BAGS <br /> RESORT 2025",
-                "buttonText": "SHOP NOW",
-                "linkString": "javascript:;"
-            },
-            {
-                "imageUrl_desktop": "/images/main/card/hp_carre_menbags_PS25_2_desktop.avif",
-                "imageUrl_mobile": "/images/main/card/hp_carre_menbags_PS25_2_mob.avif",
-                "title": "MEN'S BAGS <br /> RESORT 2025",
-                "buttonText": "SHOP NOW",
-                "linkString": "javascript:;"
+                "imageUrl_desktop": "/images/main/card/hp_carre_shoes_boots_PS25_desk.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_shoes_boots_PS25_mob.avif",
+                "title": "SHOES <br /> RESORT 2025",
+                "buttons": [
+                    {
+                        "buttonText": "FOR WOMEN",
+                        "linkString": "javascript:;",
+                        "buttonColorClass": ""
+                    },
+                    {
+                        "buttonText": "FOR MEN",
+                        "linkString": "javascript:;",
+                        "buttonColorClass": ""
+                    }
+                ]
             }
         ],
         "cardSectionData2": [
             {
-                "imageUrl_desktop": "/images/main/card/hp_carre_WOMEN_rtw_denim_PS25_desktop.avif",
-                "imageUrl_mobile": "/images/main/card/hp_carre_WOMEN_rtw_denim_PS25_mob.avif",
-                "title": "WOMEN'S READY-TO-WEAR <br /> RESORT 2025",
-                "buttonText": "VIEW ALL",
-                "linkString": "javascript:;"
+                "imageUrl_desktop": "/images/main/card/hp_carre_women_essentials_lb_PS25_desk.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_women_essentials_lb_PS25_mob.avif",
+                "title": "ESSENTIALS FOR HER",
+                "buttons": [
+                    {
+                        "buttonText": "SHOP NOW",
+                        "linkString": "javascript:;",
+                        "buttonColorClass": ""
+                    }
+                ]
             },
             {
-                "imageUrl_desktop": "/images/main/card/hp_carre_MEN_rtw_denim_PS25_desktop.avif",
-                "imageUrl_mobile": "/images/main/card/hp_carre_MEN_rtw_denim_PS25_mob.avif",
-                "title": "MEN'S READY-TO-WEAR <br /> RESORT 2025",
-                "buttonText": "VIEW ALL",
-                "linkString": "javascript:;"
+                "imageUrl_desktop": "/images/main/card/hp_carre_men_essentials_lb_PS25_desk.avif",
+                "imageUrl_mobile": "/images/main/card/hp_carre_men_essentials_lb_PS25_mob.avif",
+                "title": "ESSENTIALS FOR HIM",
+                "buttons": [
+                    {
+                        "buttonText": "SHOP NOW",
+                        "linkString": "javascript:;",
+                        "buttonColorClass": ""
+                    }
+                ]
             }
         ],
         "hotNowData": [
@@ -146,6 +169,7 @@
                     "EF1LBA51LD013CFC.avif",
                     "EF1LBA51LD013CFD.avif",
                     "EF1LBA51LD013CFE.avif",
+                    "EF1LBA51LD013CFF.avif",
                     "EF1LBA51LD013CFG.avif",
                     "EF1LBA51LD013CFR.avif"
                 ],
@@ -173,6 +197,7 @@
                     "EN4DB903KTSOGVZB.avif",
                     "EN4DB903KTSOGVZD.avif",
                     "EN4DB903KTSOGVZE.avif",
+                    "EN4DB903KTSOGVZF.avif",
                     "EN4DB903KTSOGVZG.avif",
                     "EN4DB903KTSOGVZI.avif",
                     "EN4DB903KTSOGVZR.avif"
@@ -211,22 +236,34 @@
                 "title": "BOUTIQUES",
                 "paragraph": "You can also find us in one of our Balmain boutiques.",
                 "text": "SEE OUR BOUTIQUES",
-                "linkString": "javascript:;",
-                "buttonColorClass": "btn-link--bk"
+                "buttons": [
+                    {
+                        "linkString": "javascript:;",
+                        "buttonColorClass": "btn-link--bk"
+                    }
+                ]
             },
             {
                 "title": "CUSTOMER CARE",
                 "paragraph": "Do you have any questions? We are here to help you. You can contact our customer care team by email or over the phone.",
                 "text": "GET IN TOUCH",
-                "linkString": "javascript:;",
-                "buttonColorClass": "btn-link--bk"
+                "buttons": [
+                    {
+                        "linkString": "javascript:;",
+                        "buttonColorClass": "btn-link--bk"
+                    }
+                ]
             },
             {
                 "title": "FAQ",
                 "paragraph": "Find all the answers to the frequently asked questions below.",
                 "text": "SEE OUR FAQS",
-                "linkString": "javascript:;",
-                "buttonColorClass": "btn-link--bk"
+                "buttons": [
+                    {
+                        "linkString": "javascript:;",
+                        "buttonColorClass": "btn-link--bk"
+                    }
+                ]
             }
         ]
     }

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import CardTitleButton from "@/app/components/common/card-title-button";
+import CardTitleButtons from "@/app/components/common/card-title-buttons";
 import styles from "@/app/styles/common/card-title.module.scss";
 import { LinkButtonType } from "@/type";
 
@@ -17,11 +17,12 @@ export default function CardTitle({
                     <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
                     <div className={clsx(styles["card-title__link"])}>
                         <ul>
-                            {buttons.map((button) => (
-                                <CardTitleButton
-                                    key={button.text}
-                                    text={button.text}
+                            {buttons.map((button, index) => (
+                                <CardTitleButtons
+                                    key={`${button.buttonText}-${index}`}
+                                    buttonText={button.buttonText}
                                     linkString={button.linkString}
+                                    buttonColorClass={button.buttonColorClass}
                                 />
                             ))}
                         </ul>

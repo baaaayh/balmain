@@ -33,15 +33,7 @@ export default function CardSectionItem({
                     </picture>
                 </figure>
             </Link>
-            <CardTitle
-                title={cardData.title}
-                buttons={[
-                    {
-                        text: cardData.buttonText,
-                        linkString: cardData.linkString,
-                    },
-                ]}
-            />
+            <CardTitle title={cardData.title} buttons={cardData.buttons} />
         </div>
     );
 }

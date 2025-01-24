@@ -13,6 +13,9 @@
                 visibility: visible;
                 position: relative;
             }
+            .card-slider__gutter {
+                z-index: 40;
+            }
             .card-slider__desc {
                 position: relative;
             }
@@ -23,6 +26,7 @@
     }
     &__wrap {
         > img {
+            display: block;
             width: 100%;
             // aspect-ratio: 168 / 227;
             opacity: 0;
@@ -53,6 +57,7 @@
         display: block;
         height: 90%;
         img {
+            display: block;
             max-width: none;
             width: auto;
             height: 90%;
@@ -72,6 +77,33 @@
         transition: opacity 0.1s ease-out;
         // opacity: 1;
         // visibility: visible;
+        :global(.slick-arrow) {
+            overflow: hidden;
+            width: auto;
+            height: auto;
+            background-color: #000;
+            border-radius: 50%;
+            z-index: 2;
+            &:hover {
+                background-color: #000;
+            }
+            &::before {
+                font-family: "icomoon";
+                font-size: 1.875rem;
+            }
+        }
+        :global(.slick-prev) {
+            left: 10px;
+            &::before {
+                content: "\e92c";
+            }
+        }
+        :global(.slick-next) {
+            right: 10px;
+            &::before {
+                content: "\e92d";
+            }
+        }
     }
     &__desc {
         position: absolute;

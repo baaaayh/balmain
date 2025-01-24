@@ -16,14 +16,14 @@ export default function MainPage() {
             <Header />
             <div className="inner">
                 <KeyVisual />
+                <SectionHotNow />
                 <CardSection cardSectionData={data[0].cardSectionData1} />
-                <CardSection cardSectionData={data[0].cardSectionData2} />
                 <section className="section">
                     <div className="section__inner">
                         <ModeSwitch />
                     </div>
                 </section>
-                <SectionHotNow />
+                <CardSection cardSectionData={data[0].cardSectionData2} />
                 <SectionCulture />
                 <SectionSubscribe />
                 <SectionReinsurance />

@@ -1,5 +1,5 @@
 export interface LinkButtonType {
-    text: string;
+    buttonText: string;
     linkString: string;
     buttonColorClass: string;
 }
@@ -8,8 +8,7 @@ export interface CardSectionDataType {
     imageUrl_desktop: string;
     imageUrl_mobile: string;
     title: string;
-    buttonText: string;
-    linkString: string;
+    buttons: LinkButtonType[];
 }
 
 export interface CircleDataType {

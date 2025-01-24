@@ -1,18 +1,18 @@
 import Link from "next/link";
 
 export default function LinkButton({
-    text,
+    buttonText,
     linkString,
     buttonColorClass = "",
 }: {
-    text: string;
+    buttonText: string;
     linkString: string;
-    buttonColorClass: string;
+    buttonColorClass: string | null;
 }) {
     const validLink = linkString ? linkString : "#";
     return (
         <Link href={validLink} className={`btn btn-link ${buttonColorClass}`}>
-            {text}
+            {buttonText}
         </Link>
     );
 }

@@ -32,9 +32,10 @@ export default function KeyVisualSlider({
             alt: "JOLIE MADAME BAGS <br> AN ODE TO BALMAIN HERITAGE WITH AN UNIQUE VISION",
         },
         {
-            imgDesktop: "/images/main/hp_carrousel_unicorn_x2_PS25_desk.avif",
+            imgDesktop:
+                "/images/main/keyvisual/hp_carrousel_unicorn_x2_PS25_desk.avif",
             imgMobile:
-                "/images/main/hp_carrousel_unicorn_loveletter_PS25_mob.avif",
+                "/images/main/keyvisual/hp_carrousel_unicorn_loveletter_PS25_mob.avif",
             alt: "UNICORN SNEAKERS <br> THE HOUSE'S ICONICS",
         },
     ];
@@ -96,12 +97,12 @@ export default function KeyVisualSlider({
                                     title="NEW IN <br />  RESORT 2025 COLLECTION"
                                     buttons={[
                                         {
-                                            text: "FOR WOMEN",
+                                            buttonText: "FOR WOMEN",
                                             linkString: "javascript:;",
                                             buttonColorClass: "",
                                         },
                                         {
-                                            text: "FOR MEN",
+                                            buttonText: "FOR MEN",
                                             linkString: "javascript:;",
                                             buttonColorClass: "",
                                         },
