@@ -16,7 +16,6 @@ export default function ProudctList() {
     const menuContext = useMenuContext();
     const menu = menuContext?.currMenuData;
 
-    console.log(menu);
     useEffect(() => {
         const fetchProductsByMenu = async () => {
             if (!menu) return;
