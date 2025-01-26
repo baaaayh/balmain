@@ -2,7 +2,7 @@
 import Card from "@/app/components/common/card";
 import { useState, useEffect } from "react";
 import { useMenuContext } from "@/app/lib/menu-context";
-import { getProductsData, getAllProductsData } from "@/app/lib/actions";
+import { getAllProductsData } from "@/app/lib/actions";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import styles from "@/app/styles/product/product-list.module.scss";
@@ -20,10 +20,7 @@ export default function ProudctList() {
         const fetchProductsByMenu = async () => {
             if (!menu) return;
 
-            const fetchData =
-                menu.depth1 || menu.depth2 || menu.depth3 === "View all"
-                    ? getAllProductsData(menu.menu_id)
-                    : getProductsData(menu.menu_id);
+            const fetchData = getAllProductsData(menu.menu_id);
 
             try {
                 const data = await fetchData;

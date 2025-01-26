@@ -32,18 +32,9 @@ export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
 
         const currentPath = `${pathname}/`;
 
-        // const menu = menuData.find(
-        //     (menu) =>
-        //         `/${menu.depth1.toLowerCase()}/${
-        //             menu.depth2 ? menu.depth2.toLowerCase() + "/" : ""
-        //         }${menu.depth3 ? menu.depth3.toLowerCase() + "/" : ""}` ===
-        //         currentPath
-        // );
-        const menu = menuData.find(
-            (menu) =>
-                (menu.depth3 || menu.depth2 === "View all") &&
-                menu.path === currentPath
-        );
+        const menu = menuData.find((menu) => {
+            return menu.path === currentPath;
+        });
         if (menu === undefined || menu === null) return null;
 
         return menu;

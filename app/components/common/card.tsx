@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -9,6 +10,7 @@ import styles from "@/app/styles/common/card.module.scss";
 import { ProductDataType } from "@/type";
 
 export default function Card({ product }: { product: ProductDataType }) {
+    const [dragging, setDragging] = useState(false);
     const pathname = usePathname();
 
     const backfaceSettions = {
@@ -16,6 +18,12 @@ export default function Card({ product }: { product: ProductDataType }) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        beforeChange: () => {
+            setDragging(true);
+        },
+        afterChange: () => {
+            setDragging(false);
+        },
     };
 
     return (
@@ -31,28 +39,36 @@ export default function Card({ product }: { product: ProductDataType }) {
                 <div className={clsx(styles["card-slider__gutter"])}>
                     <div className={clsx(styles["card-slider__view"])}>
                         <Link
-                            href={`${pathname}/${product.product_id}`}
+                            href={
+                                product.product_id > 1110
+                                    ? "#"
+                                    : `${pathname}/${product.product_id}`
+                            }
                             className={clsx(styles["card-slider__hero"])}
                         >
-                            {product.image_filenames
-                                .filter((image) => {
-                                    const filename = image.split(".")[0];
-                                    return filename.endsWith("F");
-                                })
-                                .map((image) => (
-                                    <Image
-                                        key={image}
-                                        src={
-                                            product.product_id > 1110
-                                                ? `/images/dummy/${product.product_id}/${image}`
-                                                : `/images/products/${product.base_item_code}/${product.color}/${image}`
+                            {product.color &&
+                                product.image_filenames
+                                    .filter((image) => {
+                                        if (image) {
+                                            const filename =
+                                                image.split(".")[0];
+                                            return filename.endsWith("F");
                                         }
-                                        width={750}
-                                        height={1060}
-                                        priority
-                                        alt="1945 Soft Moon bag in monogrammed calfskin"
-                                    />
-                                ))}
+                                    })
+                                    .map((image) => (
+                                        <Image
+                                            key={image}
+                                            src={
+                                                product.product_id > 1110
+                                                    ? `/images/dummy/${product.product_id}/${image}`
+                                                    : `/images/products/${product.base_item_code}/${product.color}/${image}`
+                                            }
+                                            width={750}
+                                            height={1060}
+                                            priority
+                                            alt="1945 Soft Moon bag in monogrammed calfskin"
+                                        />
+                                    ))}
                         </Link>
                         <div className={clsx(styles["card-slider__backface"])}>
                             <Slider {...backfaceSettions}>
@@ -65,6 +81,7 @@ export default function Card({ product }: { product: ProductDataType }) {
                                         productId={product.product_id}
                                         pathname={pathname}
                                         imageAlt={product.image_alt}
+                                        dragging={dragging}
                                     />
                                 ))}
                             </Slider>

@@ -11,6 +11,7 @@ export default function CardSliderItem({
     productId,
     pathname,
     imageAlt,
+    dragging,
 }: {
     image: string;
     baseItemCode: string;
@@ -18,10 +19,20 @@ export default function CardSliderItem({
     productId: number | null;
     pathname: string;
     imageAlt: string;
+    dragging: boolean;
 }) {
     return (
         <div className={clsx(styles["card-slider__item"])}>
-            <Link href={`${pathname}/${productId}`}>
+            <Link
+                href={
+                    productId && productId > 1110
+                        ? "#"
+                        : `${pathname}/${productId}`
+                }
+                onClick={(e) => {
+                    if (dragging) e.preventDefault();
+                }}
+            >
                 <div className={clsx(styles["card-slider__inner"])}>
                     <Image
                         src={
