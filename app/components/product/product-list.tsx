@@ -18,6 +18,7 @@ export default function ProudctList() {
 
     useEffect(() => {
         const fetchProductsByMenu = async () => {
+            console.log(menu?.menu_id);
             if (!menu) return;
 
             const fetchData = getAllProductsData(menu.menu_id);
