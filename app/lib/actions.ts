@@ -13,7 +13,10 @@ export async function getMenuData() {
             depth_level, 
             path, 
             border,
-            link
+            link,
+            prev_path,
+            prev_menu_id,
+            prev_menu
         FROM menus
         ORDER BY depth_level, menu_id
     `);
@@ -202,13 +205,34 @@ export async function getProductDetailData(productId: number) {
                 d.contents
         `;
 
-        // 쿼리 실행 (productId를 파라미터로 전달)
         const result = await pool.query(query, [productId]);
 
-        // 결과 반환 (1개 상품만 반환되도록 보장)
         return result.rows[0] || null;
     } catch (error) {
         console.error("Error fetching product details info:", error);
         throw new Error("Failed to fetch product detail data.");
     }
+}
+
+export async function getParentMenuData(menuId: number) {
+    const result = await pool.query(
+        `
+        SELECT 
+            menu_id, 
+            parent_menu_id, 
+            depth1, 
+            depth2, 
+            depth3, 
+            depth4, 
+            depth_level, 
+            path, 
+            border,
+            link
+        FROM menus
+        WHERE menu_id = $1
+    `,
+        [menuId]
+    );
+
+    return result.rows;
 }

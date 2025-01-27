@@ -15,6 +15,7 @@ export default memo(function SideNavMenuDepth1({
     depth2Menus,
     menus,
     index,
+    path,
 }: SideNavMenuProps) {
     const handleDepth1Click = useCallback(
         (index: number) => {
@@ -30,7 +31,7 @@ export default memo(function SideNavMenuDepth1({
             })}
         >
             {expandedDepth2 !== index &&
-                (!depth1.link ? (
+                (depth2Menus.length > 0 ? (
                     <button
                         type="button"
                         className={clsx(styles["menu__depth1"])}
@@ -40,7 +41,7 @@ export default memo(function SideNavMenuDepth1({
                     </button>
                 ) : (
                     <Link
-                        href={depth1.link}
+                        href={path || "/"}
                         className={clsx(styles["menu__depth1"])}
                     >
                         {depth1.depth1}
@@ -56,6 +57,7 @@ export default memo(function SideNavMenuDepth1({
                     expandedDepth3={expandedDepth3}
                     setExpandedDepth3={setExpandedDepth3}
                     index={index}
+                    path={path}
                 />
             )}
         </li>

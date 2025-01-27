@@ -58,35 +58,33 @@ export default function SideNavMenuDepth2({
                                         depth2.border,
                                 })}
                             >
-                                {depth2.path === null &&
-                                    depth2.link === null && (
-                                        <>
-                                            {expandedDepth3 === null && (
-                                                <button
-                                                    type="button"
-                                                    className={clsx(
-                                                        styles["menu__depth2"]
-                                                    )}
-                                                    onClick={() =>
-                                                        handlDepth2Click(i)
-                                                    }
-                                                >
-                                                    {depth2.depth2}
-                                                </button>
-                                            )}
-                                            {expandedDepth3 === i && (
-                                                <SideNavMenuDepth3
-                                                    depth2={depth2}
-                                                    depth3Menus={depth3Menus}
-                                                    setExpandedDepth3={
-                                                        setExpandedDepth3
-                                                    }
-                                                />
-                                            )}
-                                        </>
-                                    )}
-                                {(depth2.path !== null ||
-                                    depth2.link !== null) && (
+                                {depth3Menus.length > 0 && (
+                                    <>
+                                        {expandedDepth3 === null && (
+                                            <button
+                                                type="button"
+                                                className={clsx(
+                                                    styles["menu__depth2"]
+                                                )}
+                                                onClick={() =>
+                                                    handlDepth2Click(i)
+                                                }
+                                            >
+                                                {depth2.depth2}
+                                            </button>
+                                        )}
+                                        {expandedDepth3 === i && (
+                                            <SideNavMenuDepth3
+                                                depth2={depth2}
+                                                depth3Menus={depth3Menus}
+                                                setExpandedDepth3={
+                                                    setExpandedDepth3
+                                                }
+                                            />
+                                        )}
+                                    </>
+                                )}
+                                {depth3Menus.length === 0 && (
                                     <Link
                                         href={
                                             depth2.path

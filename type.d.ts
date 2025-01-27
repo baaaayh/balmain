@@ -32,6 +32,9 @@ export interface menuDataType {
     path: string;
     border: boolean | null;
     link: string | null;
+    prev_path: string | null;
+    prev_menu_id: number | null;
+    prev_menu: string | null;
 }
 
 export interface SideNavMenuProps {
@@ -58,6 +61,7 @@ export interface SideNavMenuProps {
     }>;
     menus: Array<menuDataType>;
     index: number;
+    path: string;
 }
 
 export interface ProductDataType {

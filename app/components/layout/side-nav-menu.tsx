@@ -47,6 +47,7 @@ export default memo(function SideNavMenu({
                                 setExpandedDepth3={setExpandedDepth3}
                                 menus={menus}
                                 index={index}
+                                path={depth1.path}
                             />
                         ) : null;
                     })}
