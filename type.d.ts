@@ -21,7 +21,7 @@ export interface ReinsuranceDataType extends LinkButtonType {
     paragraph: string;
 }
 
-export interface menuDataType {
+export interface MenuDataType {
     menu_id: number;
     parent_menu_id: number | null;
     depth1: string;
@@ -83,4 +83,27 @@ export interface ProductDataType {
     image_alt: string;
     image_filenames: Array<string>;
     color: string;
+}
+
+export interface ProductDetailDataType extends ProductDataType {
+    sizes: Array<string>;
+    colors: Array<{
+        id: number;
+        name: string;
+    }>;
+    description_contents: string;
+}
+
+export interface CartProductDataType {
+    product_id: number;
+    item_code: string;
+    menu_id: number;
+    name: string;
+    price: number;
+    quantity: number;
+    selectedSize: string;
+    selectedColor: {
+        id: string;
+        name: string;
+    };
 }

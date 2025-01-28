@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Modal from "@/app/components/common/modal";
 import Container from "@/app/components/layout/container";
 import "@/app/styles/globals.scss";
 
@@ -19,6 +20,7 @@ export default function RootLayout({
                 <div className="wrap">
                     <Container>{children}</Container>
                 </div>
+                <Modal />
             </body>
         </html>
     );

@@ -1,0 +1,142 @@
+.detail {
+    &__tab {
+        margin-top: 3rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 0.0625rem solid #d8d8d8;
+        ul {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+    &__tabbutton {
+        font-family: "Balmain Sans";
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: -0.0625rem;
+        padding: 0 0 0.3125rem;
+        cursor: pointer;
+        &--active {
+            border-bottom: 0.0625rem solid #000;
+        }
+    }
+    &__text {
+        font-family: "Proxima Nova Sm";
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.29;
+        color: #696969;
+    }
+    &__contents {
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+    &__desc {
+        ul {
+            padding-left: 40px;
+            li {
+                display: none;
+                position: relative;
+                line-height: 1.29;
+                &::before {
+                    overflow: hidden;
+                    content: "";
+                    position: absolute;
+                    top: 7px;
+                    left: -10px;
+                    display: inline-block;
+                    width: 3px;
+                    height: 3px;
+                    background-color: #696969;
+                    border-radius: 50%;
+                }
+                &:nth-child(-n + 3) {
+                    display: block;
+                }
+            }
+        }
+        &--open {
+            ul {
+                li {
+                    display: block;
+                }
+            }
+        }
+        button {
+            font-family: "Balmain Sans";
+            font-size: 0.59375rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1.05;
+            text-decoration: underline;
+            text-underline-offset: 0.09375rem;
+            cursor: pointer;
+            &:hover {
+                color: #5c5c5c;
+            }
+        }
+    }
+    &__button {
+        margin: 1rem 0;
+    }
+    &__char {
+        li {
+            position: relative;
+            padding: 0.625rem 1.25rem;
+            padding-left: 4.15rem;
+            border-bottom: 0.0625rem solid #e1e1e1;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    &__icon {
+        left: 1.25rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.875rem;
+        height: 1.875rem;
+        width: 1.875rem;
+        -webkit-margin-end: 0.625rem;
+        margin-inline-end: 0.625rem;
+        &::before {
+            font-family: "icomoon";
+            font-size: 1.875rem;
+            font-weight: 400;
+            line-height: 1.875rem;
+            color: #696969;
+        }
+        &--delivery {
+            &::before {
+                content: "\e920";
+            }
+        }
+        &--returns {
+            &::before {
+                content: "\e923";
+            }
+        }
+        &--payment {
+            &::before {
+                content: "\e921";
+            }
+        }
+        &--faq {
+            &::before {
+                content: "\e905";
+                font-size: 1.5625rem;
+            }
+        }
+        &--email {
+            &::before {
+                content: "\e926";
+            }
+        }
+        &--telephone {
+            &::before {
+                content: "\e927";
+            }
+        }
+    }
+}

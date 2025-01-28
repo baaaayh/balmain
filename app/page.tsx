@@ -6,7 +6,7 @@ import ModeSwitch from "@/app/components/common/mode-switch";
 import SectionCulture from "@/app/components/main/section-culture";
 import styles from "@/app/styles/page.module.scss";
 import data from "@/mainData.json";
-import SectionSubscribe from "@/app/components/main/section-subscribe";
+import SectionSubscribe from "@/app/components/layout/section-subscribe";
 import SectionReinsurance from "@/app/components/main/section-reinsurance";
 import Footer from "@/app/components/layout/footer";
 

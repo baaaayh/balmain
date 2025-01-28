@@ -5,14 +5,14 @@ import { useMenuContext } from "@/app/lib/menu-context";
 import { getParentMenuData } from "@/app/lib/actions";
 import styles from "@/app/styles/product/product-list-title.module.scss";
 import clsx from "clsx";
-import { menuDataType } from "@/type";
+import { MenuDataType } from "@/type";
 export default function ProductListTitle({
     productsCount,
 }: {
     productsCount: number;
 }) {
-    const [parentMenu, setParentMenu] = useState<menuDataType>();
-    const [prevMenu, setPrevMenu] = useState<menuDataType>();
+    const [parentMenu, setParentMenu] = useState<MenuDataType>();
+    const [prevMenu, setPrevMenu] = useState<MenuDataType>();
     const menuContext = useMenuContext();
     const menu = menuContext?.currMenuData;
 
@@ -38,9 +38,9 @@ export default function ProductListTitle({
 
     return (
         <div className={clsx(styles["page-top"])}>
-            <div>
+            <div className={clsx(styles["page-top__link"])}>
                 <Link
-                    className={clsx(styles["page-top__link"])}
+                    className="btn btn-back btn-back--l"
                     href={
                         (menu &&
                             (menu?.menu_id === 151 ||
@@ -51,6 +51,7 @@ export default function ProductListTitle({
                         "/"
                     }
                 >
+                    <span></span>
                     {menu &&
                     (menu?.menu_id === 151 ||
                         menu?.menu_id === 152 ||

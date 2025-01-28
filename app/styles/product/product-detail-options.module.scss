@@ -1,0 +1,135 @@
+.detail {
+    &__options {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+        background-color: #fff;
+    }
+    &__top {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1.25rem;
+    }
+    &__bottom {
+        padding-top: 1.25rem;
+        p {
+            color: #cc0000;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        strong {
+            display: block;
+            margin-bottom: 1rem;
+            font-family: "Balmain Sans";
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+    }
+    &__current {
+        display: block;
+        margin-bottom: 1rem;
+        font-family: "Balmain Sans";
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+    &__colors {
+        ul {
+            display: flex;
+            column-gap: 0.5rem;
+            li {
+                a {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 1.8125rem;
+                    height: 1.8125rem;
+                    span {
+                        display: inline-block;
+                        width: 1.1875rem;
+                        height: 1.1875rem;
+                        font-size: 0;
+                        border: 0.0625rem solid #959595;
+                        border-radius: 50%;
+                    }
+                }
+                &.detail__color--active {
+                    a {
+                        border: 0.125rem solid #000;
+                        border-radius: 50%;
+                    }
+                }
+                &.black {
+                    a {
+                        span {
+                            background-color: #000;
+                        }
+                    }
+                }
+                &.white {
+                    a {
+                        span {
+                            background-color: #fff;
+                        }
+                    }
+                }
+                &.pink {
+                    a {
+                        span {
+                            background-color: #fe249a;
+                        }
+                    }
+                }
+                &.red {
+                    a {
+                        span {
+                            background-color: #ff0000;
+                        }
+                    }
+                }
+                &.blue {
+                    a {
+                        span {
+                            background-color: #0070d2;
+                        }
+                    }
+                }
+                &.multicolor {
+                    span {
+                        background: url("/images/icons/icon_multicolor.png")
+                            center / contain no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    &__size {
+        ul {
+            display: flex;
+            column-gap: 0.625rem;
+            li {
+                display: inline-flex;
+                input[type="radio"] {
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                }
+                label {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 4.8125rem;
+                    height: 2.5rem;
+                    border-radius: 1.5625rem;
+                    border: 0.125rem solid #ccc;
+                    cursor: pointer;
+                    font-family: "Proxima Nova Rg";
+                    font-size: 0.875rem;
+                }
+                input[type="radio"]:checked + label {
+                    border-color: #000;
+                }
+            }
+        }
+    }
+}
