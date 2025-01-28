@@ -10,9 +10,10 @@ export default function Modal() {
         <div
             className={clsx(styles["modal-container"], {
                 [styles["modal-container--active"]]: modalState,
+                [styles["modal-container--closing"]]: !modalState,
             })}
         >
-            <span className={clsx(styles["dim"])}></span>
+            <span className={clsx("dim", styles["dim"])}></span>
             <div className={clsx(styles["modal"])}>
                 <div className={clsx(styles["modal__inner"])}>
                     <ModalCart />

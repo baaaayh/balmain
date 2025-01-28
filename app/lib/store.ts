@@ -98,7 +98,7 @@ export const useModalStore = create<ModalActions>((set) => ({
             set(() => ({ isOpen: true }));
         },
         closeModal: () => {
-            set(() => ({ isOpen: true }));
+            set(() => ({ isOpen: false }));
         },
         toggleModal: () => {
             set((state) => ({ isOpen: !state.isOpen }));

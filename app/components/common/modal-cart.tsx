@@ -1,9 +1,22 @@
 "use client";
-import { useCartStore } from "@/app/lib/store";
+import { useEffect } from "react";
+import { useCartStore, useModalStore } from "@/app/lib/store";
 import clsx from "clsx";
 import styles from "@/app/styles/common/modal.module.scss";
 export default function ModalCart() {
-    const { cart: cartState } = useCartStore((state) => state);
+    const { cart: cartState, actions: cartActions } = useCartStore(
+        (state) => state
+    );
+    const { actions: modalActions } = useModalStore((state) => state);
+
+    useEffect(() => {
+        document.addEventListener("click", function (e: MouseEvent) {
+            const $target = e.target;
+            if ($target instanceof HTMLElement && $target.closest(".dim")) {
+                modalActions.closeModal();
+            }
+        });
+    }, [modalActions]);
 
     return (
         <div className={clsx(styles["cart"])}>
