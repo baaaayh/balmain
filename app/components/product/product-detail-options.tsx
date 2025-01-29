@@ -77,7 +77,7 @@ export default function ProductDetailOptions({
                 <div className={styles["detail__size"]}>
                     <ul>
                         {productData &&
-                            productData.sizes.reverse().map((size) => (
+                            [...productData.sizes].reverse().map((size) => (
                                 <li key={size}>
                                     <input
                                         id={size}

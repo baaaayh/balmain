@@ -4,9 +4,7 @@ import { useCartStore, useModalStore } from "@/app/lib/store";
 import clsx from "clsx";
 import styles from "@/app/styles/common/modal.module.scss";
 export default function ModalCart() {
-    const { cart: cartState, actions: cartActions } = useCartStore(
-        (state) => state
-    );
+    const { cart: cartState } = useCartStore((state) => state);
     const { actions: modalActions } = useModalStore((state) => state);
 
     useEffect(() => {

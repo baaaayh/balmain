@@ -1,0 +1,50 @@
+.detail {
+    display: flex;
+    min-height: 100vh;
+    &__left {
+        flex: 1;
+    }
+    &__right {
+        position: relative;
+        flex: 1;
+        padding: 0 24px;
+    }
+    &__back {
+        margin-bottom: 1.25rem;
+    }
+    &__float {
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding-top: 2.5rem;
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    &__cart {
+        margin-top: 24px;
+    }
+    &__collections {
+        font-family: "Balmain Sans";
+        margin: 0 0 0.3125rem;
+        font-size: 14px;
+        line-height: 1.125rem;
+        color: #808080;
+    }
+    &__name {
+        h2 {
+            font-family: "Balmain Sans";
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.0625rem;
+            line-height: 1.2;
+        }
+    }
+    &__price {
+        padding: 0.5rem 0;
+        font-family: "Proxima Nova Sm";
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+}

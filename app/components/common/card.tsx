@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import CardSliderItem from "@/app/components/common/card-slider-item";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import styles from "@/app/styles/common/card.module.scss";
 import { ProductDataType } from "@/type";
 

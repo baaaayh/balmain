@@ -7,8 +7,6 @@ import { usePathname } from "next/navigation";
 import ProductListTitle from "@/app/components/product/product-list-title";
 import clsx from "clsx";
 import styles from "@/app/styles/product/product-list.module.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { ProductDataType } from "@/type";
 
 export default function ProudctList() {
