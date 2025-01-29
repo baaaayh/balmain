@@ -1,18 +1,14 @@
 "use client";
 import { useState, memo, useEffect } from "react";
 import { useParams } from "next/navigation";
-import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
-import CardSliderItem from "@/app/components/common/card-slider-item";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styles from "@/app/styles/common/card.module.scss";
 import { ProductDataType } from "@/type";
+import CardBackfaceSlider from "./card-backface-slider";
 
 export default memo(function Card({ product }: { product: ProductDataType }) {
-    const [dragging, setDragging] = useState(false);
     const [pathname, setPathname] = useState("");
     const params = useParams();
 
@@ -28,23 +24,6 @@ export default memo(function Card({ product }: { product: ProductDataType }) {
 
         setPathname(`/${pathSegments}`);
     }, [params]);
-
-    console.log(pathname);
-
-    const backfaceSettions = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        beforeChange: () => {
-            setDragging(true);
-        },
-        afterChange: () => {
-            setDragging(false);
-        },
-    };
-
-    console.log(pathname);
 
     return (
         <div className={clsx(styles["card-slider__card"])}>
@@ -91,20 +70,10 @@ export default memo(function Card({ product }: { product: ProductDataType }) {
                                     ))}
                         </Link>
                         <div className={clsx(styles["card-slider__backface"])}>
-                            <Slider {...backfaceSettions}>
-                                {product.image_filenames.map((image) => (
-                                    <CardSliderItem
-                                        key={image}
-                                        image={image}
-                                        baseItemCode={product.base_item_code}
-                                        color={product.color}
-                                        productId={product.product_id}
-                                        pathname={pathname}
-                                        imageAlt={product.image_alt}
-                                        dragging={dragging}
-                                    />
-                                ))}
-                            </Slider>
+                            <CardBackfaceSlider
+                                pathname={pathname}
+                                product={product}
+                            />
                         </div>
                         <div className={clsx(styles["card-slider__desc"])}>
                             <Link href="javascript:;">
