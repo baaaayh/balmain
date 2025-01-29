@@ -225,7 +225,7 @@
     }
 }
 
-.btn-addcart {
+.btn-grey {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -234,7 +234,7 @@
     height: 3.4375rem;
     padding: 1.4375rem 2rem 1.375rem;
     border-radius: 1.71875rem;
-    background-color: #949494;
+    background-color: #000;
     transition: all 0.15s ease-out;
     cursor: pointer;
     span {
@@ -274,5 +274,20 @@
         font-weight: 500;
         letter-spacing: 0.0625rem;
         line-height: 1.25rem;
+    }
+}
+
+.btn-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: inline-flex;
+    z-index: 2;
+    cursor: pointer;
+    &::before {
+        content: "\e932";
+        font-family: "icomoon";
+        font-size: 1.875rem;
+        font-weight: 400;
     }
 }

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, memo } from "react";
 import { usePathname } from "next/navigation";
 import { MenuProvider } from "@/app/lib/menu-context";
 import SideNavUtils from "@/app/components/layout/side-nav-utils";
@@ -8,7 +8,7 @@ import SideNavFooter from "@/app/components/layout/side-nav-footer";
 import clsx from "clsx";
 import styles from "@/app/styles/layout/side-nav.module.scss";
 
-export default function SideNav() {
+export default memo(function SideNav() {
     const pathname = usePathname();
     const [isExpended, setIsExpended] = useState(false);
     const [navState, setNavState] = useState(false);
@@ -75,4 +75,4 @@ export default function SideNav() {
             </nav>
         </MenuProvider>
     );
-}
+});

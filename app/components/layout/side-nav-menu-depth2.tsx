@@ -1,12 +1,12 @@
 "use client";
-import { useCallback } from "react";
+import { useCallback, memo } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import styles from "@/app/styles/layout/side-nav-menu.module.scss";
 import { SideNavMenuProps } from "@/type";
 import SideNavMenuDepth3 from "./side-nav-menu-depth3";
 
-export default function SideNavMenuDepth2({
+export default memo(function SideNavMenuDepth2({
     expandedDepth2,
     expandedDepth3,
     setExpandedDepth2,
@@ -103,4 +103,4 @@ export default function SideNavMenuDepth2({
             </ul>
         </div>
     );
-}
+});

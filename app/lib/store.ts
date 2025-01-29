@@ -30,7 +30,9 @@ export const useCartStore = create<CartStore>((set) => {
                 set((state: CartState) => {
                     const existingProduct = state.cart.find(
                         (cartItem: CartProductDataType) =>
-                            cartItem.product_id === product.product_id
+                            cartItem.product_id === product.product_id &&
+                            cartItem.selectedColor === product.selectedColor &&
+                            cartItem.selectedSize === product.selectedSize
                     );
 
                     if (existingProduct) {

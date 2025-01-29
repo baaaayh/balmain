@@ -50,6 +50,23 @@ export default function ProductDetailInfo({
                 price: productData.price,
                 selectedSize: selectedSize,
                 selectedColor: selectedColor,
+                thumbUrl: productData.image_filenames.find((image: string) =>
+                    image?.split(".")[0].endsWith("F")
+                )
+                    ? productData.product_id > 1110
+                        ? `/images/dummy/${
+                              productData.product_id
+                          }/${productData.image_filenames.find(
+                              (image: string) =>
+                                  image?.split(".")[0].endsWith("F")
+                          )}`
+                        : `/images/products/${productData.base_item_code}/${
+                              selectedColor?.name
+                          }/${productData.image_filenames.find(
+                              (image: string) =>
+                                  image?.split(".")[0].endsWith("F")
+                          )}`
+                    : "",
             });
             modalActions.openModal();
         } else {
@@ -102,7 +119,7 @@ export default function ProductDetailInfo({
             </div>
             <div className={styles["detail__cart"]}>
                 <button
-                    className="btn btn-addcart"
+                    className="btn btn-grey"
                     type="button"
                     onClick={handleAddToCart}
                 >

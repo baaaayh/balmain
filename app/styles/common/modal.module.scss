@@ -38,6 +38,8 @@
     transform: translateX(100%);
     transition: transform 0.3s ease;
     &__inner {
-        padding: 1.875rem 0.625rem;
+        position: relative;
+        height: 100%;
+        padding: 1.875rem 0.625rem 3.375rem;
     }
 }

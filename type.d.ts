@@ -106,4 +106,5 @@ export interface CartProductDataType {
         id: string;
         name: string;
     };
+    thumbUrl: string;
 }

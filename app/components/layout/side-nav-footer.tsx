@@ -1,8 +1,10 @@
+"use client";
+import { memo } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import styles from "@/app/styles/layout/side-nav-footer.module.scss";
 
-export default function SideNavFooter({
+export default memo(function SideNavFooter({
     navState,
     isExpended,
 }: {
@@ -37,4 +39,4 @@ export default function SideNavFooter({
             </ul>
         </div>
     );
-}
+});

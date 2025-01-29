@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useState, memo, useEffect } from "react";
+import { useParams } from "next/navigation";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,9 +11,20 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "@/app/styles/common/card.module.scss";
 import { ProductDataType } from "@/type";
 
-export default function Card({ product }: { product: ProductDataType }) {
+export default memo(function Card({ product }: { product: ProductDataType }) {
     const [dragging, setDragging] = useState(false);
-    const pathname = usePathname();
+    const [pathname, setPathname] = useState("");
+    const params = useParams();
+
+    useEffect(() => {
+        if (!isNaN(Number(params.id)))
+            setPathname(`/${params.depth1}/${params.depth2}/${params.depth3}`);
+        if (!isNaN(Number(params.depth3)))
+            setPathname(`/${params.depth1}/${params.depth2}`);
+        if (!isNaN(Number(params.depth2))) setPathname(`/${params.depth1}`);
+    }, [params]);
+
+    console.log(pathname);
 
     const backfaceSettions = {
         infinite: true,
@@ -27,6 +38,8 @@ export default function Card({ product }: { product: ProductDataType }) {
             setDragging(false);
         },
     };
+
+    console.log(pathname);
 
     return (
         <div className={clsx(styles["card-slider__card"])}>
@@ -120,4 +133,4 @@ export default function Card({ product }: { product: ProductDataType }) {
             </div>
         </div>
     );
-}
+});
