@@ -1,10 +1,12 @@
+"use client";
+import { memo } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import ModeButton from "@/app/components/common/mode-button";
 import styles from "@/app/styles/layout/footer.module.scss";
 
-export default function Footer() {
+export default memo(function Footer() {
     return (
         <footer className={clsx(styles["footer"])}>
             <div className={clsx(styles["footer__inner"])}>
@@ -94,6 +96,7 @@ export default function Footer() {
                             src="/images/common/logo-lg-w.svg"
                             alt="balmain"
                             priority
+                            layout="intrinsic"
                         />
                     </Link>
                 </div>
@@ -219,4 +222,4 @@ export default function Footer() {
             </div>
         </footer>
     );
-}
+});

@@ -1,10 +1,10 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, memo } from "react";
 import clsx from "clsx";
 import Section from "@/app/components/main/section";
 import styles from "@/app/styles/main/section-subscribe.module.scss";
 
-export default function SectionSubscribe() {
+export default memo(function SectionSubscribe() {
     const [message, setMessage] = useState(false);
     const [emailInput, setEmailInput] = useState("");
     const [genderRadio, setGenderRadio] = useState<string | null>(null);
@@ -146,4 +146,4 @@ export default function SectionSubscribe() {
             </div>
         </Section>
     );
-}
+});

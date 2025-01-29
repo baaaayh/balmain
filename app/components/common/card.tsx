@@ -17,11 +17,16 @@ export default memo(function Card({ product }: { product: ProductDataType }) {
     const params = useParams();
 
     useEffect(() => {
-        if (!isNaN(Number(params.id)))
-            setPathname(`/${params.depth1}/${params.depth2}/${params.depth3}`);
-        if (!isNaN(Number(params.depth3)))
-            setPathname(`/${params.depth1}/${params.depth2}`);
-        if (!isNaN(Number(params.depth2))) setPathname(`/${params.depth1}`);
+        const pathSegments = [
+            isNaN(Number(params.depth1)) ? params.depth1 : null,
+            isNaN(Number(params.depth2)) ? params.depth2 : null,
+            isNaN(Number(params.depth3)) ? params.depth3 : null,
+            isNaN(Number(params.id)) ? params.id : null,
+        ]
+            .filter((segment) => segment !== null && segment !== undefined)
+            .join("/");
+
+        setPathname(`/${pathSegments}`);
     }, [params]);
 
     console.log(pathname);

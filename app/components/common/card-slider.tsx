@@ -1,4 +1,5 @@
 "use client";
+import { memo } from "react";
 import Slider from "react-slick";
 import clsx from "clsx";
 import Card from "@/app/components/common/card";
@@ -7,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ProductDataType } from "@/type";
 
-export default function CardSlider({
+export default memo(function CardSlider({
     productsData,
 }: {
     productsData: Array<ProductDataType>;
@@ -31,4 +32,4 @@ export default function CardSlider({
             </div>
         </div>
     );
-}
+});
