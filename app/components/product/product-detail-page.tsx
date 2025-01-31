@@ -1,4 +1,4 @@
-import ProductDetailSection from "@/app/components/product/product-detail-section";
+import ProductGridSection from "@/app/components/common/product-grid-section";
 import ProductDetailSlider from "./product-detail-slider";
 import ProductDetailInfo from "@/app/components/product/product-detail-info";
 import { getProductDetailData, getSelectedMenuData } from "@/app/lib/actions";
@@ -28,8 +28,8 @@ export default async function ProductDetailPage({ id }: { id: number }) {
                             />
                         </div>
                     </div>
-                    <ProductDetailSection title={"COMPLETE THE LOOK"} />
-                    <ProductDetailSection title={"YOU MAY ALSO LIKE"} />
+                    <ProductGridSection title={"COMPLETE THE LOOK"} />
+                    <ProductGridSection title={"YOU MAY ALSO LIKE"} />
                 </div>
             )}
         </>

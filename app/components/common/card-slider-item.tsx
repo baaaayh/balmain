@@ -27,7 +27,7 @@ export default function CardSliderItem({
                 href={
                     productId && productId > 1110
                         ? "#"
-                        : `${pathname}/${productId}`
+                        : `${pathname}${productId}`
                 }
                 onClick={(e) => {
                     if (dragging) e.preventDefault();

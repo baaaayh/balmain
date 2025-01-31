@@ -1,29 +1,30 @@
 "use client";
-import { useState, memo, useEffect } from "react";
-import { useParams } from "next/navigation";
+import { useState, memo, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import styles from "@/app/styles/common/card.module.scss";
-import { ProductDataType } from "@/type";
+import { ProductDataType, MenuDataType } from "@/type";
 import CardBackfaceSlider from "./card-backface-slider";
 
-export default memo(function Card({ product }: { product: ProductDataType }) {
+export default memo(function Card({
+    product,
+    menuData,
+}: {
+    product: ProductDataType;
+    menuData: MenuDataType[];
+}) {
     const [pathname, setPathname] = useState("");
-    const params = useParams();
 
-    useEffect(() => {
-        const pathSegments = [
-            isNaN(Number(params.depth1)) ? params.depth1 : null,
-            isNaN(Number(params.depth2)) ? params.depth2 : null,
-            isNaN(Number(params.depth3)) ? params.depth3 : null,
-            isNaN(Number(params.id)) ? params.id : null,
-        ]
-            .filter((segment) => segment !== null && segment !== undefined)
-            .join("/");
-
-        setPathname(`/${pathSegments}`);
-    }, [params]);
+    useMemo(() => {
+        if (menuData) {
+            menuData.forEach((menu) => {
+                if (menu.menu_id === Number(product.menu_id)) {
+                    setPathname(menu.path);
+                }
+            });
+        }
+    }, [menuData, product]);
 
     return (
         <div className={clsx(styles["card-slider__card"])}>
@@ -41,7 +42,7 @@ export default memo(function Card({ product }: { product: ProductDataType }) {
                             href={
                                 product.product_id > 1110
                                     ? "#"
-                                    : `${pathname}/${product.product_id}`
+                                    : `${pathname}${product.product_id}`
                             }
                             className={clsx(styles["card-slider__hero"])}
                         >

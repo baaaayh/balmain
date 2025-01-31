@@ -96,7 +96,6 @@ export default memo(function Footer() {
                             src="/images/common/logo-lg-w.svg"
                             alt="balmain"
                             priority
-                            layout="intrinsic"
                         />
                     </Link>
                 </div>

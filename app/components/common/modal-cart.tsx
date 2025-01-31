@@ -72,7 +72,11 @@ export default function ModalCart() {
                 </strong>
             </div>
             <div className={clsx(styles["cart__button"])}>
-                <Link href="/cart" className="btn btn-grey">
+                <Link
+                    href="/cart"
+                    className="btn btn-grey"
+                    onClick={modalActions.closeModal}
+                >
                     <span>GO TO CART</span>
                 </Link>
             </div>
