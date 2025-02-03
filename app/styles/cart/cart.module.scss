@@ -9,6 +9,7 @@
         justify-content: space-between;
         align-items: flex-start;
         row-gap: 1.5625rem;
+        margin-bottom: 4.6875rem;
         padding: 9.375rem 15px 0;
     }
     &__left {
@@ -28,7 +29,8 @@
         border-radius: 1.25rem;
 
         ul {
-            display: none;
+            overflow: hidden;
+            transition: 0.3s ease;
             li {
                 display: flex;
                 align-items: center;
@@ -52,9 +54,6 @@
                     content: "\e91f";
                 }
             }
-            ul {
-                display: block;
-            }
         }
     }
     &__toggle {
@@ -68,6 +67,7 @@
         height: 1.25rem;
         letter-spacing: 0.055rem;
         line-height: 1.43;
+        margin-bottom: 0.5rem;
         padding: 0 1.25rem;
         cursor: pointer;
         &::after {

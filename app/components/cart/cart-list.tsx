@@ -22,8 +22,8 @@ export default function CartList({
                             <div className={clsx(styles["cart-list__figure"])}>
                                 <Image
                                     src={item.thumbUrl}
-                                    width={150}
-                                    height={170}
+                                    width={384}
+                                    height={519}
                                     alt={""}
                                 />
                             </div>

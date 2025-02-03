@@ -1,5 +1,12 @@
 "use client";
-import { useReducer } from "react";
+import {
+    useReducer,
+    useState,
+    useRef,
+    useCallback,
+    useEffect,
+    useMemo,
+} from "react";
 import Link from "next/link";
 import { useCartStore } from "@/app/lib/store";
 import ProductGridSection from "@/app/components/common/product-grid-section";
@@ -36,6 +43,33 @@ export default function Cart() {
         delivery: true,
     });
 
+    const contactContentRef = useRef<HTMLUListElement>(null);
+    const deliveryContentRef = useRef<HTMLUListElement>(null);
+
+    const [contactHeight, setContactHeight] = useState(
+        contactContentRef.current?.scrollHeight
+    );
+    const [deliveryHeight, setDeliveryHeight] = useState(
+        deliveryContentRef.current?.scrollHeight
+    );
+
+    const handleToggle = useCallback((type: "contact" | "delivery") => {
+        dispatch({ type });
+    }, []);
+
+    useEffect(() => {
+        if (toggleState.contact) {
+            setContactHeight(contactContentRef.current?.scrollHeight);
+        } else {
+            setContactHeight(0);
+        }
+        if (toggleState.delivery) {
+            setDeliveryHeight(deliveryContentRef.current?.scrollHeight);
+        } else {
+            setDeliveryHeight(0);
+        }
+    }, [toggleState]);
+
     return (
         <>
             <div className={clsx(styles["cart"])}>
@@ -60,13 +94,18 @@ export default function Cart() {
                                                 styles["cart__toggle"]
                                             )}
                                             onClick={() =>
-                                                dispatch({ type: "contact" })
+                                                handleToggle("contact")
                                             }
                                         >
                                             CONTACT
                                         </button>
                                     </h2>
-                                    <ul>
+                                    <ul
+                                        ref={contactContentRef}
+                                        style={{
+                                            height: `${contactHeight}px`,
+                                        }}
+                                    >
                                         <li>
                                             <span
                                                 className={clsx(
@@ -119,13 +158,18 @@ export default function Cart() {
                                                 styles["cart__toggle"]
                                             )}
                                             onClick={() =>
-                                                dispatch({ type: "delivery" })
+                                                handleToggle("delivery")
                                             }
                                         >
                                             DELIVERY AND RETURNS
                                         </button>
                                     </h2>
-                                    <ul>
+                                    <ul
+                                        ref={deliveryContentRef}
+                                        style={{
+                                            height: `${deliveryHeight}px`,
+                                        }}
+                                    >
                                         <li>
                                             <span
                                                 className={clsx(
