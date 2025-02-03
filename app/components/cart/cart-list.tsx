@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useCartStore } from "@/app/lib/store";
+import CartModify from "@/app/components/cart/cart-modify";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-list.module.scss";
+import { CartProductDataType } from "@/type";
 
-export default function CartList() {
-    const { cart: cartState } = useCartStore((state) => state);
-
-    console.log(cartState);
+export default function CartList({
+    cartState,
+}: {
+    cartState: CartProductDataType[];
+}) {
     return (
         <div className={clsx(styles["cart-list"])}>
             <ul>
@@ -26,15 +28,35 @@ export default function CartList() {
                                 />
                             </div>
                             <div className={clsx(styles["cart-list__info"])}>
-                                <h3></h3>
-                                <span>Color: {}</span>
-                                <span>Size: {}</span>
-                                <span>${}.00</span>
                                 <div
-                                    className={clsx(
-                                        styles["cart-list__modify"]
-                                    )}
-                                ></div>
+                                    className={clsx(styles["cart-list__text"])}
+                                >
+                                    <div
+                                        className={clsx(
+                                            styles["cart-list__left"]
+                                        )}
+                                    >
+                                        <h3>{item.name}</h3>
+                                        <span>
+                                            Color: {item.selectedColor.name}
+                                        </span>
+                                        <span>Size: {item.selectedSize}</span>
+                                    </div>
+                                    <div
+                                        className={clsx(
+                                            styles["cart-list__right"]
+                                        )}
+                                    >
+                                        <span>
+                                            $
+                                            {Number(
+                                                item.price
+                                            ).toLocaleString()}
+                                            .00
+                                        </span>
+                                    </div>
+                                </div>
+                                <CartModify quantity={item.quantity} />
                             </div>
                         </div>
                     </li>

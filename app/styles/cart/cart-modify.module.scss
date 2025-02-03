@@ -1,0 +1,58 @@
+.cart-modify {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 1.5625rem;
+    margin-top: 1.125rem;
+    min-width: 100%;
+    &__buttons {
+        display: flex;
+        column-gap: 0.625rem;
+        li {
+            button {
+                font-family: "Balmain Sans";
+                font-size: 0.59375rem;
+                font-weight: 700;
+                letter-spacing: 0.0625rem;
+                line-height: 1;
+                padding: 0;
+                text-decoration: underline;
+            }
+        }
+    }
+    &__control {
+        display: flex;
+        align-items: center;
+        column-gap: 0.625rem;
+        button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.875rem;
+            height: 1.875rem;
+            border-radius: 1.875rem;
+            background-color: #f2f2f2;
+            &::before {
+                font-family: "icomoon";
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 1;
+            }
+        }
+    }
+    &__plus {
+        &::before {
+            content: "\e93c";
+        }
+    }
+    &__minus {
+        &::before {
+            content: "\e941";
+        }
+    }
+    &__quantity {
+        font-family: "Proxima Nova Rg";
+        font-size: 14px;
+        font-size: 0.875rem;
+    }
+}
