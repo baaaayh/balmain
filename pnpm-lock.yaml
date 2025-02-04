@@ -20,9 +20,6 @@ importers:
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
-      immer:
-        specifier: ^10.1.1
-        version: 10.1.1
       next:
         specifier: 15.1.4
         version: 15.1.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.83.1)
@@ -2736,7 +2733,8 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  immer@10.1.1: {}
+  immer@10.1.1:
+    optional: true
 
   immutable@5.0.3: {}
 

@@ -42,10 +42,7 @@ export default memo(function CartEditModal() {
                     );
                     setProductData(result);
                 } catch (error) {
-                    console.error(
-                        "상품 정보를 가져오는데 실패했습니다 : ",
-                        error
-                    );
+                    console.error("Failed to fetch product details:", error);
                 }
             };
             fetchProductDetail();
