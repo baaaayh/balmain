@@ -110,8 +110,6 @@ export default memo(function CartEditModal() {
                     : "",
             };
 
-        console.log(productId, productIdState, cartItemIndex, newProduct);
-
         if (
             (productId !== productIdState ||
                 selectedColor !== productColorState ||
@@ -119,8 +117,10 @@ export default memo(function CartEditModal() {
             newProduct
         ) {
             actions.changeCartItem(cartItemIndex, newProduct);
+            cartEditModalActions.closeCartEditModal();
         }
     }, [
+        cartEditModalActions,
         actions,
         productId,
         productIdState,
