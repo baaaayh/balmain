@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Modal from "@/app/components/common/modal";
 import Container from "@/app/components/layout/container";
+import Modal from "@/app/components/common/modal";
+import CartEditModal from "@/app/components/cart/cart-edit-modal";
 import "@/app/styles/globals.scss";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
                     <Container>{children}</Container>
                 </div>
                 <Modal />
+                <CartEditModal />
             </body>
         </html>
     );

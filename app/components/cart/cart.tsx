@@ -31,6 +31,7 @@ function reducer(state: ToggleState, action: Action): ToggleState {
 
 export default function Cart() {
     const { cart: cartList } = useCartStore((state) => state);
+    const [cartState, setCartState] = useState(cartList);
 
     const [toggleState, dispatch] = useReducer(reducer, {
         contact: true,
@@ -64,14 +65,18 @@ export default function Cart() {
         }
     }, [toggleState]);
 
+    useEffect(() => {
+        setCartState(cartList);
+    }, [cartList]);
+
     return (
         <>
             <div className={clsx(styles["cart"])}>
                 <div className={clsx(styles["cart__inner"])}>
-                    {cartList.length > 0 ? (
+                    {cartState.length > 0 ? (
                         <div className={clsx(styles["cart__order"])}>
                             <div className={clsx(styles["cart__left"])}>
-                                <CartContainer cartList={cartList} />
+                                <CartContainer cartState={cartState} />
                                 <CartPackaging />
                                 <div className={clsx(styles["cart__checkout"])}>
                                     <Link href="/" className="btn btn-grey">
@@ -80,7 +85,7 @@ export default function Cart() {
                                 </div>
                             </div>
                             <div className={clsx(styles["cart__right"])}>
-                                <CartTotal cartList={cartList} />
+                                <CartTotal cartState={cartState} />
                                 <div
                                     className={clsx(styles["cart__content"], {
                                         [styles["cart__content--active"]]:

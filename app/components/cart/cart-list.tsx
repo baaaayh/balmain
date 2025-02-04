@@ -5,14 +5,14 @@ import styles from "@/app/styles/cart/cart-list.module.scss";
 import { CartProductDataType } from "@/type";
 
 export default function CartList({
-    cartList,
+    cartState,
 }: {
-    cartList: CartProductDataType[];
+    cartState: CartProductDataType[];
 }) {
     return (
         <div className={clsx(styles["cart-list"])}>
             <ul>
-                {cartList.map((item, index) => (
+                {cartState.map((item, index) => (
                     <CartListItem
                         key={`${item.item_code}-${item.selectedColor}-${item.selectedSize}-${index}`}
                         item={item}

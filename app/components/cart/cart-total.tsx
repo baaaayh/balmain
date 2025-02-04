@@ -4,11 +4,11 @@ import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-total.module.scss";
 import { CartProductDataType } from "@/type";
 export default function CartTotal({
-    cartList,
+    cartState,
 }: {
-    cartList: CartProductDataType[];
+    cartState: CartProductDataType[];
 }) {
-    const subtotal = cartList.reduce(
+    const subtotal = cartState.reduce(
         (acc: number, item: CartProductDataType) => {
             return acc + item.price * item.quantity;
         },

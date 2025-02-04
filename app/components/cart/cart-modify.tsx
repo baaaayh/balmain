@@ -1,6 +1,6 @@
 "use client";
-import { useReducer, useEffect, memo } from "react";
-import { useCartStore } from "@/app/lib/store";
+import { useReducer, useEffect, memo, useCallback } from "react";
+import { useCartStore, useCartEditModalStore } from "@/app/lib/store";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-modify.module.scss";
 import { CartProductDataType } from "@/type";
@@ -12,6 +12,9 @@ export default memo(function CartModify({
 }) {
     const { cart, actions } = useCartStore((state) => state);
     const { updateCartQuantity } = actions;
+    const { actions: cartEditModalActions } = useCartEditModalStore(
+        (state) => state
+    );
 
     function reducer(state: number, action: { type: string }) {
         switch (action.type) {
@@ -30,11 +33,29 @@ export default memo(function CartModify({
         updateCartQuantity(cartItem.product_id, quantity);
     }, [quantity, cartItem.product_id, updateCartQuantity]);
 
+    const openCartEditModal = useCallback(
+        (id: number, color: { id: string; name: string }, size: string) => {
+            cartEditModalActions.openCartEditModal(id, color, size);
+        },
+        [cartEditModalActions]
+    );
+
     return (
         <div className={clsx(styles["cart-modify"])}>
             <ul className={clsx(styles["cart-modify__buttons"])}>
                 <li>
-                    <button type="button">EDIT</button>
+                    <button
+                        type="button"
+                        onClick={() =>
+                            openCartEditModal(
+                                cartItem.product_id,
+                                cartItem.selectedColor,
+                                cartItem.selectedSize
+                            )
+                        }
+                    >
+                        EDIT
+                    </button>
                 </li>
                 <li>
                     <button
@@ -59,7 +80,7 @@ export default memo(function CartModify({
                     {
                         cart.filter(
                             (item) => item.product_id === cartItem.product_id
-                        )[0].quantity
+                        )[0]?.quantity
                     }
                 </div>
                 <button

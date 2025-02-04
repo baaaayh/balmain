@@ -77,7 +77,13 @@ export default memo(function Card({
                             />
                         </div>
                         <div className={clsx(styles["card-slider__desc"])}>
-                            <Link href="javascript:;">
+                            <Link
+                                href={
+                                    product.product_id > 1110
+                                        ? "#"
+                                        : `${pathname}${product.product_id}`
+                                }
+                            >
                                 <div
                                     className={clsx(
                                         styles["card-slider__badge"]
@@ -91,9 +97,16 @@ export default memo(function Card({
                             <div
                                 className={clsx(styles["card-slider__button"])}
                             >
-                                <span className="btn btn-link btn-link--bk">
+                                <Link
+                                    href={
+                                        product.product_id > 1110
+                                            ? "#"
+                                            : `${pathname}${product.product_id}`
+                                    }
+                                    className="btn btn-link btn-link--bk"
+                                >
                                     SHOP NOW
-                                </span>
+                                </Link>
                                 <span
                                     className={clsx(
                                         styles["card-slider__amount"]

@@ -22,6 +22,7 @@ interface CartState {
     cart: CartProductDataType[];
     actions: {
         addToCart: (product: CartProductDataType) => void;
+        changeCartItem: (index: number, product: CartProductDataType) => void;
         removeCartItem: (product_id: number) => void;
         updateCartQuantity: (productId: number, quantity: number) => void;
         clearCart: () => void;
@@ -86,6 +87,23 @@ export const useCartStore = create<CartState>()(
                         ),
                     }));
                 },
+                changeCartItem: (
+                    index: number,
+                    changedItem: CartProductDataType
+                ) => {
+                    set(() => ({
+                        ...get(),
+                        cart: get().cart.map((cartItem, cartItemIndex) =>
+                            cartItemIndex === index
+                                ? {
+                                      ...changedItem,
+                                      quantity: Math.max(1, cartItem.quantity),
+                                  }
+                                : cartItem
+                        ),
+                    }));
+                },
+
                 clearCart: () => {
                     set(() => ({
                         ...get(),
@@ -129,6 +147,49 @@ export const useModalStore = create<ModalActions>((set) => ({
         },
         toggleModal: () => {
             set((state) => ({ isOpen: !state.isOpen }));
+        },
+    },
+}));
+
+export interface CartEditModalState {
+    isOpen: boolean;
+    productId: number | null;
+    selectedColor: { id: string; name: string } | null;
+    selectedSize: string | null;
+}
+
+export interface CartEditModalActions extends CartEditModalState {
+    actions: {
+        openCartEditModal: (
+            product_id: number,
+            color: { id: string; name: string },
+            size: string
+        ) => void;
+        closeCartEditModal: () => void;
+    };
+}
+
+export const useCartEditModalStore = create<CartEditModalActions>((set) => ({
+    isOpen: false,
+    productId: null,
+    selectedColor: null,
+    selectedSize: null,
+    actions: {
+        openCartEditModal: (product_id, color, size) => {
+            set(() => ({
+                isOpen: true,
+                productId: Number(product_id),
+                selectedColor: color,
+                selectedSize: size,
+            }));
+        },
+        closeCartEditModal: () => {
+            set(() => ({
+                isOpen: false,
+                productId: null,
+                selectedColor: null,
+                selectedSize: null,
+            }));
         },
     },
 }));

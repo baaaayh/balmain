@@ -6,18 +6,18 @@ import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-container.module.scss";
 import { CartProductDataType } from "@/type";
 export default memo(function CartContainer({
-    cartList,
+    cartState,
 }: {
-    cartList: CartProductDataType[];
+    cartState: CartProductDataType[];
 }) {
     return (
         <div className={clsx(styles["cart-container"])}>
             <div className={clsx(styles["cart-container__head"])}>
-                <h2>SHOPPING BAG ({cartList.length})</h2>
+                <h2>SHOPPING BAG ({cartState.length})</h2>
                 <Link href="/">BACK</Link>
             </div>
             <div className={clsx(styles["cart-container__body"])}>
-                <CartList cartList={cartList} />
+                <CartList cartState={cartState} />
             </div>
         </div>
     );
