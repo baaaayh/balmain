@@ -124,7 +124,7 @@ export default memo(function CartEditModal() {
 
         if (isProductChanged && newProduct) {
             if (existingItem) {
-                actions.removeCartItem(Number(productId));
+                actions.removeCartItem(cartItemIndex);
                 actions.updateCartQuantity(
                     Number(changedState.productId),
                     existingItem.quantity + cart[cartItemIndex].quantity

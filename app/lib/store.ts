@@ -66,11 +66,11 @@ export const useCartStore = create<CartState>()(
                         }
                     });
                 },
-                removeCartItem: (product_id: number) => {
+                removeCartItem: (cartArrayIndex: number) => {
                     set(() => ({
                         ...get(),
                         cart: get().cart.filter(
-                            (cartItem) => cartItem.product_id !== product_id
+                            (_, cartIndex) => cartIndex !== cartArrayIndex
                         ),
                     }));
                 },
