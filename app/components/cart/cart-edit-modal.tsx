@@ -127,7 +127,7 @@ export default memo(function CartEditModal() {
                 actions.removeCartItem(Number(productId));
                 actions.updateCartQuantity(
                     Number(changedState.productId),
-                    existingItem.quantity + 1
+                    existingItem.quantity + cart[cartItemIndex].quantity
                 );
             }
 

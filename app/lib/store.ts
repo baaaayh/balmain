@@ -93,17 +93,16 @@ export const useCartStore = create<CartState>()(
                 ) => {
                     set(() => ({
                         ...get(),
-                        cart: get().cart.map((cartItem, cartItemIndex) =>
-                            cartItemIndex === index
+                        cart: get().cart.map((cartItem, cartItemIndex) => {
+                            return cartItemIndex === index
                                 ? {
                                       ...changedItem,
                                       quantity: Math.max(1, cartItem.quantity),
                                   }
-                                : cartItem
-                        ),
+                                : cartItem;
+                        }),
                     }));
                 },
-
                 clearCart: () => {
                     set(() => ({
                         ...get(),
