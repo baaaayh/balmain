@@ -34,17 +34,19 @@ export default function CardSliderItem({
                 }}
             >
                 <div className={clsx(styles["card-slider__inner"])}>
-                    <Image
-                        src={
-                            productId && productId > 1110
-                                ? `/images/dummy/${productId}/${image}`
-                                : `/images/products/${baseItemCode}/${color}/${image}`
-                        }
-                        width={750}
-                        height={1060}
-                        priority
-                        alt={imageAlt}
-                    />
+                    {image && color && (
+                        <Image
+                            src={
+                                productId && productId > 1110
+                                    ? `/images/dummy/${productId}/${image}`
+                                    : `/images/products/${baseItemCode}/${color}/${image}`
+                            }
+                            width={750}
+                            height={1060}
+                            priority
+                            alt={imageAlt}
+                        />
+                    )}
                 </div>
             </Link>
         </div>
