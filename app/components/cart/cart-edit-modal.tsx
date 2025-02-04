@@ -2,10 +2,12 @@
 import { memo, useEffect, useState, useCallback } from "react";
 import { getProductDetailData } from "@/app/lib/actions";
 import { useCartEditModalStore, useCartStore } from "@/app/lib/store";
-import Image from "next/image";
+import CartEditModalFigure from "@/app/components/cart/cart-edit-modal-figure";
+import CartEditModalSizes from "@/app/components/cart/cart-edit-modal-sizes";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-edit-modal.module.scss";
 import { ProductDetailDataType } from "@/type";
+import CartEditModalColors from "@/app/components/cart/cart-edit-modal-colors";
 
 export default memo(function CartEditModal() {
     const {
@@ -103,12 +105,8 @@ export default memo(function CartEditModal() {
         const newProduct = productData &&
             changedState.selectedColor &&
             changedState.selectedSize && {
-                product_id: productData.product_id,
-                item_code: productData.item_code,
-                menu_id: productData.menu_id,
-                name: productData.name,
+                ...productData,
                 quantity: 1,
-                price: productData.price,
                 selectedSize: changedState.selectedSize,
                 selectedColor: {
                     id: changedState.selectedColor.id,
@@ -161,30 +159,10 @@ export default memo(function CartEditModal() {
             <div className={clsx(styles["edit-modal"])}>
                 <div className={clsx(styles["edit-modal__inner"])}>
                     <div className={clsx(styles["edit-modal__left"])}>
-                        <div className={clsx(styles["edit-modal__figure"])}>
-                            {productData?.image_filenames
-                                .filter((image) => {
-                                    if (image) {
-                                        return image
-                                            ?.split(".")[0]
-                                            .endsWith("F");
-                                    }
-                                })
-                                .map((image) => (
-                                    <Image
-                                        key={image}
-                                        src={
-                                            productData.product_id > 1110
-                                                ? `/images/dummy/${productData.product_id}/${image}`
-                                                : `/images/products/${productData.base_item_code}/${changedState.selectedColor?.name}/${image}`
-                                        }
-                                        width={568}
-                                        height={641}
-                                        priority
-                                        alt="1945 Soft Moon bag in monogrammed calfskin"
-                                    />
-                                ))}
-                        </div>
+                        <CartEditModalFigure
+                            productData={productData}
+                            changedState={changedState}
+                        />
                     </div>
                     <div className={clsx(styles["edit-modal__right"])}>
                         <div className={clsx(styles["edit-modal__title"])}>
@@ -199,72 +177,16 @@ export default memo(function CartEditModal() {
                             >
                                 COLOR: {changedState.selectedColor?.name}
                             </div>
-                            <div className={clsx(styles["edit-modal__colors"])}>
-                                <ul>
-                                    {productData &&
-                                        productData.colors.map((color) => (
-                                            <li
-                                                key={color.id}
-                                                className={clsx(
-                                                    styles[
-                                                        (styles[
-                                                            "edit-modal__color"
-                                                        ],
-                                                        color.name.toLowerCase())
-                                                    ],
-                                                    {
-                                                        [styles[
-                                                            "edit-modal__color--active"
-                                                        ]]:
-                                                            Number(color.id) ===
-                                                            Number(
-                                                                changedState
-                                                                    .selectedColor
-                                                                    ?.id
-                                                            ),
-                                                    }
-                                                )}
-                                            >
-                                                <button
-                                                    type="button"
-                                                    onClick={() =>
-                                                        changeProduct({
-                                                            id: String(
-                                                                color.id
-                                                            ),
-                                                            name: color.name,
-                                                        })
-                                                    }
-                                                >
-                                                    <span>{color.name}</span>
-                                                </button>
-                                            </li>
-                                        ))}
-                                </ul>
-                            </div>
-                            <div className={clsx(styles["edit-modal__sizes"])}>
-                                <ul>
-                                    {productData &&
-                                        [...productData.sizes].map((size) => (
-                                            <li key={size}>
-                                                <input
-                                                    id={size}
-                                                    name={"sizes_radio"}
-                                                    type="radio"
-                                                    value={size}
-                                                    onChange={handleSizeInput}
-                                                    checked={
-                                                        changedState.selectedSize ===
-                                                        size
-                                                    }
-                                                />
-                                                <label htmlFor={size}>
-                                                    {size}
-                                                </label>
-                                            </li>
-                                        ))}
-                                </ul>
-                            </div>
+                            <CartEditModalColors
+                                productData={productData}
+                                changeProduct={changeProduct}
+                                changedState={changedState}
+                            />
+                            <CartEditModalSizes
+                                productData={productData}
+                                handleSizeInput={handleSizeInput}
+                                changedState={changedState}
+                            />
                         </div>
                         <div>
                             <button
