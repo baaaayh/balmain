@@ -1,13 +1,14 @@
 "use client";
+import Link from "next/link";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-total.module.scss";
 import { CartProductDataType } from "@/type";
 export default function CartTotal({
-    cartState,
+    cartList,
 }: {
-    cartState: CartProductDataType[];
+    cartList: CartProductDataType[];
 }) {
-    const subtotal = cartState.reduce(
+    const subtotal = cartList.reduce(
         (acc: number, item: CartProductDataType) => {
             return acc + item.price * item.quantity;
         },
@@ -44,9 +45,9 @@ export default function CartTotal({
                 <span>${(subtotal + tax).toLocaleString()}.00</span>
             </div>
             <div className={clsx(styles["cart-total__checkout"])}>
-                <button type="button" className="btn btn-grey">
+                <Link href="/" type="button" className="btn btn-grey">
                     <span>CHECKOUT</span>
-                </button>
+                </Link>
             </div>
         </div>
     );

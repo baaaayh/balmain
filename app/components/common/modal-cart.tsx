@@ -1,10 +1,11 @@
 "use client";
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useCartStore, useModalStore } from "@/app/lib/store";
 import clsx from "clsx";
 import styles from "@/app/styles/common/modal-cart.module.scss";
+import ModalCartItem from "@/app/components/common/modal-cart-item";
+
 export default function ModalCart() {
     const { cart: cartState } = useCartStore((state) => state);
     const { actions: modalActions } = useModalStore((state) => state);
@@ -28,35 +29,10 @@ export default function ModalCart() {
             <div className={clsx(styles["cart__list"])}>
                 <ul>
                     {cartState.map((item, index) => (
-                        <li
-                            key={`${item.product_id}-${item.selectedColor}-${item.selectedSize}-${index}`}
-                            className={clsx(styles["cart__item"])}
-                        >
-                            <div className={clsx(styles["cart__inner"])}>
-                                <div className={clsx(styles["cart__figure"])}>
-                                    <Image
-                                        src={item.thumbUrl}
-                                        width={128}
-                                        height={174}
-                                        priority
-                                        alt={item.name}
-                                    />
-                                </div>
-                                <div className={clsx(styles["cart__contents"])}>
-                                    <div
-                                        className={clsx(styles["cart__option"])}
-                                    >
-                                        <h3>{item.name}</h3>
-                                        <span>
-                                            Color: {item.selectedColor.name}
-                                        </span>
-                                        <span>Size: {item.selectedSize}</span>
-                                        <span>Quantity: {item.quantity}</span>
-                                        <b>${item.price}.00</b>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <ModalCartItem
+                            key={`${item.item_code}-${item.selectedColor}-${item.selectedSize}-${index}`}
+                            item={item}
+                        />
                     ))}
                 </ul>
             </div>
@@ -64,10 +40,12 @@ export default function ModalCart() {
                 <span>Total (Estimated)</span>
                 <strong>
                     $
-                    {cartState.reduce(
-                        (acc, item) => acc + item.quantity * item.price,
-                        0
-                    )}
+                    {cartState
+                        .reduce(
+                            (acc, item) => acc + item.quantity * item.price,
+                            0
+                        )
+                        .toLocaleString()}
                     .00
                 </strong>
             </div>

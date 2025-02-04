@@ -17,6 +17,7 @@
                 line-height: 1;
                 padding: 0;
                 text-decoration: underline;
+                cursor: pointer;
             }
         }
     }
@@ -32,6 +33,8 @@
             height: 1.875rem;
             border-radius: 1.875rem;
             background-color: #f2f2f2;
+            cursor: pointer;
+            font-size: 0;
             &::before {
                 font-family: "icomoon";
                 font-size: 1rem;

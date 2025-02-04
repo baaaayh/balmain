@@ -1,85 +1,110 @@
 import { create } from "zustand";
-import { CartProductDataType } from "@/type";
+import { persist, createJSONStorage } from "zustand/middleware";
 
-export interface CartState {
+interface CartProductDataType {
+    product_id: number;
+    item_code: string;
+    menu_id: number;
+    name: string;
+    quantity: number;
+    price: number;
+    selectedSize: string;
+    selectedColor: {
+        id: string;
+        name: string;
+    };
+    thumbUrl: string;
+}
+
+interface CartState {
     user: string;
     isLoggedIn: boolean;
     cart: CartProductDataType[];
-}
-
-export interface CartStore extends CartState {
-    actions: ActionsType["actions"];
-}
-
-export interface ActionsType {
     actions: {
         addToCart: (product: CartProductDataType) => void;
-        removeCartItem: (productId: number) => void;
+        removeCartItem: (product_id: number) => void;
         updateCartQuantity: (productId: number, quantity: number) => void;
         clearCart: () => void;
     };
 }
 
-export const useCartStore = create<CartStore>((set) => {
-    return {
-        user: "guest",
-        isLoggedIn: false,
-        cart: [],
-        actions: {
-            addToCart: (product: CartProductDataType) => {
-                set((state: CartState) => {
-                    const existingProduct = state.cart.find(
-                        (cartItem: CartProductDataType) =>
-                            cartItem.product_id === product.product_id &&
-                            cartItem.selectedColor === product.selectedColor &&
-                            cartItem.selectedSize === product.selectedSize
-                    );
+export const useCartStore = create<CartState>()(
+    persist(
+        (set, get) => ({
+            user: "guest",
+            isLoggedIn: false,
+            cart: [],
+            actions: {
+                addToCart: (product: CartProductDataType) => {
+                    set(() => {
+                        const existingProduct = get().cart.find((cartItem) => {
+                            return (
+                                cartItem.product_id === product.product_id &&
+                                cartItem.selectedColor.name ===
+                                    product.selectedColor.name &&
+                                cartItem.selectedSize === product.selectedSize
+                            );
+                        });
 
-                    if (existingProduct) {
-                        return {
-                            cart: state.cart.map(
-                                (cartItem: CartProductDataType) => {
-                                    return {
-                                        ...cartItem,
-                                        quantity: cartItem.quantity + 1,
-                                    };
-                                }
-                            ),
-                        };
-                    } else {
-                        return {
-                            cart: [...state.cart, { ...product, quantity: 1 }],
-                        };
-                    }
-                });
+                        if (existingProduct) {
+                            return {
+                                ...get(),
+                                cart: get().cart.map((cartItem) => ({
+                                    ...cartItem,
+                                    quantity: cartItem.quantity + 1,
+                                })),
+                            };
+                        } else {
+                            return {
+                                ...get(),
+                                cart: [
+                                    ...get().cart,
+                                    { ...product, quantity: 1 },
+                                ],
+                            };
+                        }
+                    });
+                },
+                removeCartItem: (product_id: number) => {
+                    set(() => ({
+                        ...get(),
+                        cart: get().cart.filter(
+                            (cartItem) => cartItem.product_id !== product_id
+                        ),
+                    }));
+                },
+                updateCartQuantity: (productId: number, quantity: number) => {
+                    set(() => ({
+                        ...get(),
+                        cart: get().cart.map((cartItem) =>
+                            cartItem.product_id === productId
+                                ? {
+                                      ...cartItem,
+                                      quantity: Math.max(1, quantity),
+                                  }
+                                : cartItem
+                        ),
+                    }));
+                },
+                clearCart: () => {
+                    set(() => ({
+                        ...get(),
+                        cart: [],
+                    }));
+                },
             },
-            removeCartItem: (product_id: number) => {
-                set((state: CartState) => ({
-                    cart: state.cart.filter(
-                        (cartItem) => cartItem.product_id !== product_id
-                    ),
-                }));
-            },
-            updateCartQuantity: (productId: number, quantity: number) => {
-                set((state: CartState) => ({
-                    cart: state.cart.map((cartItem) =>
-                        cartItem.product_id === productId
-                            ? {
-                                  ...cartItem,
-                                  quantity: cartItem.quantity + quantity,
-                              }
-                            : cartItem
-                    ),
-                }));
-            },
-            clearCart: () => {
-                set(() => ({
-                    cart: [],
-                }));
-            },
-        },
-    };
-});
+        }),
+        {
+            name: "balmain-cart-store",
+            storage: createJSONStorage(() => localStorage),
+            partialize: (state) => ({
+                user: state.user,
+                isLoggedIn: state.isLoggedIn,
+                cart: state.cart,
+            }),
+        }
+    )
+);
 
 export interface ModalState {
     isOpen: boolean;

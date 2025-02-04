@@ -1,17 +1,11 @@
 "use client";
-import {
-    useReducer,
-    useState,
-    useRef,
-    useCallback,
-    useEffect,
-    useMemo,
-} from "react";
+import { useReducer, useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useCartStore } from "@/app/lib/store";
 import ProductGridSection from "@/app/components/common/product-grid-section";
 import CartContainer from "@/app/components/cart/cart-container";
 import CartTotal from "@/app/components/cart/cart-total";
+import CartPackaging from "@/app/components/cart/cart-packaging";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart.module.scss";
 
@@ -36,7 +30,7 @@ function reducer(state: ToggleState, action: Action): ToggleState {
 }
 
 export default function Cart() {
-    const { cart: cartState } = useCartStore((state) => state);
+    const { cart: cartList } = useCartStore((state) => state);
 
     const [toggleState, dispatch] = useReducer(reducer, {
         contact: true,
@@ -74,13 +68,19 @@ export default function Cart() {
         <>
             <div className={clsx(styles["cart"])}>
                 <div className={clsx(styles["cart__inner"])}>
-                    {cartState.length > 0 ? (
+                    {cartList.length > 0 ? (
                         <div className={clsx(styles["cart__order"])}>
                             <div className={clsx(styles["cart__left"])}>
-                                <CartContainer cartState={cartState} />
+                                <CartContainer cartList={cartList} />
+                                <CartPackaging />
+                                <div className={clsx(styles["cart__checkout"])}>
+                                    <Link href="/" className="btn btn-grey">
+                                        <span>CHECKOUT</span>
+                                    </Link>
+                                </div>
                             </div>
                             <div className={clsx(styles["cart__right"])}>
-                                <CartTotal cartState={cartState} />
+                                <CartTotal cartList={cartList} />
                                 <div
                                     className={clsx(styles["cart__content"], {
                                         [styles["cart__content--active"]]:

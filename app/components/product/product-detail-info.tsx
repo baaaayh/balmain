@@ -23,7 +23,7 @@ export default function ProductDetailInfo({
     } | null>(null);
     const [selectedSize, setSelectedSize] = useState("");
     const [alertText, setAlertText] = useState("");
-    const { actions: cartActions } = useCartStore((state) => state);
+    const { actions } = useCartStore((state) => state);
     const { actions: modalActions } = useModalStore((state) => state);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export default function ProductDetailInfo({
 
     const handleAddToCart = useCallback(() => {
         if (productData && selectedColor && selectedSize) {
-            cartActions.addToCart({
+            actions.addToCart({
                 product_id: id,
                 item_code: productData.item_code,
                 menu_id: productData.menu_id,
@@ -49,7 +49,10 @@ export default function ProductDetailInfo({
                 quantity: 1,
                 price: productData.price,
                 selectedSize: selectedSize,
-                selectedColor: selectedColor,
+                selectedColor: {
+                    id: selectedColor.id,
+                    name: selectedColor.name,
+                },
                 thumbUrl: productData.image_filenames.find((image: string) =>
                     image?.split(".")[0].endsWith("F")
                 )
@@ -73,14 +76,7 @@ export default function ProductDetailInfo({
             if (!productData) alert("Something went wrong. Please try again.");
             if (!selectedSize) setAlertText("Please select size.");
         }
-    }, [
-        cartActions,
-        id,
-        productData,
-        selectedColor,
-        selectedSize,
-        modalActions,
-    ]);
+    }, [actions, id, productData, selectedColor, selectedSize, modalActions]);
 
     return (
         <div className={clsx(styles["detail__float"])}>
