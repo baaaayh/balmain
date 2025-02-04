@@ -60,9 +60,15 @@ export default memo(function CartModify({
                 <li>
                     <button
                         type="button"
-                        onClick={() =>
-                            actions.removeCartItem(cartItem.product_id)
-                        }
+                        onClick={() => {
+                            actions.removeCartItem(
+                                cart.findIndex(
+                                    (item) =>
+                                        Number(item.product_id) ===
+                                        Number(cartItem.product_id)
+                                )
+                            );
+                        }}
                     >
                         REMOVE
                     </button>

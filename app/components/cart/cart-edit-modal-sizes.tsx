@@ -2,7 +2,7 @@
 import { memo } from "react";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-edit-modal.module.scss";
-import { ProductDetailDataType } from "@/type";
+import { ProductDetailDataType, ChangedStateType } from "@/type";
 
 export default memo(function CartEditModalSizes({
     productData,
@@ -11,14 +11,7 @@ export default memo(function CartEditModalSizes({
 }: {
     productData: ProductDetailDataType | null;
     handleSizeInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    changedState: {
-        productId: number | null;
-        selectedColor: {
-            id: string;
-            name: string;
-        } | null;
-        selectedSize: string;
-    } | null;
+    changedState: ChangedStateType | null;
 }) {
     return (
         <div className={clsx(styles["edit-modal__sizes"])}>

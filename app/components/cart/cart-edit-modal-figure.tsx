@@ -3,21 +3,14 @@ import { memo } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import styles from "@/app/styles/cart/cart-edit-modal.module.scss";
-import { ProductDetailDataType } from "@/type";
+import { ProductDetailDataType, ChangedStateType } from "@/type";
 
 export default memo(function CartEditModalFigure({
     productData,
     changedState,
 }: {
     productData: ProductDetailDataType | null;
-    changedState: {
-        productId: number | null;
-        selectedColor: {
-            id: string;
-            name: string;
-        } | null;
-        selectedSize: string;
-    } | null;
+    changedState: ChangedStateType | null;
 }) {
     return (
         <div className={clsx(styles["edit-modal__figure"])}>

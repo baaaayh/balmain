@@ -134,9 +134,8 @@ export default memo(function CartEditModal() {
             if (cartItemIndex >= 0) {
                 actions.changeCartItem(cartItemIndex, newProduct);
             }
-
-            cartEditModalActions.closeCartEditModal();
         }
+        cartEditModalActions.closeCartEditModal();
     }, [
         changedState,
         cartEditModalActions,

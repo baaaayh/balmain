@@ -108,3 +108,12 @@ export interface CartProductDataType {
     };
     thumbUrl: string;
 }
+
+export interface ChangedStateType {
+    productId: number | null;
+    selectedColor: {
+        id: string;
+        name: string;
+    } | null;
+    selectedSize: string;
+}
