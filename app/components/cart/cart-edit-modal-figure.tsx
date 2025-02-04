@@ -8,9 +8,11 @@ import { ProductDetailDataType, ChangedStateType } from "@/type";
 export default memo(function CartEditModalFigure({
     productData,
     changedState,
+    selectedColor,
 }: {
     productData: ProductDetailDataType | null;
     changedState: ChangedStateType | null;
+    selectedColor: { id: string; name: string } | null;
 }) {
     return (
         <div className={clsx(styles["edit-modal__figure"])}>
@@ -26,7 +28,12 @@ export default memo(function CartEditModalFigure({
                         src={
                             productData.product_id > 1110
                                 ? `/images/dummy/${productData.product_id}/${image}`
-                                : `/images/products/${productData.base_item_code}/${changedState?.selectedColor?.name}/${image}`
+                                : `/images/products/${
+                                      productData.base_item_code
+                                  }/${
+                                      changedState?.selectedColor?.name ||
+                                      selectedColor
+                                  }/${image}`
                         }
                         width={568}
                         height={641}

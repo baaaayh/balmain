@@ -42,19 +42,22 @@ export default function ProductDetailSlider({
         return (
             productData &&
             selectedColor &&
-            productData.image_filenames.map((image) => (
-                <SwiperSlide key={image}>
-                    <div className={clsx(styles["detail__figure"])}>
-                        <Image
-                            src={`/images/products/${productData.base_item_code}/${selectedColor.name}/${image}`}
-                            width={1029}
-                            height={1391}
-                            priority
-                            alt={productData.image_alt}
-                        />
-                    </div>
-                </SwiperSlide>
-            ))
+            productData.image_filenames.map(
+                (image) =>
+                    image && (
+                        <SwiperSlide key={image}>
+                            <div className={clsx(styles["detail__figure"])}>
+                                <Image
+                                    src={`/images/products/${productData.base_item_code}/${selectedColor.name}/${image}`}
+                                    width={1029}
+                                    height={1391}
+                                    priority
+                                    alt={productData.image_alt}
+                                />
+                            </div>
+                        </SwiperSlide>
+                    )
+            )
         );
     }, [productData, selectedColor]);
 

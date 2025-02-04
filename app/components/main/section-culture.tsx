@@ -44,6 +44,7 @@ export default function SectionCulture() {
                     <Image
                         width={1440}
                         height={1440}
+                        priority
                         src={background}
                         alt={altText}
                     />

@@ -161,6 +161,9 @@ export default memo(function CartEditModal() {
                         <CartEditModalFigure
                             productData={productData}
                             changedState={changedState}
+                            selectedColor={
+                                selectedColor || changedState.selectedColor
+                            }
                         />
                     </div>
                     <div className={clsx(styles["edit-modal__right"])}>

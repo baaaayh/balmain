@@ -55,20 +55,30 @@ export default memo(function Card({
                                             return filename.endsWith("F");
                                         }
                                     })
-                                    .map((image) => (
-                                        <Image
-                                            key={image}
-                                            src={
-                                                product.product_id > 1110
-                                                    ? `/images/dummy/${product.product_id}/${image}`
-                                                    : `/images/products/${product.base_item_code}/${product.color}/${image}`
-                                            }
-                                            width={750}
-                                            height={1060}
-                                            priority
-                                            alt="1945 Soft Moon bag in monogrammed calfskin"
-                                        />
-                                    ))}
+                                    .map((image) => {
+                                        if (
+                                            image &&
+                                            product.product_id &&
+                                            product.base_item_code &&
+                                            product.color
+                                        ) {
+                                            return (
+                                                <Image
+                                                    key={image}
+                                                    src={
+                                                        product.product_id >
+                                                        1110
+                                                            ? `/images/dummy/${product.product_id}/${image}`
+                                                            : `/images/products/${product.base_item_code}/${product.color}/${image}`
+                                                    }
+                                                    width={750}
+                                                    height={1060}
+                                                    priority
+                                                    alt="1945 Soft Moon bag in monogrammed calfskin"
+                                                />
+                                            );
+                                        }
+                                    })}
                         </Link>
                         <div className={clsx(styles["card-slider__backface"])}>
                             <CardBackfaceSlider

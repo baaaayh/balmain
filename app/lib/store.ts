@@ -178,16 +178,16 @@ export const useCartEditModalStore = create<CartEditModalActions>((set) => ({
             set(() => ({
                 isOpen: true,
                 productId: Number(product_id),
-                selectedColor: color,
+                selectedColor: {
+                    id: color.id,
+                    name: color.name,
+                },
                 selectedSize: size,
             }));
         },
         closeCartEditModal: () => {
             set(() => ({
                 isOpen: false,
-                productId: null,
-                selectedColor: null,
-                selectedSize: null,
             }));
         },
     },
