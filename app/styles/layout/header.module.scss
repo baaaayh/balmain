@@ -1,9 +1,11 @@
 .header {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1;
     &__inner {
         position: relative;
-        padding: 0.6875rem 0;
         background-color: #000;
     }
     &__logo {
@@ -25,6 +27,33 @@
             opacity: 1;
         }
     }
+    &__banner {
+        display: block;
+        margin: 0 auto;
+    }
+    &__rolling {
+        position: relative;
+        padding: 0.6875rem 0;
+        &--close {
+            display: none;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        padding: 0 1.25rem;
+        display: inline-block;
+        font-size: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &::before {
+            content: "\e932";
+            font-family: "icomoon";
+            font-size: 1.875rem;
+            color: #fff;
+        }
+    }
 }
 
 .full-logo {
@@ -37,5 +66,48 @@
     pointer-events: none;
     &--fadeout {
         opacity: 0;
+    }
+}
+
+.header-slider {
+    max-width: -webkit-fit-content;
+    max-width: fit-content;
+    width: 100%;
+    &__item {
+        p {
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            font-family: " Proxima Nova Sm";
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+    :global(.slick-slide:not(.slick-current)) {
+        height: 0 !important;
+    }
+    :global(.slick-prev) {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        &::before {
+            content: "\e92c";
+            font-family: "icomoon";
+            font-size: 1.875rem;
+            color: #fff;
+        }
+    }
+    :global(.slick-next) {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        &::before {
+            content: "\e92d";
+            font-family: "icomoon";
+            font-size: 1.875rem;
+            color: #fff;
+        }
     }
 }

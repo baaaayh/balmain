@@ -1,3 +1,11 @@
 .product-grid {
     display: flex;
 }
+
+@media screen and (max-width: 1240px) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.625rem;
+    }
+}

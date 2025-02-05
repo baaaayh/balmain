@@ -235,9 +235,10 @@
             {
                 "title": "BOUTIQUES",
                 "paragraph": "You can also find us in one of our Balmain boutiques.",
-                "text": "SEE OUR BOUTIQUES",
+
                 "buttons": [
                     {
+                        "buttonText": "See our boutiques",
                         "linkString": "javascript:;",
                         "buttonColorClass": "btn-link--bk"
                     }
@@ -246,9 +247,9 @@
             {
                 "title": "CUSTOMER CARE",
                 "paragraph": "Do you have any questions? We are here to help you. You can contact our customer care team by email or over the phone.",
-                "text": "GET IN TOUCH",
                 "buttons": [
                     {
+                        "buttonText": "Get in touch",
                         "linkString": "javascript:;",
                         "buttonColorClass": "btn-link--bk"
                     }
@@ -257,9 +258,9 @@
             {
                 "title": "FAQ",
                 "paragraph": "Find all the answers to the frequently asked questions below.",
-                "text": "SEE OUR FAQS",
                 "buttons": [
                     {
+                        "buttonText": "SEE OUR FAQS",
                         "linkString": "javascript:;",
                         "buttonColorClass": "btn-link--bk"
                     }

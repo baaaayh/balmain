@@ -123,6 +123,33 @@ export const useCartStore = create<CartState>()(
     )
 );
 
+export interface SideNavState {
+    isOpen: boolean;
+}
+
+export interface SideNavActions extends SideNavState {
+    actions: {
+        openSideNav: () => void;
+        closeSideNav: () => void;
+        toggleSideNav: () => void;
+    };
+}
+
+export const useSideNavStore = create<SideNavActions>((set) => ({
+    isOpen: false,
+    actions: {
+        openSideNav: () => {
+            set(() => ({ isOpen: true }));
+        },
+        closeSideNav: () => {
+            set(() => ({ isOpen: false }));
+        },
+        toggleSideNav: () => {
+            set((state) => ({ isOpen: !state.isOpen }));
+        },
+    },
+}));
+
 export interface ModalState {
     isOpen: boolean;
 }

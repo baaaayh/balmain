@@ -2,3 +2,9 @@
     width: 100%;
     background-color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+    .cart-page {
+        padding: 0 0.9375rem;
+    }
+}

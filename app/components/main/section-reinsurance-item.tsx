@@ -1,23 +1,30 @@
 import LinkButton from "@/app/components/common/link-button";
 import clsx from "clsx";
 import styles from "@/app/styles/main/section-reinsurance-item.module.scss";
-import { ReinsuranceDataType } from "@/type";
-
 export default function SectionReinsuranceItem({
-    data,
+    data: { title, paragraph, buttons },
 }: {
-    data: ReinsuranceDataType;
+    data: {
+        title: string;
+        paragraph: string;
+        buttons: Array<{
+            buttonText: string;
+            linkString: string;
+            buttonColorClass: string;
+        }>;
+    };
 }) {
+    const { buttonText, linkString, buttonColorClass } = buttons[0];
     return (
         <li className={clsx(styles["reinsurance__item"])}>
             <div className={clsx(styles["reinsurance__inner"])}>
-                <h3>{data.title}</h3>
-                <p>{data.paragraph}</p>
+                <h3>{title}</h3>
+                <p>{paragraph}</p>
                 <div className={clsx(styles["reinsurance__button"])}>
                     <LinkButton
-                        text={data.text}
-                        linkString={data.linkString}
-                        buttonColorClass={data.buttonColorClass}
+                        buttonText={buttonText}
+                        linkString={linkString}
+                        buttonColorClass={buttonColorClass}
                     />
                 </div>
             </div>

@@ -142,3 +142,19 @@
         overflow: visible;
     }
 }
+
+@media screen and (max-width: 1240px) {
+    .card-slider {
+        &__card {
+            &:hover {
+                .card-slider__hero {
+                    display: block;
+                }
+                .card-slider__backface {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}

@@ -160,3 +160,20 @@
         }
     }
 }
+
+@media screen and (max-width: 900px) {
+    .menu {
+        transition: none;
+        pointer-events: all;
+        &--active {
+            opacity: 1;
+            transition: none;
+            width: 100%;
+        }
+        &--closing {
+            opacity: 1;
+            transition: none;
+            width: 100%;
+        }
+    }
+}

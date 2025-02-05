@@ -34,3 +34,22 @@
         text-align: center;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .reinsurance {
+        &__item {
+            padding: 1.25rem;
+        }
+        &__inner {
+            h3 {
+                text-align: left;
+            }
+            p {
+                text-align: left;
+            }
+        }
+        &__button {
+            text-align: left;
+        }
+    }
+}

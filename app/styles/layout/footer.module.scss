@@ -109,3 +109,26 @@
         content: "\e915";
     }
 }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 1rem 0 1.25rem;
+        &__inner {
+            padding: 0 0.9375rem;
+        }
+        &__sns {
+            ul {
+                justify-content: space-between;
+            }
+        }
+        &__family {
+            ul {
+                column-gap: 0;
+                row-gap: 0.9375rem;
+                li {
+                    flex-basis: 50%;
+                }
+            }
+        }
+    }
+}

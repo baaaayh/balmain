@@ -5,7 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import styles from "@/app/styles/common/card.module.scss";
 import { ProductDataType, MenuDataType } from "@/type";
-import CardBackfaceSlider from "./card-backface-slider";
+import CardBackfaceSlider from "@/app/components/common/card-backface-slider";
 
 export default memo(function Card({
     product,

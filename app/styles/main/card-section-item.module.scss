@@ -6,3 +6,19 @@
         display: block;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .card {
+        > a {
+            position: relative;
+            height: 22.1875rem;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}

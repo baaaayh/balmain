@@ -151,9 +151,14 @@
     background-color: #fff;
     border-radius: 1.71875rem;
     text-transform: uppercase;
+    transition: all 0.3s ease-in;
     &--bk {
         background-color: #000;
         color: #fff;
+    }
+    &:hover {
+        background-color: #949494;
+        text-decoration: underline;
     }
 }
 

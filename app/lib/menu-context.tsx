@@ -2,21 +2,21 @@
 import { useState, useEffect, createContext, useContext, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { getMenuData } from "@/app/lib/actions";
-import { menuDataType } from "@/type";
+import { MenuDataType } from "@/type";
 interface MenuContextType {
-    menuData: menuDataType[];
-    currMenuData: menuDataType | null;
+    menuData: MenuDataType[];
+    currMenuData: MenuDataType | null;
 }
 
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
 
 export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
-    const [menuData, setMenuData] = useState<menuDataType[]>([]);
+    const [menuData, setMenuData] = useState<MenuDataType[]>([]);
     const pathname = usePathname();
 
     useEffect(() => {
         async function getMenu() {
-            await getMenuData().then((data: menuDataType[]) => {
+            await getMenuData().then((data: MenuDataType[]) => {
                 setMenuData(data);
             });
         }

@@ -145,3 +145,11 @@ img {
         /* color-scheme: dark; */
     }
 }
+
+@media screen and (max-width: 768px) {
+    .section {
+        &__inner {
+            padding: 0.625rem;
+        }
+    }
+}

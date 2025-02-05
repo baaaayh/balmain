@@ -124,3 +124,24 @@
         flex-basis: 100%;
     }
 }
+
+@media screen and (max-width: 1240px) {
+    .subscribe {
+        &__email {
+            button {
+                min-width: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .subscribe {
+        &__inner {
+            flex-direction: column;
+        }
+        &__right {
+            padding: 0;
+        }
+    }
+}
