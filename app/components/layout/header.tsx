@@ -19,7 +19,6 @@ export default memo(function Header() {
     const [sliderWidth, setSliderWidth] = useState(0);
     const sliderRef = useRef<Slider | null>(null);
     const slideRefs = useRef<HTMLElement[]>([]);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [showBanner, setShowBanner] = useState(true);
 
     useEffect(() => {
@@ -32,16 +31,15 @@ export default memo(function Header() {
         return () => window.removeEventListener("scroll", handleLogo);
     }, []);
 
-    const updateSliderWidth = (newIndex: number) => {
-        const currentSlide = slideRefs.current[newIndex];
-        if (currentSlide) {
-            const newWidth = currentSlide.getBoundingClientRect().width;
+    const updateSliderWidth = () => {
+        const sliderElement = sliderRef.current?.innerSlider?.list;
+        const newWidth = sliderElement?.getBoundingClientRect().width;
+        if (newWidth) {
             setSliderWidth(newWidth);
+        }
 
-            const sliderElement = sliderRef.current?.innerSlider?.list;
-            if (sliderElement) {
-                sliderElement.style.width = `${newWidth}px`;
-            }
+        if (sliderElement) {
+            sliderElement.style.width = `${newWidth}px`;
         }
     };
 
@@ -50,33 +48,31 @@ export default memo(function Header() {
         speed: 500,
         slidesToShow: 1,
         variableWidth: true,
-        beforeChange: (_oldIndex: number, newIndex: number) => {
-            updateSliderWidth(newIndex);
-        },
-        afterChange: (current: number) => {
-            setCurrentSlideIndex(current);
-        },
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ],
     };
+
+    const handleResize = useCallback(() => {
+        updateSliderWidth();
+    }, []);
 
     useLayoutEffect(() => {
         const handleInit = () => {
-            setTimeout(() => {
-                if (sliderRef.current) {
-                    const initialSlideIndex = 0;
-                    setCurrentSlideIndex(initialSlideIndex);
-                    updateSliderWidth(initialSlideIndex);
-                }
-            }, 0);
+            updateSliderWidth();
         };
         handleInit();
+    }, []);
 
-        const handleResize = () => {
-            updateSliderWidth(currentSlideIndex);
-        };
-
+    useEffect(() => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [currentSlideIndex]);
+    }, [handleResize]);
 
     const closeBanner = useCallback(() => {
         setShowBanner(false);
@@ -90,12 +86,7 @@ export default memo(function Header() {
                         [styles["header__rolling--close"]]: !showBanner,
                     })}
                 >
-                    <div
-                        className={clsx(styles["header__banner"])}
-                        style={{
-                            width: sliderWidth || "auto",
-                        }}
-                    >
+                    <div className={clsx(styles["header__banner"])}>
                         <Slider
                             ref={sliderRef}
                             {...headerSliderSettings}
@@ -115,6 +106,9 @@ export default memo(function Header() {
                                         if (el) {
                                             slideRefs.current[index] = el;
                                         }
+                                    }}
+                                    style={{
+                                        width: sliderWidth || "auto",
                                     }}
                                 >
                                     <p>{text}</p>

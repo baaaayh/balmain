@@ -144,17 +144,10 @@
 }
 
 @media screen and (max-width: 1240px) {
-    .card-slider {
-        &__card {
-            &:hover {
-                .card-slider__hero {
-                    display: block;
-                }
-                .card-slider__backface {
-                    opacity: 0;
-                    visibility: hidden;
-                }
-            }
+    .slider-container {
+        margin: 0 -0.9375rem;
+        :global(.slick-slide) {
+            padding: 0 0.3125rem;
         }
     }
 }

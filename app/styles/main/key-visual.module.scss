@@ -1,4 +1,5 @@
 .kv {
+    overflow: hidden;
     padding: 0;
     transform-style: preserve-3d;
     will-change: transform, padding, height;

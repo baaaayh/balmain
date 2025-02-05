@@ -120,3 +120,24 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .mobile-nav {
+        ul {
+            li {
+                &:not(:first-child) {
+                    padding: 0 0.25rem;
+                }
+            }
+        }
+    }
+    .floating-nav {
+        left: 0.625rem;
+        right: 0.625rem;
+        bottom: 0.625rem;
+    }
+    .btn-mobmenu {
+        width: auto;
+        padding: 0.625rem;
+    }
+}

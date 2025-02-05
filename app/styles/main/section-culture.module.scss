@@ -102,3 +102,18 @@
         }
     }
 }
+
+@media screen and (max-width: 900px) {
+    .culture {
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0;
+        h2 {
+            font-size: 16px;
+            text-align: left;
+        }
+        &__contents {
+            display: none;
+        }
+    }
+}

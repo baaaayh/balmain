@@ -51,26 +51,28 @@ export default function SectionCulture() {
                 </div>
                 <div className={clsx(styles["culture__inner"])}>
                     <h2>BALMAIN CULTURE</h2>
-                    <p>
-                        Discover the captivating world of Balmain. An invitation
-                        to explore the Maison&apos;s bold and timeless
-                        creations,
-                        <br /> blending heritage and innovation. Since 1945,
-                        Balmain has been shaping the future of fashion with
-                        passion and
-                        <br /> precision.
-                    </p>
-                    <div className={clsx(styles["circle-list"])}>
-                        <ul>
-                            {data.map((d, index) => (
-                                <SectionCultureItem
-                                    key={index}
-                                    handleBackground={handleBackground}
-                                    removeBackground={removeBackground}
-                                    data={d}
-                                />
-                            ))}
-                        </ul>
+                    <div className={clsx(styles["culture__contents"])}>
+                        <p>
+                            Discover the captivating world of Balmain. An
+                            invitation to explore the Maison&apos;s bold and
+                            timeless creations,
+                            <br /> blending heritage and innovation. Since 1945,
+                            Balmain has been shaping the future of fashion with
+                            passion and
+                            <br /> precision.
+                        </p>
+                        <div className={clsx(styles["circle-list"])}>
+                            <ul>
+                                {data.map((d, index) => (
+                                    <SectionCultureItem
+                                        key={index}
+                                        handleBackground={handleBackground}
+                                        removeBackground={removeBackground}
+                                        data={d}
+                                    />
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
