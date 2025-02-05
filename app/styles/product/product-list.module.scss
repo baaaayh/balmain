@@ -6,3 +6,10 @@
         font-size: 20px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.625rem;
+    }
+}

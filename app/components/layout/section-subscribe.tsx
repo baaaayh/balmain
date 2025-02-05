@@ -34,7 +34,12 @@ export default memo(function SectionSubscribe() {
     return (
         <Section sectionClass={"subscribe"}>
             <div className={clsx(styles["subscribe"])}>
-                <div className={clsx(styles["subscribe__inner"])}>
+                <div
+                    className={clsx(
+                        styles["subscribe__inner"],
+                        "subscribe__inner"
+                    )}
+                >
                     <div className={clsx(styles["subscribe__left"])}>
                         <div className={clsx(styles["subscribe__title"])}>
                             <h2>SIGN UP FOR BALMAIN UPDATES</h2>

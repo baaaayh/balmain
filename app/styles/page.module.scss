@@ -11,6 +11,10 @@
 
 .main {
     overflow: hidden;
+    background-color: #f5f5f5;
+    :global(.subscribe__inner) {
+        background-color: #fff;
+    }
 }
 
 @media (hover: hover) and (pointer: fine) {
