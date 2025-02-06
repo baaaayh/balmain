@@ -1,5 +1,6 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
+import Slider from "react-slick";
 import Image from "next/image";
 import clsx from "clsx";
 import Section from "@/app/components/main/section";
@@ -14,6 +15,18 @@ export default function SectionCulture() {
     );
     const [changeBg, setChangeBg] = useState(false);
     const data = sectionData[0].circleSectionData;
+    const sliderRef = useRef<Slider | null>(null);
+
+    const previous = useCallback(() => {
+        if (sliderRef.current) {
+            sliderRef.current.slickPrev();
+        }
+    }, []);
+    const next = useCallback(() => {
+        if (sliderRef.current) {
+            sliderRef.current.slickNext();
+        }
+    }, []);
 
     const handleBackground = useCallback((title: string, bg: string) => {
         setAltText(title);
@@ -28,6 +41,31 @@ export default function SectionCulture() {
         );
         setChangeBg(false);
     }, []);
+
+    const sliderSettings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToScroll: 1,
+        arrows: true,
+        centerMode: true,
+        centerPadding: "0px",
+        useTransform: false,
+        responsive: [
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 6,
+                },
+            },
+        ],
+    };
 
     return (
         <Section sectionClass={"culture"}>
@@ -50,7 +88,25 @@ export default function SectionCulture() {
                     />
                 </div>
                 <div className={clsx(styles["culture__inner"])}>
-                    <h2>BALMAIN CULTURE</h2>
+                    <div className={clsx(styles["culture__title"])}>
+                        <h2>BALMAIN CULTURE</h2>
+                        <div className={clsx(styles["culture__control"])}>
+                            <button
+                                type="button"
+                                className={clsx(styles["culture__prev"])}
+                                onClick={previous}
+                            >
+                                PREV
+                            </button>
+                            <button
+                                type="button"
+                                className={clsx(styles["culture__next"])}
+                                onClick={next}
+                            >
+                                NEXT
+                            </button>
+                        </div>
+                    </div>
                     <div className={clsx(styles["culture__contents"])}>
                         <p>
                             Discover the captivating world of Balmain. An
@@ -62,7 +118,14 @@ export default function SectionCulture() {
                             <br /> precision.
                         </p>
                         <div className={clsx(styles["circle-list"])}>
-                            <ul>
+                            <Slider
+                                ref={sliderRef}
+                                {...sliderSettings}
+                                className={clsx(
+                                    styles["circle-list__container"],
+                                    "circle-list__container"
+                                )}
+                            >
                                 {data.map((d, index) => (
                                     <SectionCultureItem
                                         key={index}
@@ -71,7 +134,7 @@ export default function SectionCulture() {
                                         data={d}
                                     />
                                 ))}
-                            </ul>
+                            </Slider>
                         </div>
                     </div>
                 </div>

@@ -134,11 +134,28 @@ img {
 }
 
 .sub-inner {
+    background-color: #fff;
     padding: 1.875rem 1.5rem;
+    .card-slider {
+        &__view {
+            background-color: #f5f5f5;
+        }
+        &__card {
+            &:hover {
+                .card-slider__view {
+                    background-color: #f5f5f5;
+                }
+            }
+        }
+    }
 }
 
 .contents {
     width: 100%;
+}
+
+.detail-container {
+    background-color: #f5f5f5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -154,7 +171,9 @@ img {
         }
         &--culture {
             .section__inner {
+                position: relative;
                 padding: 0.625rem 0;
+                margin-top: 3rem;
             }
         }
     }

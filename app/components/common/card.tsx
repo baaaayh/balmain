@@ -27,7 +27,7 @@ export default memo(function Card({
     }, [menuData, product]);
 
     return (
-        <div className={clsx(styles["card-slider__card"])}>
+        <div className={clsx("card-slider__card", styles["card-slider__card"])}>
             <div className={clsx(styles["card-slider__wrap"])}>
                 <Image
                     src="/images/dummy/layout.png"
@@ -37,7 +37,12 @@ export default memo(function Card({
                     alt={product.name}
                 />
                 <div className={clsx(styles["card-slider__gutter"])}>
-                    <div className={clsx(styles["card-slider__view"])}>
+                    <div
+                        className={clsx(
+                            styles["card-slider__view"],
+                            "card-slider__view"
+                        )}
+                    >
                         <Link
                             href={
                                 product.product_id > 1110

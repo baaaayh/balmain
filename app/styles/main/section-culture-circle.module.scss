@@ -2,6 +2,37 @@
     overflow: hidden;
     border-radius: 175px;
     img {
-        transition: transform 0.3s linear;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.circle-list {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 0 12px;
+        h3 {
+            margin-top: 1.125rem;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.2;
+            text-align: center;
+            width: fit-content;
+            transform-origin: top;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .circle-list {
+        &__item {
+            h3 {
+                margin-top: 0.625rem;
+                font-size: 12px;
+                width: 100%;
+            }
+        }
     }
 }

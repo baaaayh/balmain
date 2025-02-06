@@ -16,13 +16,13 @@ const SectionCultureItem = memo(function SectionCultureItem({
     data: CircleDataType;
 }) {
     return (
-        <li key={data.title}>
+        <div className={clsx(styles["circle-list__item"])} key={data.title}>
             <Link
                 href="javascript:;"
                 onMouseEnter={() => handleBackground(data.title, data.imageUrl)}
                 onMouseLeave={removeBackground}
             >
-                <div className={clsx(styles["image-circle"])}>
+                <div className={clsx(styles["image-circle"], "image-circle")}>
                     <Image
                         width={230}
                         height={230}
@@ -37,7 +37,7 @@ const SectionCultureItem = memo(function SectionCultureItem({
                     }}
                 ></h3>
             </Link>
-        </li>
+        </div>
     );
 });
 

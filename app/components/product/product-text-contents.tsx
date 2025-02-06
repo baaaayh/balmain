@@ -14,10 +14,28 @@ export default function ProudctTextContents({
     const handleContentsChange = useCallback((text: string) => {
         setSelectedContents(text);
     }, []);
-
+    const [mobReadMoreState, setMobReadMoreState] = useState<{
+        desc: boolean;
+        delivery: boolean;
+        contact: boolean;
+    }>({
+        desc: false,
+        delivery: false,
+        contact: false,
+    });
     const handleReadMoreState = useCallback(() => {
         setReadMoreState((prev) => !prev);
     }, []);
+
+    const handleMobReadMoreState = useCallback(
+        (key: "desc" | "delivery" | "contact") => {
+            setMobReadMoreState((prev) => ({
+                ...prev,
+                [key]: !prev[key],
+            }));
+        },
+        []
+    );
 
     return (
         <div className={clsx(styles["detail__text"])}>
@@ -64,33 +82,88 @@ export default function ProudctTextContents({
                 </ul>
             </div>
             <div className={clsx(styles["detail__contents"])}>
-                {(selectedContents === "DESCRIPTION" && (
-                    <div
-                        className={clsx(styles["detail__desc"], {
-                            [styles["detail__desc--open"]]: !readMoreState,
-                        })}
-                    >
+                <div
+                    className={clsx(styles["detail__toggle"], {
+                        [styles["detail__toggle--active"]]:
+                            selectedContents === "DESCRIPTION",
+                    })}
+                >
+                    <div className={clsx(styles["detail__desc"])}>
                         <div
-                            dangerouslySetInnerHTML={{
-                                __html:
-                                    productData &&
-                                    productData.description_contents
-                                        .replace(/\\r\\n/g, "")
-                                        .replace(/\\n/g, ""),
-                            }}
-                            className={clsx(styles["detail__desc"])}
-                        ></div>
-                        <div className={clsx(styles["detail__button"])}>
-                            <button type="button" onClick={handleReadMoreState}>
-                                {readMoreState ? "READ MORE" : "READ LESS"}
+                            className={clsx(styles["detail__head"])}
+                            onClick={() => handleMobReadMoreState("desc")}
+                        >
+                            <button
+                                type="button"
+                                className={clsx(styles["detail__headbutton"], {
+                                    [styles["detail__headbutton--active"]]:
+                                        selectedContents === "DESCRIPTION",
+                                })}
+                            >
+                                DESCRIPTION
                             </button>
+                            <span></span>
                         </div>
-                        <div className={clsx(styles["detail__button"])}>
-                            <button type="button">SUSTAINABILITY</button>
+                        <div
+                            className={clsx(styles["detail__box"], {
+                                [styles["detail__box--active"]]:
+                                    mobReadMoreState.desc,
+                            })}
+                        >
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html:
+                                        productData &&
+                                        productData.description_contents
+                                            .replace(/\\r\\n/g, "")
+                                            .replace(/\\n/g, ""),
+                                }}
+                                className={clsx(styles["detail__desc"], {
+                                    [styles["detail__desc--open"]]:
+                                        !readMoreState,
+                                })}
+                            ></div>
+                            <div className={clsx(styles["detail__button"])}>
+                                <button
+                                    type="button"
+                                    onClick={handleReadMoreState}
+                                >
+                                    {readMoreState ? "READ MORE" : "READ LESS"}
+                                </button>
+                            </div>
+                            <div className={clsx(styles["detail__button"])}>
+                                <button type="button">SUSTAINABILITY</button>
+                            </div>
                         </div>
                     </div>
-                )) ||
-                    (selectedContents === "DELIVERY AND RETURNS" && (
+                </div>
+                <div
+                    className={clsx(styles["detail__toggle"], {
+                        [styles["detail__toggle--active"]]:
+                            selectedContents === "DELIVERY AND RETURNS",
+                    })}
+                >
+                    <div
+                        className={clsx(styles["detail__head"])}
+                        onClick={() => handleMobReadMoreState("delivery")}
+                    >
+                        <button
+                            type="button"
+                            className={clsx(styles["detail__headbutton"], {
+                                [styles["detail__headbutton--active"]]:
+                                    selectedContents === "DELIVERY AND RETURNS",
+                            })}
+                        >
+                            DELIVERY AND RETURNS
+                        </button>
+                        <span></span>
+                    </div>
+                    <div
+                        className={clsx(styles["detail__box"], {
+                            [styles["detail__box--active"]]:
+                                mobReadMoreState.delivery,
+                        })}
+                    >
                         <ul className={clsx(styles["detail__char"])}>
                             <li>
                                 <span
@@ -151,8 +224,35 @@ export default function ProudctTextContents({
                                 </a>
                             </li>
                         </ul>
-                    )) ||
-                    (selectedContents === "CONTACT" && (
+                    </div>
+                </div>
+                <div
+                    className={clsx(styles["detail__toggle"], {
+                        [styles["detail__toggle--active"]]:
+                            selectedContents === "CONTACT",
+                    })}
+                >
+                    <div
+                        className={clsx(styles["detail__head"])}
+                        onClick={() => handleMobReadMoreState("contact")}
+                    >
+                        <button
+                            type="button"
+                            className={clsx(styles["detail__headbutton"], {
+                                [styles["detail__headbutton--active"]]:
+                                    selectedContents === "CONTACT",
+                            })}
+                        >
+                            CONTACT
+                        </button>
+                        <span></span>
+                    </div>
+                    <div
+                        className={clsx(styles["detail__box"], {
+                            [styles["detail__box--active"]]:
+                                mobReadMoreState.contact,
+                        })}
+                    >
                         <ul className={clsx(styles["detail__char"])}>
                             <li>
                                 <span
@@ -187,7 +287,8 @@ export default function ProudctTextContents({
                                 </div>
                             </li>
                         </ul>
-                    ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

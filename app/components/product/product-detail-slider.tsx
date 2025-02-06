@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
-import { Swiper as SwiperClass, SwiperSlide } from "swiper/react";
+import Slider from "react-slick";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Image from "next/image";
 import clsx from "clsx";
 import styles from "@/app/styles/product/product-detail-slider.module.scss";
@@ -21,7 +24,7 @@ export default function ProductDetailSlider({
 
     useEffect(() => {
         const handleResize = () => {
-            setIsSwiperActive(window.innerWidth <= 768);
+            setIsSwiperActive(window.innerWidth <= 900);
         };
 
         handleResize();
@@ -45,7 +48,7 @@ export default function ProductDetailSlider({
             productData.image_filenames.map(
                 (image) =>
                     image && (
-                        <SwiperSlide key={image}>
+                        <div key={image}>
                             <div className={clsx(styles["detail__figure"])}>
                                 <Image
                                     src={`/images/products/${productData.base_item_code}/${selectedColor.name}/${image}`}
@@ -55,18 +58,30 @@ export default function ProductDetailSlider({
                                     alt={productData.image_alt}
                                 />
                             </div>
-                        </SwiperSlide>
+                        </div>
                     )
             )
         );
     }, [productData, selectedColor]);
 
+    const settings = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+
     return (
         <>
             {isSwiperActive ? (
-                <SwiperClass className={clsx(styles["detail__slider"])}>
+                <Slider
+                    {...settings}
+                    className={clsx(styles["detail__slider"])}
+                >
                     {renderImage}
-                </SwiperClass>
+                </Slider>
             ) : (
                 <div className={clsx(styles["detail__static"])}>
                     {renderImage}

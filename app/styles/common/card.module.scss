@@ -181,7 +181,6 @@
 @media screen and (max-width: 1240px) {
     .card-slider {
         &__card {
-            padding: 0;
             &:hover {
                 .card-slider__hero {
                     display: block;
@@ -198,15 +197,12 @@
                     position: absolute;
                 }
                 .card-slider__view {
-                    background-color: #f5f5f5;
+                    background-color: #fff;
                 }
             }
         }
         &__wrap {
             padding-bottom: 4.25rem;
-        }
-        &__view {
-            background-color: #f5f5f5;
         }
         &__hero {
             position: relative;
@@ -239,6 +235,11 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .card-slider {
         &__gutter {
             padding: 0;
         }

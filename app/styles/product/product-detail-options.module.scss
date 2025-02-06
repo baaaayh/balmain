@@ -110,6 +110,7 @@
             flex-wrap: wrap;
             li {
                 display: inline-flex;
+                justify-content: center;
                 input[type="radio"] {
                     display: inline-block;
                     width: 0;
@@ -130,6 +131,50 @@
                 input[type="radio"]:checked + label {
                     border-color: #000;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .detail {
+        &__size {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detail {
+        &__size {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .detail {
+        &__size {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .detail {
+        &__size {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     }

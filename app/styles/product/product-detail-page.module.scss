@@ -5,7 +5,17 @@
     &__left {
     }
     &__right {
-        position: relative;
         padding: 0 24px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .detail {
+        position: relative;
+        display: block;
+        padding-top: 9rem;
+        &__right {
+            padding: 0 1.25rem;
+        }
     }
 }
