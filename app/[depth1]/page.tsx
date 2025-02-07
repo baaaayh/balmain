@@ -4,10 +4,7 @@ import ProductListPage from "@/app/components/product/product-list-page";
 export default async function Depth3Page({
     params,
 }: {
-    params: {
-        depth1: string;
-        depth2: string;
-    };
+    params: Promise<{ depth1: string }>;
 }) {
     const { depth1 } = await params;
 
