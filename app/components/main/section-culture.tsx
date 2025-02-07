@@ -47,6 +47,7 @@ export default function SectionCulture() {
         infinite: true,
         speed: 500,
         slidesToScroll: 1,
+        slidesToShow: 6,
         arrows: true,
         centerMode: true,
         centerPadding: "0px",
@@ -56,12 +57,6 @@ export default function SectionCulture() {
                 breakpoint: 900,
                 settings: {
                     slidesToShow: 3,
-                },
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 6,
                 },
             },
         ],
