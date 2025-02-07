@@ -1,12 +1,14 @@
 "use client";
-import { useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import ModalCart from "@/app/components/common/modal-cart";
+import ModalConfirm from "@/app/components/common/modal-confirm";
 import clsx from "clsx";
 import { useModalStore } from "@/app/lib/store";
 import styles from "@/app/styles/common/modal.module.scss";
 
 export default function Modal() {
     const { isOpen: modalState } = useModalStore((state) => state);
+    const [windowWidth, setWindowwidth] = useState(0);
 
     const handleCloseModal = useCallback(() => {
         useModalStore.setState({ isOpen: false });
@@ -19,6 +21,14 @@ export default function Modal() {
             document.body.style.overflow = "";
         }
     }, [modalState]);
+
+    useEffect(() => {
+        function calcWindowWidth() {
+            setWindowwidth(window.innerWidth);
+        }
+        calcWindowWidth();
+        return () => window.addEventListener("resize", calcWindowWidth);
+    }, []);
 
     return (
         <div
@@ -37,7 +47,7 @@ export default function Modal() {
                             onClick={handleCloseModal}
                         ></button>
                     </div>
-                    <ModalCart />
+                    {windowWidth > 900 ? <ModalCart /> : <ModalConfirm />}
                 </div>
             </div>
         </div>

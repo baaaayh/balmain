@@ -43,3 +43,34 @@
         padding: 1.875rem 0.625rem 3.375rem;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .modal-container {
+        z-index: 201;
+        &--active {
+            .modal {
+                animation: none;
+            }
+        }
+    }
+    .modal {
+        top: auto;
+        bottom: 0;
+        right: auto;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+        transform: none;
+        &__inner {
+            padding: 0;
+        }
+        &__close {
+            button {
+                top: -0.625rem;
+                right: -0.625rem;
+            }
+        }
+    }
+}

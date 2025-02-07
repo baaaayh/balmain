@@ -89,3 +89,11 @@
         }
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .cart-packaging {
+        &__figure {
+            display: none;
+        }
+    }
+}

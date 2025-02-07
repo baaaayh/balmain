@@ -148,6 +148,9 @@ img {
             }
         }
     }
+    .section__inner {
+        padding: 0 0.75rem;
+    }
 }
 
 .contents {
@@ -167,7 +170,7 @@ img {
 @media screen and (max-width: 900px) {
     .section {
         &__inner {
-            padding: 0.625rem;
+            padding: 0.625rem 0;
         }
         &--culture {
             .section__inner {

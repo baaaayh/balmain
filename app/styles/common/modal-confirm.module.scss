@@ -1,0 +1,42 @@
+.confirm {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+    }
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &__head {
+        h2 {
+            font-size: 1rem;
+            letter-spacing: 0.0625rem;
+            line-height: 1.25;
+            padding-right: 10px;
+            span {
+                position: relative;
+                margin-right: 0.75rem;
+                &::before {
+                    content: "\e928";
+                    font-family: "icomoon";
+                    font-size: 0.8125rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    &__footer {
+        text-align: center;
+        a {
+            display: inline-block;
+            border-bottom: 0.0625rem solid #000;
+            font-family: "Balmain Sans";
+            font-size: 0.59375rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1.05;
+        }
+    }
+}
