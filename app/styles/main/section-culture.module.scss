@@ -111,7 +111,7 @@
             padding: 0 0.625rem;
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: calc(100% - 1rem);
             z-index: 1;
             h2 {
                 width: 100%;
