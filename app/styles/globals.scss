@@ -151,7 +151,21 @@ img {
 }
 
 .contents {
+    position: relative;
     width: 100%;
+    .header__logo {
+        top: 1.6875rem;
+        right: 1.6875rem;
+    }
+    .header__rolling {
+        display: none;
+    }
+    .full-logo {
+        display: none;
+    }
+    .main-logo {
+        display: none;
+    }
 }
 
 .detail-container {
@@ -182,5 +196,11 @@ img {
     }
     .sub-inner {
         padding: 0.625rem;
+    }
+    .contents {
+        .header__logo {
+            top: 1rem;
+            right: 0;
+        }
     }
 }

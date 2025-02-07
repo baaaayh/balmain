@@ -79,12 +79,16 @@ export default memo(function Header() {
     }, []);
 
     return (
-        <header className={clsx(styles["header"])}>
+        <header className={clsx("header", styles["header"])}>
             <div className={clsx(styles["header__inner"])}>
                 <div
-                    className={clsx(styles["header__rolling"], {
-                        [styles["header__rolling--close"]]: !showBanner,
-                    })}
+                    className={clsx(
+                        "header__rolling",
+                        styles["header__rolling"],
+                        {
+                            [styles["header__rolling--close"]]: !showBanner,
+                        }
+                    )}
                 >
                     <div className={clsx(styles["header__banner"])}>
                         <Slider
@@ -125,7 +129,7 @@ export default memo(function Header() {
                     </button>
                 </div>
                 <div
-                    className={clsx(styles["full-logo"], {
+                    className={clsx("full-logo", styles["full-logo"], {
                         [styles["full-logo--fadeout"]]: fadeOut,
                     })}
                 >
@@ -137,12 +141,21 @@ export default memo(function Header() {
                         alt="BALMAIN PARIS"
                     />
                 </div>
-                <div className={clsx(styles["header__logo"])}>
-                    <Link href="/">
+                <div className={clsx("header__logo", styles["header__logo"])}>
+                    <Link href="/" className="main-logo">
                         <Image
                             width={60}
                             height={60}
                             src="/images/common/header_logo_big_w.svg"
+                            alt="BALMAIN LOGO"
+                            priority
+                        />
+                    </Link>
+                    <Link href="/" className="sub-logo">
+                        <Image
+                            width={30}
+                            height={30}
+                            src="/images/common/sub-logo.svg"
                             alt="BALMAIN LOGO"
                             priority
                         />

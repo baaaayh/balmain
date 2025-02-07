@@ -1,3 +1,4 @@
+import Header from "@/app/components/layout/header";
 import Cart from "@/app/components/cart/cart";
 import Footer from "@/app/components/layout/footer";
 import clsx from "clsx";
@@ -6,6 +7,7 @@ export default function CartPage() {
     return (
         <>
             <div className="contents">
+                <Header />
                 <div className="sub-inner">
                     <div className={clsx(styles["cart-page"])}>
                         <Cart />

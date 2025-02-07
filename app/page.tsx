@@ -1,4 +1,3 @@
-import Header from "@/app/components/layout/header";
 import KeyVisual from "@/app/components/main/key-visual";
 import SectionHotNow from "@/app/components/main/section-hot-now";
 import CardSection from "@/app/components/main/card-section";
@@ -13,7 +12,6 @@ import Footer from "@/app/components/layout/footer";
 export default function MainPage() {
     return (
         <main className={styles.main}>
-            <Header />
             <div className="inner">
                 <KeyVisual />
                 <SectionHotNow />
