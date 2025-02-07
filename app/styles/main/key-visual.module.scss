@@ -40,7 +40,9 @@
 
 @media screen and (max-width: 768px) {
     .kv {
-        padding: 0.625rem 0.625rem 0;
+        &--active {
+            padding: 0.625rem 0.625rem 0;
+        }
         &__pagination {
             justify-content: center;
         }
