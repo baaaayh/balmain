@@ -12,6 +12,9 @@
 .main {
     overflow: hidden;
     background-color: #f5f5f5;
+    :global(.section__inner) {
+        padding: 0.625rem;
+    }
     :global(.subscribe__inner) {
         background-color: #fff;
     }

@@ -8,6 +8,7 @@ export interface CardSectionDataType {
     imageUrl_desktop: string;
     imageUrl_mobile: string;
     title: string;
+    link: string;
     buttons: LinkButtonType[];
 }
 

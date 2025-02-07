@@ -137,19 +137,16 @@ img {
     background-color: #fff;
     padding: 1.875rem 1.5rem;
     .card-slider {
-        &__view {
-            background-color: #f5f5f5;
-        }
         &__card {
+            .card-slider__view {
+                background-color: #f5f5f5;
+            }
             &:hover {
                 .card-slider__view {
                     background-color: #f5f5f5;
                 }
             }
         }
-    }
-    .section__inner {
-        padding: 0 0.75rem;
     }
 }
 
@@ -165,6 +162,9 @@ img {
     html {
         /* color-scheme: dark; */
     }
+}
+
+@media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 900px) {

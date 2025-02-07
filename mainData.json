@@ -5,15 +5,16 @@
                 "imageUrl_desktop": "/images/main/card/hp_carre_redleather_PS25_desk.avif",
                 "imageUrl_mobile": "/images/main/card/hp_carre_redleather_PS25_mob.avif",
                 "title": "NEW IN <br /> RESORT 2025",
+                "link": "/women/ready-to-wear",
                 "buttons": [
                     {
                         "buttonText": "FOR WOMEN",
-                        "linkString": "javascript:;",
+                        "linkString": "/women/ready-to-wear",
                         "buttonColorClass": ""
                     },
                     {
                         "buttonText": "FOR MEN",
-                        "linkString": "javascript:;",
+                        "linkString": "/men/ready-to-wear",
                         "buttonColorClass": ""
                     }
                 ]
@@ -22,15 +23,16 @@
                 "imageUrl_desktop": "/images/main/card/hp_carre_shoes_boots_PS25_desk.avif",
                 "imageUrl_mobile": "/images/main/card/hp_carre_shoes_boots_PS25_mob.avif",
                 "title": "SHOES <br /> RESORT 2025",
+                "link": "/women/shoes",
                 "buttons": [
                     {
                         "buttonText": "FOR WOMEN",
-                        "linkString": "javascript:;",
+                        "linkString": "/women/shoes",
                         "buttonColorClass": ""
                     },
                     {
                         "buttonText": "FOR MEN",
-                        "linkString": "javascript:;",
+                        "linkString": "/men/shoes",
                         "buttonColorClass": ""
                     }
                 ]
@@ -41,10 +43,11 @@
                 "imageUrl_desktop": "/images/main/card/hp_carre_women_essentials_lb_PS25_desk.avif",
                 "imageUrl_mobile": "/images/main/card/hp_carre_women_essentials_lb_PS25_mob.avif",
                 "title": "ESSENTIALS FOR HER",
+                "link": "/women/essentials-for-her",
                 "buttons": [
                     {
                         "buttonText": "SHOP NOW",
-                        "linkString": "javascript:;",
+                        "linkString": "/women/essentials-for-her",
                         "buttonColorClass": ""
                     }
                 ]
@@ -53,10 +56,11 @@
                 "imageUrl_desktop": "/images/main/card/hp_carre_men_essentials_lb_PS25_desk.avif",
                 "imageUrl_mobile": "/images/main/card/hp_carre_men_essentials_lb_PS25_mob.avif",
                 "title": "ESSENTIALS FOR HIM",
+                "link": "/men/essentials-for-himr",
                 "buttons": [
                     {
                         "buttonText": "SHOP NOW",
-                        "linkString": "javascript:;",
+                        "linkString": "/men/essentials-for-him",
                         "buttonColorClass": ""
                     }
                 ]

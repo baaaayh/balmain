@@ -12,7 +12,7 @@ export default function CardSectionItem({
 }) {
     return (
         <div className={clsx(styles["card"])}>
-            <Link href="javascript:;">
+            <Link href={cardData.link}>
                 <figure>
                     <picture>
                         <source

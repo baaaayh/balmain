@@ -29,14 +29,30 @@ export default function KeyVisualSlider({
                 "/images/main/keyvisual/hp_carrousel_joliemadame_leather_rubber_PS25_desk.avif",
             imgMobile:
                 "/images/main/keyvisual/hp_carrousel_jmrubber_B_PS25_mob.avif",
+            link: "/women/bags/jolie-madame-bags",
             alt: "JOLIE MADAME BAGS <br> AN ODE TO BALMAIN HERITAGE WITH AN UNIQUE VISION",
+            buttons: [
+                {
+                    buttonText: "FOR WOMEN",
+                    linkString: "/women/bags/jolie-madame-bags",
+                    buttonColorClass: "",
+                },
+            ],
         },
         {
             imgDesktop:
                 "/images/main/keyvisual/hp_carrousel_unicorn_x2_PS25_desk.avif",
             imgMobile:
                 "/images/main/keyvisual/hp_carrousel_unicorn_loveletter_PS25_mob.avif",
+            link: "/men/sneakers/unicorn",
             alt: "UNICORN SNEAKERS <br> THE HOUSE'S ICONICS",
+            buttons: [
+                {
+                    buttonText: "FOR MEN",
+                    linkString: "/men/sneakers/unicorn",
+                    buttonColorClass: "",
+                },
+            ],
         },
     ];
 
@@ -78,7 +94,7 @@ export default function KeyVisualSlider({
                             className={clsx(styles["kv__item"])}
                         >
                             <div className={clsx(styles["kv__figure"])}>
-                                <Link href="javascript:;">
+                                <Link href={slide.link}>
                                     <picture>
                                         <source
                                             srcSet={slide.imgMobile}
@@ -95,18 +111,7 @@ export default function KeyVisualSlider({
                                 </Link>
                                 <CardTitle
                                     title="NEW IN <br />  RESORT 2025 COLLECTION"
-                                    buttons={[
-                                        {
-                                            buttonText: "FOR WOMEN",
-                                            linkString: "javascript:;",
-                                            buttonColorClass: "",
-                                        },
-                                        {
-                                            buttonText: "FOR MEN",
-                                            linkString: "javascript:;",
-                                            buttonColorClass: "",
-                                        },
-                                    ]}
+                                    buttons={slide.buttons}
                                 />
                             </div>
                         </SwiperSlide>
