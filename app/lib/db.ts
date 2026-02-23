@@ -1,14 +1,14 @@
-import { Pool } from "pg";
+import pg from "pg";
+const { Pool } = pg;
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const pool = new Pool({
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 5432,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+  connectionString: process.env.NEXT_PUBLIC_DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Supabase 연결 시 인증서 에러 방지
+  },
 });
 
 export default pool;

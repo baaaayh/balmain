@@ -1,316 +1,314 @@
-@import "./fonts.scss";
+@use "./fonts.scss";
 
 .btn {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .btn-menu {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 28px;
-    height: 15px;
-    font-size: 0;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 28px;
+  height: 15px;
+  font-size: 0;
+  cursor: pointer;
+  transition: 0.23s ease;
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-black);
+    transition: 0.34s ease;
+  }
+  span {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-black);
     transition: 0.23s ease;
-    &::before,
-    &::after {
-        content: "";
-        display: inline-block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--color-black);
-        transition: 0.34s ease;
-    }
-    span {
-        display: inline-block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--color-black);
-        transition: 0.23s ease;
-    }
+  }
 }
 
 .btn-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &__text {
     position: relative;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    cursor: pointer;
-    &__text {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        font-size: 0;
-        &::before {
-            font-family: "icomoon";
-            font-size: 1.25rem;
-            line-height: 1.25rem;
-        }
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    &::before {
+      font-family: "icomoon";
+      font-size: 1.25rem;
+      line-height: 1.25rem;
     }
-    &--user {
-        .btn-icon__text {
-            &::before {
-                content: "\e908";
-                font-size: 1.1875rem;
-                font-weight: 600 !important;
-                line-height: 1;
-            }
-        }
+  }
+  &--user {
+    .btn-icon__text {
+      &::before {
+        content: "\e908";
+        font-size: 1.1875rem;
+        font-weight: 600 !important;
+        line-height: 1;
+      }
     }
-    &--search {
-        .btn-icon__text {
-            &::before {
-                content: "\e905";
-            }
-        }
+  }
+  &--search {
+    .btn-icon__text {
+      &::before {
+        content: "\e905";
+      }
     }
-    &--shoppingbag {
-        .btn-icon__text {
-            &::before {
-                content: "\e903";
-            }
-        }
+  }
+  &--shoppingbag {
+    .btn-icon__text {
+      &::before {
+        content: "\e903";
+      }
     }
-    &__count {
-        position: absolute;
-        top: -0.1875rem;
-        left: 0.75rem;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.59375rem;
-        width: 0.875rem;
-        height: 0.875rem;
-        background-color: #ffe691;
-        font-weight: 700;
-        color: #000;
-        text-align: center;
-        border-radius: 100%;
-    }
+  }
+  &__count {
+    position: absolute;
+    top: -0.1875rem;
+    left: 0.75rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.59375rem;
+    width: 0.875rem;
+    height: 0.875rem;
+    background-color: #ffe691;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    border-radius: 100%;
+  }
 }
 
 .icon-title {
-    visibility: hidden;
-    margin-left: 14px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    color: #000;
-    white-space: nowrap;
+  visibility: hidden;
+  margin-left: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #000;
+  white-space: nowrap;
 }
 
 .btn-navfoot {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    padding: 0 0 0 2.3125rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    letter-spacing: 0.03125rem;
-    line-height: 1.125rem;
-    color: #000;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 0 2.3125rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.03125rem;
+  line-height: 1.125rem;
+  color: #000;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-50%);
+  }
+  &--phone {
     &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 16px;
-        height: 16px;
-        transform: translateY(-50%);
+      background: url(/images/icons/icon_phone.webp) center / auto no-repeat;
     }
-    &--phone {
-        &::before {
-            background: url(/images/icons/icon_phone.webp) center / auto
-                no-repeat;
-        }
+  }
+  &--marker {
+    &::before {
+      background: url(/images/icons/icon_marker.webp) center / auto no-repeat;
     }
-    &--marker {
-        &::before {
-            background: url(/images/icons/icon_marker.webp) center / auto
-                no-repeat;
-        }
-    }
+  }
 }
 
 .btn-link {
-    font-size: 0.59375rem;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: 0.0625rem;
-    line-height: 1;
-    padding: 0.625rem 2rem;
-    background-color: #fff;
-    border-radius: 1.71875rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in;
-    &--bk {
-        background-color: #000;
-        color: #fff;
-    }
-    &:hover {
-        background-color: #949494;
-        text-decoration: underline;
-    }
+  font-size: 0.59375rem;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.0625rem;
+  line-height: 1;
+  padding: 0.625rem 2rem;
+  background-color: #fff;
+  border-radius: 1.71875rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+  &--bk {
+    background-color: #000;
+    color: #fff;
+  }
+  &:hover {
+    background-color: #949494;
+    text-decoration: underline;
+  }
 }
 
 .btn-cart {
-    position: relative;
-    &::before {
-        content: "\e903";
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-    }
-}
-
-.btn-kvcontrol {
-    overflow: hidden;
-    background-color: #fff;
-    border-radius: 15px;
-    cursor: pointer;
-    vertical-align: middle;
-    span {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        font-size: 0;
-        pointer-events: none;
-        &::before {
-            display: inline-flex;
-            width: 30px;
-            height: 30px;
-        }
-    }
-    &--pause {
-        span {
-            column-gap: 1.25px;
-            &::before,
-            &::after {
-                content: "";
-                display: inline-block;
-                height: 0.625rem;
-                width: 0.125rem;
-                background-color: #000;
-                border-radius: 0.0625rem;
-            }
-        }
-    }
-    &--play {
-        span {
-            column-gap: 0;
-            &::before {
-                background: transparent;
-                border-color: transparent transparent transparent #000;
-                border-style: solid;
-                border-width: 0.3125rem 0 0.3125rem 0.5rem;
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                height: 0.625rem;
-                width: 0.625rem;
-            }
-            &::after {
-                display: none;
-            }
-        }
-    }
-    &--prev {
-        span {
-            &::before {
-                display: inline-block;
-                content: "\e92c";
-                font-family: "icomoon";
-                font-size: 1.875rem;
-            }
-        }
-    }
-    &--next {
-        span {
-            &::before {
-                display: inline-block;
-                content: "\e92d";
-                font-family: "icomoon";
-                font-size: 1.875rem;
-            }
-        }
-    }
-}
-
-.btn-grey {
+  position: relative;
+  &::before {
+    content: "\e903";
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    min-width: 14.375rem;
-    height: 3.4375rem;
-    padding: 1.4375rem 2rem 1.375rem;
-    border-radius: 1.71875rem;
-    background-color: #000;
-    transition: all 0.15s ease-out;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.btn-kvcontrol {
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+  span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    pointer-events: none;
+    &::before {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &--pause {
     span {
+      column-gap: 1.25px;
+      &::before,
+      &::after {
+        content: "";
         display: inline-block;
-        color: #ccc;
-        font-family: "Balmain Sans";
-        font-size: 0.59375rem;
-        letter-spacing: 0.0625rem;
-        line-height: 1;
+        height: 0.625rem;
+        width: 0.125rem;
+        background-color: #000;
+        border-radius: 0.0625rem;
+      }
     }
-    &:hover {
-        background-color: #5c5c5c;
+  }
+  &--play {
+    span {
+      column-gap: 0;
+      &::before {
+        background: transparent;
+        border-color: transparent transparent transparent #000;
+        border-style: solid;
+        border-width: 0.3125rem 0 0.3125rem 0.5rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 0.625rem;
+        width: 0.625rem;
+      }
+      &::after {
+        display: none;
+      }
     }
+  }
+  &--prev {
+    span {
+      &::before {
+        display: inline-block;
+        content: "\e92c";
+        font-family: "icomoon";
+        font-size: 1.875rem;
+      }
+    }
+  }
+  &--next {
+    span {
+      &::before {
+        display: inline-block;
+        content: "\e92d";
+        font-family: "icomoon";
+        font-size: 1.875rem;
+      }
+    }
+  }
+}
+
+.btn-grey {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 14.375rem;
+  height: 3.4375rem;
+  padding: 1.4375rem 2rem 1.375rem;
+  border-radius: 1.71875rem;
+  background-color: #000;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  span {
+    display: inline-block;
+    color: #ccc;
+    font-family: "Balmain Sans";
+    font-size: 0.59375rem;
+    letter-spacing: 0.0625rem;
+    line-height: 1;
+  }
+  &:hover {
+    background-color: #5c5c5c;
+  }
 }
 
 .btn-back {
-    display: inline-flex;
-    justify-content: start;
-    align-items: center;
-    column-gap: 0.75rem;
-    font-size: 0.875rem;
-    font-family: "Balmain Sans";
-    font-size: 0.75rem;
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0.75rem;
+  font-size: 0.875rem;
+  font-family: "Balmain Sans";
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  span {
+    &::before {
+      font-family: "icomoon";
+      content: "\e901";
+    }
+  }
+  &--l {
+    font-family: "Proxima Nova Bold";
+    font-size: 1.125rem;
     font-weight: 500;
     letter-spacing: 0.0625rem;
     line-height: 1.25rem;
-    text-transform: uppercase;
-    span {
-        &::before {
-            font-family: "icomoon";
-            content: "\e901";
-        }
-    }
-    &--l {
-        font-family: "Proxima Nova Bold";
-        font-size: 1.125rem;
-        font-weight: 500;
-        letter-spacing: 0.0625rem;
-        line-height: 1.25rem;
-    }
+  }
 }
 
 .btn-close {
-    position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    display: inline-flex;
-    z-index: 2;
-    cursor: pointer;
-    &::before {
-        content: "\e932";
-        font-family: "icomoon";
-        font-size: 1.875rem;
-        font-weight: 400;
-    }
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: inline-flex;
+  z-index: 2;
+  cursor: pointer;
+  &::before {
+    content: "\e932";
+    font-family: "icomoon";
+    font-size: 1.875rem;
+    font-weight: 400;
+  }
 }
