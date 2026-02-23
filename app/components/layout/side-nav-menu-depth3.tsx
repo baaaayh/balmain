@@ -35,7 +35,6 @@ export default memo(function SideNavMenuDepth3({
           </button>
         </li>
         {depth3Menus.map((depth3) => {
-          console.log(depth3);
           return (
             <li
               key={depth3.menu_id}

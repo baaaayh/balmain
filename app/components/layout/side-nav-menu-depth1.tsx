@@ -24,8 +24,6 @@ export default memo(function SideNavMenuDepth1({
     [setExpandedDepth2],
   );
 
-  console.log(depth1.border);
-
   return (
     <li
       className={clsx(styles["menu__item"], {
